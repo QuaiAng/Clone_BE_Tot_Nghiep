@@ -1,0 +1,5826 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Education-assistant",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Authenticate/login": {
+      "post": {
+        "tags": [
+          "Authenticate"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Email",
+                  "Password"
+                ],
+                "type": "object",
+                "properties": {
+                  "Email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "Password": {
+                    "type": "string",
+                    "format": "password"
+                  }
+                }
+              },
+              "encoding": {
+                "Email": {
+                  "style": "form"
+                },
+                "Password": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Authenticate/refresh-token": {
+      "post": {
+        "tags": [
+          "Authenticate"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestRefreshTokenDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestRefreshTokenDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestRefreshTokenDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestRefreshTokenDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Authenticate/logout": {
+      "post": {
+        "tags": [
+          "Authenticate"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Authenticate/forgot-password": {
+      "post": {
+        "tags": [
+          "Authenticate"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Authenticate/forgot-password-confirm": {
+      "get": {
+        "tags": [
+          "Authenticate"
+        ],
+        "parameters": [
+          {
+            "name": "Email",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "email"
+            }
+          },
+          {
+            "name": "Token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Authenticate/reset-password": {
+      "post": {
+        "tags": [
+          "Authenticate"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Email",
+                  "Token"
+                ],
+                "type": "object",
+                "properties": {
+                  "Email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "Token": {
+                    "type": "string"
+                  },
+                  "Password": {
+                    "minLength": 6,
+                    "pattern": "^(?=.*[a-zA-Z])(?=.*\\d).+$",
+                    "type": "string",
+                    "format": "password"
+                  }
+                }
+              },
+              "encoding": {
+                "Email": {
+                  "style": "form"
+                },
+                "Token": {
+                  "style": "form"
+                },
+                "Password": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Authenticate/me": {
+      "get": {
+        "tags": [
+          "Authenticate"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/BoMon": {
+      "get": {
+        "tags": [
+          "BoMon"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortByOrder",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "BoMon"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Email",
+                  "KhoaId",
+                  "SoDienThoai",
+                  "TenBoMon"
+                ],
+                "type": "object",
+                "properties": {
+                  "TenBoMon": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "Email": {
+                    "maxLength": 255,
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "SoDienThoai": {
+                    "maxLength": 15,
+                    "type": "string"
+                  },
+                  "KhoaId": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "encoding": {
+                "TenBoMon": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                },
+                "SoDienThoai": {
+                  "style": "form"
+                },
+                "KhoaId": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/BoMon/no-page": {
+      "get": {
+        "tags": [
+          "BoMon"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/BoMon/{id}": {
+      "get": {
+        "tags": [
+          "BoMon"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "BoMon"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Email",
+                  "Id",
+                  "KhoaId",
+                  "SoDienThoai",
+                  "TenBoMon"
+                ],
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "TenBoMon": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "Email": {
+                    "maxLength": 255,
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "SoDienThoai": {
+                    "maxLength": 15,
+                    "type": "string"
+                  },
+                  "KhoaId": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "TenBoMon": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                },
+                "SoDienThoai": {
+                  "style": "form"
+                },
+                "KhoaId": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "BoMon"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/BoMon/by-khoa/{khoaId}": {
+      "get": {
+        "tags": [
+          "BoMon"
+        ],
+        "parameters": [
+          {
+            "name": "khoaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChiTietChuongTrinhDaoTao": {
+      "get": {
+        "tags": [
+          "ChiTietChuongTrinhDaoTao"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortByOrder",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ChiTietChuongTrinhDaoTao"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "BoMonId",
+                  "ChuongTrinhDaoTaoId",
+                  "DiemTichLuy",
+                  "HocKy",
+                  "LoaiMonHoc",
+                  "MonHocId",
+                  "SoTinChi"
+                ],
+                "type": "object",
+                "properties": {
+                  "MonHocId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "ChuongTrinhDaoTaoId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "BoMonId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "SoTinChi": {
+                    "maximum": 10,
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "HocKy": {
+                    "maximum": 10,
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "DiemTichLuy": {
+                    "type": "boolean"
+                  },
+                  "LoaiMonHoc": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "encoding": {
+                "MonHocId": {
+                  "style": "form"
+                },
+                "ChuongTrinhDaoTaoId": {
+                  "style": "form"
+                },
+                "BoMonId": {
+                  "style": "form"
+                },
+                "SoTinChi": {
+                  "style": "form"
+                },
+                "HocKy": {
+                  "style": "form"
+                },
+                "DiemTichLuy": {
+                  "style": "form"
+                },
+                "LoaiMonHoc": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChiTietChuongTrinhDaoTao/{id}": {
+      "get": {
+        "tags": [
+          "ChiTietChuongTrinhDaoTao"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ChiTietChuongTrinhDaoTao"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "BoMonId",
+                  "ChuongTrinhDaoTaoId",
+                  "DiemTichLuy",
+                  "HocKy",
+                  "Id",
+                  "LoaiMonHoc",
+                  "MonHocId",
+                  "SoTinChi"
+                ],
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "MonHocId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "ChuongTrinhDaoTaoId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "BoMonId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "SoTinChi": {
+                    "maximum": 10,
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "HocKy": {
+                    "maximum": 10,
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "DiemTichLuy": {
+                    "type": "boolean"
+                  },
+                  "LoaiMonHoc": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "MonHocId": {
+                  "style": "form"
+                },
+                "ChuongTrinhDaoTaoId": {
+                  "style": "form"
+                },
+                "BoMonId": {
+                  "style": "form"
+                },
+                "SoTinChi": {
+                  "style": "form"
+                },
+                "HocKy": {
+                  "style": "form"
+                },
+                "DiemTichLuy": {
+                  "style": "form"
+                },
+                "LoaiMonHoc": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ChiTietChuongTrinhDaoTao"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChiTietLopHocPhan": {
+      "get": {
+        "tags": [
+          "ChiTietLopHocPhan"
+        ],
+        "parameters": [
+          {
+            "name": "lopHocPhanId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "ngayNopDiem",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortByOrder",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ChiTietLopHocPhan"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "GiangVienId",
+                  "LopHocPhanId",
+                  "MonHocId",
+                  "SinhVienId"
+                ],
+                "type": "object",
+                "properties": {
+                  "DiemChuyenCan": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "DiemTrungBinh": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "DiemThi1": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "DiemThi2": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "DiemTongKet1": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "DiemTongKet2": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "NgayLuuDiem": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "NgayNopDiem": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "HocKy": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "GhiChu": {
+                    "type": "string"
+                  },
+                  "TrangThai": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "SinhVienId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "MonHocId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "GiangVienId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "LopHocPhanId": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "encoding": {
+                "DiemChuyenCan": {
+                  "style": "form"
+                },
+                "DiemTrungBinh": {
+                  "style": "form"
+                },
+                "DiemThi1": {
+                  "style": "form"
+                },
+                "DiemThi2": {
+                  "style": "form"
+                },
+                "DiemTongKet1": {
+                  "style": "form"
+                },
+                "DiemTongKet2": {
+                  "style": "form"
+                },
+                "NgayLuuDiem": {
+                  "style": "form"
+                },
+                "NgayNopDiem": {
+                  "style": "form"
+                },
+                "HocKy": {
+                  "style": "form"
+                },
+                "GhiChu": {
+                  "style": "form"
+                },
+                "TrangThai": {
+                  "style": "form"
+                },
+                "SinhVienId": {
+                  "style": "form"
+                },
+                "MonHocId": {
+                  "style": "form"
+                },
+                "GiangVienId": {
+                  "style": "form"
+                },
+                "LopHocPhanId": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChiTietLopHocPhan/{lopHocPhanId}/by-lop-hoc-phan": {
+      "get": {
+        "tags": [
+          "ChiTietLopHocPhan"
+        ],
+        "parameters": [
+          {
+            "name": "lopHocPhanId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChiTietLopHocPhan/{id}": {
+      "get": {
+        "tags": [
+          "ChiTietLopHocPhan"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ChiTietLopHocPhan"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Id"
+                ],
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "DiemChuyenCan": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "DiemTrungBinh": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "DiemThi1": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "DiemThi2": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "DiemTongKet1": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "DiemTongKet2": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "NgayLuuDiem": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "GhiChu": {
+                    "type": "string"
+                  },
+                  "TrangThai": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "DiemChuyenCan": {
+                  "style": "form"
+                },
+                "DiemTrungBinh": {
+                  "style": "form"
+                },
+                "DiemThi1": {
+                  "style": "form"
+                },
+                "DiemThi2": {
+                  "style": "form"
+                },
+                "DiemTongKet1": {
+                  "style": "form"
+                },
+                "DiemTongKet2": {
+                  "style": "form"
+                },
+                "NgayLuuDiem": {
+                  "style": "form"
+                },
+                "GhiChu": {
+                  "style": "form"
+                },
+                "TrangThai": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ChiTietLopHocPhan"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChiTietLopHocPhan/update-list": {
+      "put": {
+        "tags": [
+          "ChiTietLopHocPhan"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestListUpdateDiemSoDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestListUpdateDiemSoDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestListUpdateDiemSoDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestListUpdateDiemSoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChiTietLopHocPhan/delete-list": {
+      "delete": {
+        "tags": [
+          "ChiTietLopHocPhan"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestDeleteChiTietLopHocPhanDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestDeleteChiTietLopHocPhanDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestDeleteChiTietLopHocPhanDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestDeleteChiTietLopHocPhanDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChiTietLopHocPhan/{lopHocPhanid}/export": {
+      "get": {
+        "tags": [
+          "ChiTietLopHocPhan"
+        ],
+        "parameters": [
+          {
+            "name": "lopHocPhanid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChiTietLopHocPhan/import": {
+      "post": {
+        "tags": [
+          "ChiTietLopHocPhan"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "File",
+                  "LopHocPhanId"
+                ],
+                "type": "object",
+                "properties": {
+                  "LopHocPhanId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "File": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "LopHocPhanId": {
+                  "style": "form"
+                },
+                "File": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChuongTrinhDaoTao": {
+      "get": {
+        "tags": [
+          "ChuongTrinhDaoTao"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortByOrder",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ChuongTrinhDaoTao"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Khoa",
+                  "LoaiChuonTrinhDaoTao",
+                  "NganhId",
+                  "TenChuongTrinh",
+                  "ThoiGianDaoTao",
+                  "TongSoTinChi"
+                ],
+                "type": "object",
+                "properties": {
+                  "MaChuongTrinh": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "TenChuongTrinh": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "LoaiChuonTrinhDaoTao": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "ThoiGianDaoTao": {
+                    "type": "string"
+                  },
+                  "MoTa": {
+                    "type": "string"
+                  },
+                  "TongSoTinChi": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Khoa": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "NganhId": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "encoding": {
+                "MaChuongTrinh": {
+                  "style": "form"
+                },
+                "TenChuongTrinh": {
+                  "style": "form"
+                },
+                "LoaiChuonTrinhDaoTao": {
+                  "style": "form"
+                },
+                "ThoiGianDaoTao": {
+                  "style": "form"
+                },
+                "MoTa": {
+                  "style": "form"
+                },
+                "TongSoTinChi": {
+                  "style": "form"
+                },
+                "Khoa": {
+                  "style": "form"
+                },
+                "NganhId": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChuongTrinhDaoTao/{id}": {
+      "get": {
+        "tags": [
+          "ChuongTrinhDaoTao"
+        ],
+        "operationId": "GetChuongTrinhDaoTaoId",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ChuongTrinhDaoTao"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Id",
+                  "Khoa",
+                  "LoaiChuonTrinhDaoTao",
+                  "MaChuongTrinh",
+                  "NganhId",
+                  "TenChuongTrinh",
+                  "ThoiGianDaoTao",
+                  "TongSoTinChi"
+                ],
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "MaChuongTrinh": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "TenChuongTrinh": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "LoaiChuonTrinhDaoTao": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "ThoiGianDaoTao": {
+                    "type": "string"
+                  },
+                  "MoTa": {
+                    "type": "string"
+                  },
+                  "TongSoTinChi": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Khoa": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "NganhId": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "MaChuongTrinh": {
+                  "style": "form"
+                },
+                "TenChuongTrinh": {
+                  "style": "form"
+                },
+                "LoaiChuonTrinhDaoTao": {
+                  "style": "form"
+                },
+                "ThoiGianDaoTao": {
+                  "style": "form"
+                },
+                "MoTa": {
+                  "style": "form"
+                },
+                "TongSoTinChi": {
+                  "style": "form"
+                },
+                "Khoa": {
+                  "style": "form"
+                },
+                "NganhId": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ChuongTrinhDaoTao"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/giangviens": {
+      "get": {
+        "tags": [
+          "GiangVien"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortByOrder",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "KhoaId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "BoMonId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "active",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "trangThai",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "GiangVien"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "CCCD",
+                  "ChucVu",
+                  "Email",
+                  "GioiTinh",
+                  "HoTen"
+                ],
+                "type": "object",
+                "properties": {
+                  "HoTen": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "Email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "ChucVu": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "GioiTinh": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "NgaySinh": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "CCCD": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "SoDienThoai": {
+                    "maxLength": 15,
+                    "type": "string",
+                    "format": "tel"
+                  },
+                  "DiaChi": {
+                    "type": "string"
+                  },
+                  "NgayVaoTruong": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "TrinhDo": {
+                    "type": "string"
+                  },
+                  "ChuyenNganh": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "TrangThai": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "LoaiTaiKhoan": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "KhoaId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "BoMonId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "File": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "HoTen": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                },
+                "ChucVu": {
+                  "style": "form"
+                },
+                "GioiTinh": {
+                  "style": "form"
+                },
+                "NgaySinh": {
+                  "style": "form"
+                },
+                "CCCD": {
+                  "style": "form"
+                },
+                "SoDienThoai": {
+                  "style": "form"
+                },
+                "DiaChi": {
+                  "style": "form"
+                },
+                "NgayVaoTruong": {
+                  "style": "form"
+                },
+                "TrinhDo": {
+                  "style": "form"
+                },
+                "ChuyenNganh": {
+                  "style": "form"
+                },
+                "TrangThai": {
+                  "style": "form"
+                },
+                "LoaiTaiKhoan": {
+                  "style": "form"
+                },
+                "KhoaId": {
+                  "style": "form"
+                },
+                "BoMonId": {
+                  "style": "form"
+                },
+                "File": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/giangviens/{id}/by-khoa": {
+      "get": {
+        "tags": [
+          "GiangVien"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/giangviens/{boMonId}/by-bomon": {
+      "get": {
+        "tags": [
+          "GiangVien"
+        ],
+        "parameters": [
+          {
+            "name": "boMonId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/giangviens/{id}": {
+      "get": {
+        "tags": [
+          "GiangVien"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "GiangVien"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "CCCD",
+                  "ChucVu",
+                  "Email",
+                  "GioiTinh",
+                  "HoTen"
+                ],
+                "type": "object",
+                "properties": {
+                  "HoTen": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "Email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "ChucVu": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "GioiTinh": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "NgaySinh": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "CCCD": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "SoDienThoai": {
+                    "maxLength": 15,
+                    "type": "string",
+                    "format": "tel"
+                  },
+                  "DiaChi": {
+                    "type": "string"
+                  },
+                  "NgayVaoTruong": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "TrinhDo": {
+                    "type": "string"
+                  },
+                  "LoaiTaiKhoan": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "ChuyenNganh": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "TrangThai": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "TaiKhoanId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "KhoaId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "BoMonId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "File": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "HoTen": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                },
+                "ChucVu": {
+                  "style": "form"
+                },
+                "GioiTinh": {
+                  "style": "form"
+                },
+                "NgaySinh": {
+                  "style": "form"
+                },
+                "CCCD": {
+                  "style": "form"
+                },
+                "SoDienThoai": {
+                  "style": "form"
+                },
+                "DiaChi": {
+                  "style": "form"
+                },
+                "NgayVaoTruong": {
+                  "style": "form"
+                },
+                "TrinhDo": {
+                  "style": "form"
+                },
+                "LoaiTaiKhoan": {
+                  "style": "form"
+                },
+                "ChuyenNganh": {
+                  "style": "form"
+                },
+                "TrangThai": {
+                  "style": "form"
+                },
+                "TaiKhoanId": {
+                  "style": "form"
+                },
+                "KhoaId": {
+                  "style": "form"
+                },
+                "BoMonId": {
+                  "style": "form"
+                },
+                "File": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "GiangVien"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/giangviens/{id}/restore": {
+      "put": {
+        "tags": [
+          "GiangVien"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/giangviens/{id}/update-giang-vien": {
+      "put": {
+        "tags": [
+          "GiangVien"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "HoTen": {
+                    "type": "string"
+                  },
+                  "NgaySinh": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "CCCD": {
+                    "type": "string"
+                  },
+                  "SoDienThoai": {
+                    "type": "string"
+                  },
+                  "DiaChi": {
+                    "type": "string"
+                  },
+                  "File": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "HoTen": {
+                  "style": "form"
+                },
+                "NgaySinh": {
+                  "style": "form"
+                },
+                "CCCD": {
+                  "style": "form"
+                },
+                "SoDienThoai": {
+                  "style": "form"
+                },
+                "DiaChi": {
+                  "style": "form"
+                },
+                "File": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/giangviens/change_password": {
+      "put": {
+        "tags": [
+          "GiangVien"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Id",
+                  "NewPassword",
+                  "OldPassword"
+                ],
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "OldPassword": {
+                    "type": "string"
+                  },
+                  "NewPassword": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "OldPassword": {
+                  "style": "form"
+                },
+                "NewPassword": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HocBa": {
+      "get": {
+        "tags": [
+          "HocBa"
+        ],
+        "parameters": [
+          {
+            "name": "lopHocPhanId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortByOrder",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "HocBa"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "ChiTietChuongTrinhDaoTaoId",
+                  "DiemTongKet",
+                  "KetQua",
+                  "LopHocPhanId",
+                  "SinhVienId"
+                ],
+                "type": "object",
+                "properties": {
+                  "DiemTongKet": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "MoTa": {
+                    "type": "string"
+                  },
+                  "KetQua": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "SinhVienId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "LopHocPhanId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "ChiTietChuongTrinhDaoTaoId": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "encoding": {
+                "DiemTongKet": {
+                  "style": "form"
+                },
+                "MoTa": {
+                  "style": "form"
+                },
+                "KetQua": {
+                  "style": "form"
+                },
+                "SinhVienId": {
+                  "style": "form"
+                },
+                "LopHocPhanId": {
+                  "style": "form"
+                },
+                "ChiTietChuongTrinhDaoTaoId": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HocBa/{id}": {
+      "get": {
+        "tags": [
+          "HocBa"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "HocBa"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "ChiTietChuongTrinhDaoTaoId",
+                  "DiemTongKet",
+                  "Id",
+                  "LopHocPhanId",
+                  "SinhVienId"
+                ],
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "DiemTongKet": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "SinhVienId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "LopHocPhanId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "ChiTietChuongTrinhDaoTaoId": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "DiemTongKet": {
+                  "style": "form"
+                },
+                "SinhVienId": {
+                  "style": "form"
+                },
+                "LopHocPhanId": {
+                  "style": "form"
+                },
+                "ChiTietChuongTrinhDaoTaoId": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "HocBa"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HocBa/nop-diem": {
+      "put": {
+        "tags": [
+          "HocBa"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestListUpdateHocbaDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestListUpdateHocbaDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestListUpdateHocbaDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestListUpdateHocbaDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HocBa/delete-list": {
+      "delete": {
+        "tags": [
+          "HocBa"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestDeleteHocBaDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestDeleteHocBaDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestDeleteHocBaDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestDeleteHocBaDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Khoa": {
+      "get": {
+        "tags": [
+          "Khoa"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortByOrder",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Khoa"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Email",
+                  "SoDienThoai",
+                  "TenKhoa",
+                  "ViTriPhong"
+                ],
+                "type": "object",
+                "properties": {
+                  "TenKhoa": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "SoDienThoai": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "Email": {
+                    "maxLength": 255,
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "ViTriPhong": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "Website": {
+                    "maxLength": 255,
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "TenKhoa": {
+                  "style": "form"
+                },
+                "SoDienThoai": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                },
+                "ViTriPhong": {
+                  "style": "form"
+                },
+                "Website": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Khoa/no-page": {
+      "get": {
+        "tags": [
+          "Khoa"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Khoa/{id}": {
+      "get": {
+        "tags": [
+          "Khoa"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Khoa"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Email",
+                  "Id",
+                  "SoDienThoai",
+                  "TenKhoa",
+                  "ViTriPhong"
+                ],
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "TenKhoa": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "SoDienThoai": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "Email": {
+                    "maxLength": 255,
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "ViTriPhong": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "Website": {
+                    "maxLength": 255,
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "TenKhoa": {
+                  "style": "form"
+                },
+                "SoDienThoai": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                },
+                "ViTriPhong": {
+                  "style": "form"
+                },
+                "Website": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Khoa"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LichBieu": {
+      "get": {
+        "tags": [
+          "LichBieu"
+        ],
+        "parameters": [
+          {
+            "name": "giangVienId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "tuanId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "boMonId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortByOrder",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "LichBieu"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Thu",
+                  "TietBatDau",
+                  "TietKetThuc"
+                ],
+                "type": "object",
+                "properties": {
+                  "TietBatDau": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "TietKetThuc": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Thu": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "TuanId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "LopHocPhanId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "PhongHocId": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "encoding": {
+                "TietBatDau": {
+                  "style": "form"
+                },
+                "TietKetThuc": {
+                  "style": "form"
+                },
+                "Thu": {
+                  "style": "form"
+                },
+                "TuanId": {
+                  "style": "form"
+                },
+                "LopHocPhanId": {
+                  "style": "form"
+                },
+                "PhongHocId": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LichBieu/no-page": {
+      "get": {
+        "tags": [
+          "LichBieu"
+        ],
+        "parameters": [
+          {
+            "name": "giangVienId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "tuanId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "boMonId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortByOrder",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LichBieu/{id}": {
+      "get": {
+        "tags": [
+          "LichBieu"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "LichBieu"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Id",
+                  "LopHocPhanId",
+                  "PhongHocId",
+                  "Thu",
+                  "TietBatDau",
+                  "TietKetThuc"
+                ],
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "TietBatDau": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "TietKetThuc": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Thu": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "LopHocPhanId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "PhongHocId": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "TietBatDau": {
+                  "style": "form"
+                },
+                "TietKetThuc": {
+                  "style": "form"
+                },
+                "Thu": {
+                  "style": "form"
+                },
+                "LopHocPhanId": {
+                  "style": "form"
+                },
+                "PhongHocId": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "LichBieu"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LichBieu/copy": {
+      "post": {
+        "tags": [
+          "LichBieu"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestAddLichBieuListTuanDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestAddLichBieuListTuanDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestAddLichBieuListTuanDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestAddLichBieuListTuanDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LopHoc": {
+      "get": {
+        "tags": [
+          "LopHoc"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortByOrder",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "LopHoc"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "MaLopHoc",
+                  "NamHoc",
+                  "SiSo"
+                ],
+                "type": "object",
+                "properties": {
+                  "MaLopHoc": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "SiSo": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "NamHoc": {
+                    "maxLength": 10,
+                    "type": "string"
+                  },
+                  "GiangVienId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "NganhId": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "encoding": {
+                "MaLopHoc": {
+                  "style": "form"
+                },
+                "SiSo": {
+                  "style": "form"
+                },
+                "NamHoc": {
+                  "style": "form"
+                },
+                "GiangVienId": {
+                  "style": "form"
+                },
+                "NganhId": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LopHoc/{id}": {
+      "get": {
+        "tags": [
+          "LopHoc"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "LopHoc"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Id",
+                  "MaLopHoc",
+                  "NamHoc",
+                  "SiSo"
+                ],
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "MaLopHoc": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "SiSo": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "NamHoc": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "GiangVienId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "NganhId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "CreatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "MaLopHoc": {
+                  "style": "form"
+                },
+                "SiSo": {
+                  "style": "form"
+                },
+                "NamHoc": {
+                  "style": "form"
+                },
+                "GiangVienId": {
+                  "style": "form"
+                },
+                "NganhId": {
+                  "style": "form"
+                },
+                "CreatedAt": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "LopHoc"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LopHocPhan": {
+      "get": {
+        "tags": [
+          "LopHocPhan"
+        ],
+        "parameters": [
+          {
+            "name": "khoa",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "loaiChuongTrinhDaoTao",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "chuongTrinhDaoTaoId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "hocKy",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "trangThai",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "loaiLopHoc",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "giangVienId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortByOrder",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LopHocPhan/by-giang-vien": {
+      "get": {
+        "tags": [
+          "LopHocPhan"
+        ],
+        "parameters": [
+          {
+            "name": "loaiChuongTrinhDaoTao",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "khoa",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "hocKy",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "giangVienId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LopHocPhan/no-page": {
+      "get": {
+        "tags": [
+          "LopHocPhan"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LopHocPhan/{id}": {
+      "get": {
+        "tags": [
+          "LopHocPhan"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "LopHocPhan"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Id",
+                  "SiSo",
+                  "TrangThai"
+                ],
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "SiSo": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "TrangThai": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "SiSo": {
+                  "style": "form"
+                },
+                "TrangThai": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "LopHocPhan"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LopHocPhan/them-lop-hkp": {
+      "post": {
+        "tags": [
+          "LopHocPhan"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "MonHocId",
+                  "SiSo",
+                  "TrangThai"
+                ],
+                "type": "object",
+                "properties": {
+                  "SiSo": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "TrangThai": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "MonHocId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "GiangVienId": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "encoding": {
+                "SiSo": {
+                  "style": "form"
+                },
+                "TrangThai": {
+                  "style": "form"
+                },
+                "MonHocId": {
+                  "style": "form"
+                },
+                "GiangVienId": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LopHocPhan/them-auto": {
+      "post": {
+        "tags": [
+          "LopHocPhan"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "HocKy",
+                  "Khoa",
+                  "NganhId"
+                ],
+                "type": "object",
+                "properties": {
+                  "NganhId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "HocKy": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Khoa": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "encoding": {
+                "NganhId": {
+                  "style": "form"
+                },
+                "HocKy": {
+                  "style": "form"
+                },
+                "Khoa": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LopHocPhan/{id}/update-trang-thai": {
+      "put": {
+        "tags": [
+          "LopHocPhan"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "trangThai": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "encoding": {
+                "trangThai": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LopHocPhan/list-phan-cong": {
+      "put": {
+        "tags": [
+          "LopHocPhan"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/RequestUpdateLopHocPhanDto"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/RequestUpdateLopHocPhanDto"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/RequestUpdateLopHocPhanDto"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/RequestUpdateLopHocPhanDto"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/MonHoc": {
+      "get": {
+        "tags": [
+          "MonHoc"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortByOrder",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "MonHoc"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "MaMonHoc",
+                  "TenMonHoc"
+                ],
+                "type": "object",
+                "properties": {
+                  "MaMonHoc": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "TenMonHoc": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "MoTa": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "KhoaId": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "encoding": {
+                "MaMonHoc": {
+                  "style": "form"
+                },
+                "TenMonHoc": {
+                  "style": "form"
+                },
+                "MoTa": {
+                  "style": "form"
+                },
+                "KhoaId": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/MonHoc/{id}": {
+      "get": {
+        "tags": [
+          "MonHoc"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "MonHoc"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Id",
+                  "MaMonHoc",
+                  "TenMonHoc"
+                ],
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "MaMonHoc": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "TenMonHoc": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "MoTa": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "KhoaId": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "MaMonHoc": {
+                  "style": "form"
+                },
+                "TenMonHoc": {
+                  "style": "form"
+                },
+                "MoTa": {
+                  "style": "form"
+                },
+                "KhoaId": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "MonHoc"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/MonHoc/by-khoa/{khoaId}": {
+      "get": {
+        "tags": [
+          "MonHoc"
+        ],
+        "parameters": [
+          {
+            "name": "khoaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Nganh": {
+      "get": {
+        "tags": [
+          "Nganh"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortByOrder",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Nganh"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "KhoaId",
+                  "MaNganh",
+                  "TenNganh"
+                ],
+                "type": "object",
+                "properties": {
+                  "MaNganh": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "TenNganh": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "MoTa": {
+                    "type": "string"
+                  },
+                  "KhoaId": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "encoding": {
+                "MaNganh": {
+                  "style": "form"
+                },
+                "TenNganh": {
+                  "style": "form"
+                },
+                "MoTa": {
+                  "style": "form"
+                },
+                "KhoaId": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Nganh/{id}": {
+      "get": {
+        "tags": [
+          "Nganh"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Nganh"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Id",
+                  "KhoaId",
+                  "MaNganh",
+                  "TenNganh"
+                ],
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "MaNganh": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "TenNganh": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "MoTa": {
+                    "type": "string"
+                  },
+                  "KhoaId": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "MaNganh": {
+                  "style": "form"
+                },
+                "TenNganh": {
+                  "style": "form"
+                },
+                "MoTa": {
+                  "style": "form"
+                },
+                "KhoaId": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Nganh"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/PhongHoc": {
+      "get": {
+        "tags": [
+          "PhongHoc"
+        ],
+        "parameters": [
+          {
+            "name": "trangThai",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortByOrder",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "PhongHoc"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "LoaiPhongHoc",
+                  "SucChua",
+                  "TenPhong",
+                  "ToaNha",
+                  "TrangThaiPhongHoc"
+                ],
+                "type": "object",
+                "properties": {
+                  "TenPhong": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "ToaNha": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "SucChua": {
+                    "maximum": 2147483647,
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "LoaiPhongHoc": {
+                    "maximum": 3,
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "TrangThaiPhongHoc": {
+                    "maximum": 3,
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "encoding": {
+                "TenPhong": {
+                  "style": "form"
+                },
+                "ToaNha": {
+                  "style": "form"
+                },
+                "SucChua": {
+                  "style": "form"
+                },
+                "LoaiPhongHoc": {
+                  "style": "form"
+                },
+                "TrangThaiPhongHoc": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/PhongHoc/no-page": {
+      "get": {
+        "tags": [
+          "PhongHoc"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/PhongHoc/{id}": {
+      "get": {
+        "tags": [
+          "PhongHoc"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "PhongHoc"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Id",
+                  "LoaiPhongHoc",
+                  "SucChua",
+                  "TenPhong",
+                  "ToaNha",
+                  "TrangThaiPhongHoc"
+                ],
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "TenPhong": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "ToaNha": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "SucChua": {
+                    "maximum": 2147483647,
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "LoaiPhongHoc": {
+                    "maximum": 3,
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "TrangThaiPhongHoc": {
+                    "maximum": 3,
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "TenPhong": {
+                  "style": "form"
+                },
+                "ToaNha": {
+                  "style": "form"
+                },
+                "SucChua": {
+                  "style": "form"
+                },
+                "LoaiPhongHoc": {
+                  "style": "form"
+                },
+                "TrangThaiPhongHoc": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "PhongHoc"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/PhongHoc/{id}/update-trang-thai": {
+      "patch": {
+        "tags": [
+          "PhongHoc"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "trangThai": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "encoding": {
+                "trangThai": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SinhVien": {
+      "get": {
+        "tags": [
+          "SinhVien"
+        ],
+        "parameters": [
+          {
+            "name": "lopId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "tinhTrangHocTap",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortByOrder",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SinhVien"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "CCCD",
+                  "DiaChi",
+                  "Email",
+                  "HoTen",
+                  "MSSV",
+                  "SoDienThoai",
+                  "TrangThaiSinhVienEnum"
+                ],
+                "type": "object",
+                "properties": {
+                  "MSSV": {
+                    "type": "string"
+                  },
+                  "CCCD": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "HoTen": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "Email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "SoDienThoai": {
+                    "maxLength": 15,
+                    "type": "string",
+                    "format": "tel"
+                  },
+                  "NgaySinh": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "GioiTinhEnum": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "DiaChi": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "TrangThaiSinhVienEnum": {
+                    "maximum": 5,
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "TinhTrangHocTapSinhVienEnum": {
+                    "maximum": 6,
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "NgayTotNghiep": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "NgayNhapHoc": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "LopHocId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "File": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "MSSV": {
+                  "style": "form"
+                },
+                "CCCD": {
+                  "style": "form"
+                },
+                "HoTen": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                },
+                "SoDienThoai": {
+                  "style": "form"
+                },
+                "NgaySinh": {
+                  "style": "form"
+                },
+                "GioiTinhEnum": {
+                  "style": "form"
+                },
+                "DiaChi": {
+                  "style": "form"
+                },
+                "TrangThaiSinhVienEnum": {
+                  "style": "form"
+                },
+                "TinhTrangHocTapSinhVienEnum": {
+                  "style": "form"
+                },
+                "NgayTotNghiep": {
+                  "style": "form"
+                },
+                "NgayNhapHoc": {
+                  "style": "form"
+                },
+                "LopHocId": {
+                  "style": "form"
+                },
+                "File": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SinhVien/all-tinh-trang-hoc-tap": {
+      "get": {
+        "tags": [
+          "SinhVien"
+        ],
+        "parameters": [
+          {
+            "name": "lopId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SinhVien/{id}": {
+      "get": {
+        "tags": [
+          "SinhVien"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "SinhVien"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "CCCD",
+                  "DiaChi",
+                  "Email",
+                  "HoTen",
+                  "Id",
+                  "MSSV",
+                  "SoDienThoai",
+                  "TrangThaiSinhVienEnum"
+                ],
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "MSSV": {
+                    "type": "string"
+                  },
+                  "CCCD": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "HoTen": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "Email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "SoDienThoai": {
+                    "maxLength": 15,
+                    "type": "string",
+                    "format": "tel"
+                  },
+                  "NgaySinh": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "GioiTinhEnum": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "DiaChi": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "TrangThaiSinhVienEnum": {
+                    "maximum": 5,
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "TinhTrangHocTapSinhVienEnum": {
+                    "maximum": 6,
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "NgayTotNghiep": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "NgayNhapHoc": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "LopHocId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "File": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "CreatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "MSSV": {
+                  "style": "form"
+                },
+                "CCCD": {
+                  "style": "form"
+                },
+                "HoTen": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                },
+                "SoDienThoai": {
+                  "style": "form"
+                },
+                "NgaySinh": {
+                  "style": "form"
+                },
+                "GioiTinhEnum": {
+                  "style": "form"
+                },
+                "DiaChi": {
+                  "style": "form"
+                },
+                "TrangThaiSinhVienEnum": {
+                  "style": "form"
+                },
+                "TinhTrangHocTapSinhVienEnum": {
+                  "style": "form"
+                },
+                "NgayTotNghiep": {
+                  "style": "form"
+                },
+                "NgayNhapHoc": {
+                  "style": "form"
+                },
+                "LopHocId": {
+                  "style": "form"
+                },
+                "File": {
+                  "style": "form"
+                },
+                "CreatedAt": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SinhVien"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SinhVien/{id}/restore": {
+      "put": {
+        "tags": [
+          "SinhVien"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SinhVien/{lopId}/export": {
+      "get": {
+        "tags": [
+          "SinhVien"
+        ],
+        "parameters": [
+          {
+            "name": "lopId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SinhVien/import": {
+      "post": {
+        "tags": [
+          "SinhVien"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "File",
+                  "lopHocId"
+                ],
+                "type": "object",
+                "properties": {
+                  "lopHocId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "File": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "lopHocId": {
+                  "style": "form"
+                },
+                "File": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ThongKe/xep-loai-hoc-luc": {
+      "get": {
+        "tags": [
+          "ThongKe"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ThongKe/top-sinh-vien-gpa": {
+      "get": {
+        "tags": [
+          "ThongKe"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tuan": {
+      "get": {
+        "tags": [
+          "Tuan"
+        ],
+        "parameters": [
+          {
+            "name": "namHoc",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortByOrder",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Tuan"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "NamHoc",
+                  "NgayBatDau",
+                  "SoTuan"
+                ],
+                "type": "object",
+                "properties": {
+                  "SoTuan": {
+                    "maximum": 52,
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "NamHoc": {
+                    "maximum": 2147483647,
+                    "minimum": 1900,
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "NgayBatDau": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              },
+              "encoding": {
+                "SoTuan": {
+                  "style": "form"
+                },
+                "NamHoc": {
+                  "style": "form"
+                },
+                "NgayBatDau": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tuan/by-nam-hoc": {
+      "get": {
+        "tags": [
+          "Tuan"
+        ],
+        "parameters": [
+          {
+            "name": "namHoc",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tuan/combobox-copy": {
+      "get": {
+        "tags": [
+          "Tuan"
+        ],
+        "parameters": [
+          {
+            "name": "NamHoc",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "TuanBatDauId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "GiangVienId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tuan/{id}": {
+      "get": {
+        "tags": [
+          "Tuan"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Tuan"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Id",
+                  "NamHoc",
+                  "NgayBatDau",
+                  "NgayKetThuc",
+                  "SoTuan"
+                ],
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "SoTuan": {
+                    "maximum": 52,
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "NamHoc": {
+                    "maximum": 2147483647,
+                    "minimum": 1900,
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "NgayBatDau": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "NgayKetThuc": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "SoTuan": {
+                  "style": "form"
+                },
+                "NamHoc": {
+                  "style": "form"
+                },
+                "NgayBatDau": {
+                  "style": "form"
+                },
+                "NgayKetThuc": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Tuan"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tuan/tao-auto": {
+      "post": {
+        "tags": [
+          "Tuan"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "NamHoc"
+                ],
+                "type": "object",
+                "properties": {
+                  "NamHoc": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "encoding": {
+                "NamHoc": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "RequestAddLichBieuListTuanDto": {
+        "required": [
+          "denTuanId",
+          "giangVienId",
+          "lichBieus",
+          "namHoc",
+          "vaoTuanId"
+        ],
+        "type": "object",
+        "properties": {
+          "lichBieus": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RequestUpdateLichBieuDto"
+            }
+          },
+          "namHoc": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "vaoTuanId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "denTuanId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "giangVienId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RequestDeleteChiTietLopHocPhanDto": {
+        "required": [
+          "ids"
+        ],
+        "type": "object",
+        "properties": {
+          "ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "RequestDeleteHocBaDto": {
+        "required": [
+          "ids"
+        ],
+        "type": "object",
+        "properties": {
+          "ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "RequestListUpdateDiemSoDto": {
+        "required": [
+          "listDiemSo",
+          "loaiMonHoc"
+        ],
+        "type": "object",
+        "properties": {
+          "listDiemSo": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateChiTietLopHocPhanDto"
+            }
+          },
+          "loaiMonHoc": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RequestListUpdateHocbaDto": {
+        "required": [
+          "chuongTrinhDaoTaoId",
+          "lopHocPhanId",
+          "monHocId"
+        ],
+        "type": "object",
+        "properties": {
+          "listDiemSo": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RequestNopDiemChiTietLopHocPhanDto"
+            },
+            "nullable": true
+          },
+          "lopHocPhanId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "chuongTrinhDaoTaoId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "monHocId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RequestNopDiemChiTietLopHocPhanDto": {
+        "type": "object",
+        "properties": {
+          "diemTongKet1": {
+            "type": "number",
+            "format": "double"
+          },
+          "diemTongKet2": {
+            "type": "number",
+            "format": "double"
+          },
+          "sinhVienId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RequestRefreshTokenDto": {
+        "type": "object",
+        "properties": {
+          "refreshToken": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RequestUpdateLichBieuDto": {
+        "required": [
+          "id",
+          "thu",
+          "tietBatDau",
+          "tietKetThuc"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tietBatDau": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tietKetThuc": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "thu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tuanId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "lopHocPhanId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "phongHocId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RequestUpdateLopHocPhanDto": {
+        "required": [
+          "id",
+          "maHocPhan",
+          "monHocId",
+          "siSo",
+          "trangThai"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "maHocPhan": {
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string"
+          },
+          "siSo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "trangThai": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "monHocId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "giangVienId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateChiTietLopHocPhanDto": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "diemChuyenCan": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "diemTrungBinh": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "diemThi1": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "diemThi2": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "diemTongKet1": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "diemTongKet2": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "ghiChu": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

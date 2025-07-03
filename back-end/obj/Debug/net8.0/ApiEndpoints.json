@@ -1,0 +1,3387 @@
+[
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleAuthenticate.AuthenticateController",
+    "Method": "ForgotPassword",
+    "RelativePath": "api/Authenticate/forgot-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleAuthenticate.AuthenticateController",
+    "Method": "ForgotPasswordConfirm",
+    "RelativePath": "api/Authenticate/forgot-password-confirm",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Token",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleAuthenticate.AuthenticateController",
+    "Method": "Login",
+    "RelativePath": "api/Authenticate/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleAuthenticate.AuthenticateController",
+    "Method": "Logout",
+    "RelativePath": "api/Authenticate/logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleAuthenticate.AuthenticateController",
+    "Method": "GetMeAsync",
+    "RelativePath": "api/Authenticate/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleAuthenticate.AuthenticateController",
+    "Method": "RefreshToken",
+    "RelativePath": "api/Authenticate/refresh-token",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "requestRefreshTokenDto",
+        "Type": "Education_assistant.Modules.ModuleAuthenticate.Dtos.RequestRefreshTokenDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleAuthenticate.AuthenticateController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/Authenticate/reset-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Token",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleBoMon.BoMonController",
+    "Method": "GetAllBoMonAsync",
+    "RelativePath": "api/BoMon",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortByOrder",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleBoMon.BoMonController",
+    "Method": "AddBoMonAsync",
+    "RelativePath": "api/BoMon",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TenBoMon",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SoDienThoai",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "KhoaId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleBoMon.BoMonController",
+    "Method": "GetBoMonByIdAsync",
+    "RelativePath": "api/BoMon/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleBoMon.BoMonController",
+    "Method": "UpdateBoMonAsync",
+    "RelativePath": "api/BoMon/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenBoMon",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SoDienThoai",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "KhoaId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleBoMon.BoMonController",
+    "Method": "DeleteBoMonAsync",
+    "RelativePath": "api/BoMon/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleBoMon.BoMonController",
+    "Method": "GetBoMonByKhoaIdAsync",
+    "RelativePath": "api/BoMon/by-khoa/{khoaId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "khoaId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleBoMon.BoMonController",
+    "Method": "GetAllBoMonNoPageAsync",
+    "RelativePath": "api/BoMon/no-page",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChiTietChuongTrinhDaoTao.ChiTietChuongTrinhDaoTaoController",
+    "Method": "GetAllChiTietChuongTrinhDaoTaoAsync",
+    "RelativePath": "api/ChiTietChuongTrinhDaoTao",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortByOrder",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChiTietChuongTrinhDaoTao.ChiTietChuongTrinhDaoTaoController",
+    "Method": "AddChiTietChuongTrinhDaoTaoAsync",
+    "RelativePath": "api/ChiTietChuongTrinhDaoTao",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "MonHocId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "ChuongTrinhDaoTaoId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "BoMonId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "SoTinChi",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "HocKy",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "DiemTichLuy",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "LoaiMonHoc",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChiTietChuongTrinhDaoTao.ChiTietChuongTrinhDaoTaoController",
+    "Method": "GetChiTietChuongTrinhDaoTaoByIdAsync",
+    "RelativePath": "api/ChiTietChuongTrinhDaoTao/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChiTietChuongTrinhDaoTao.ChiTietChuongTrinhDaoTaoController",
+    "Method": "UpdateChiTietChuongTrinhDaoTaoAsync",
+    "RelativePath": "api/ChiTietChuongTrinhDaoTao/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "MonHocId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "ChuongTrinhDaoTaoId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "BoMonId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "SoTinChi",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "HocKy",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "DiemTichLuy",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "LoaiMonHoc",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChiTietChuongTrinhDaoTao.ChiTietChuongTrinhDaoTaoController",
+    "Method": "DeleteChiTietChuongTrinhDaoTaoAsync",
+    "RelativePath": "api/ChiTietChuongTrinhDaoTao/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChiTietLopHocPhan.ChiTietLopHocPhanController",
+    "Method": "GetAllChiTietLopHocPhanAsync",
+    "RelativePath": "api/ChiTietLopHocPhan",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lopHocPhanId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "ngayNopDiem",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortByOrder",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChiTietLopHocPhan.ChiTietLopHocPhanController",
+    "Method": "AddChiTietLopHocPhanAsync",
+    "RelativePath": "api/ChiTietLopHocPhan",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "DiemChuyenCan",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "DiemTrungBinh",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "DiemThi1",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "DiemThi2",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "DiemTongKet1",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "DiemTongKet2",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgayLuuDiem",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgayNopDiem",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "HocKy",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "GhiChu",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TrangThai",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "SinhVienId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "MonHocId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "GiangVienId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "LopHocPhanId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChiTietLopHocPhan.ChiTietLopHocPhanController",
+    "Method": "GetChiTietLopHocPhanByIdAsync",
+    "RelativePath": "api/ChiTietLopHocPhan/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChiTietLopHocPhan.ChiTietLopHocPhanController",
+    "Method": "UpdateChiTietLopHocPhanAsync",
+    "RelativePath": "api/ChiTietLopHocPhan/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "DiemChuyenCan",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "DiemTrungBinh",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "DiemThi1",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "DiemThi2",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "DiemTongKet1",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "DiemTongKet2",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgayLuuDiem",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "GhiChu",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TrangThai",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChiTietLopHocPhan.ChiTietLopHocPhanController",
+    "Method": "DeleteChiTietLopHocPhanAsync",
+    "RelativePath": "api/ChiTietLopHocPhan/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChiTietLopHocPhan.ChiTietLopHocPhanController",
+    "Method": "GetAllChiTietLopHocPhanByLopHocPhanAsync",
+    "RelativePath": "api/ChiTietLopHocPhan/{lopHocPhanId}/by-lop-hoc-phan",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lopHocPhanId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChiTietLopHocPhan.ChiTietLopHocPhanController",
+    "Method": "ExportAsync",
+    "RelativePath": "api/ChiTietLopHocPhan/{lopHocPhanid}/export",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lopHocPhanid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChiTietLopHocPhan.ChiTietLopHocPhanController",
+    "Method": "DeleteListChiTietLopHocPhanAsync",
+    "RelativePath": "api/ChiTietLopHocPhan/delete-list",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Education_assistant.Modules.ModuleChiTietLopHocPhan.DTOs.Request.RequestDeleteChiTietLopHocPhanDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChiTietLopHocPhan.ChiTietLopHocPhanController",
+    "Method": "ImportAsync",
+    "RelativePath": "api/ChiTietLopHocPhan/import",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "LopHocPhanId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChiTietLopHocPhan.ChiTietLopHocPhanController",
+    "Method": "UpdateListChiTietLopHocPhanAsync",
+    "RelativePath": "api/ChiTietLopHocPhan/update-list",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Education_assistant.Modules.ModuleChiTietLopHocPhan.DTOs.Request.RequestListUpdateDiemSoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChuongTrinhDaoTao.ChuongTrinhDaoTaoController",
+    "Method": "GetAllChuongTrinhDaoTaoAsync",
+    "RelativePath": "api/ChuongTrinhDaoTao",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortByOrder",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChuongTrinhDaoTao.ChuongTrinhDaoTaoController",
+    "Method": "AddChuongTrinhDaoTaoAsync",
+    "RelativePath": "api/ChuongTrinhDaoTao",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "MaChuongTrinh",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenChuongTrinh",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "LoaiChuonTrinhDaoTao",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ThoiGianDaoTao",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "MoTa",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TongSoTinChi",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Khoa",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "NganhId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChuongTrinhDaoTao.ChuongTrinhDaoTaoController",
+    "Method": "GetChuongTrinhDaoTaoByIdAsync",
+    "RelativePath": "api/ChuongTrinhDaoTao/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "GetChuongTrinhDaoTaoId"
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChuongTrinhDaoTao.ChuongTrinhDaoTaoController",
+    "Method": "UpdateChuongTrinhDaoTaosAsync",
+    "RelativePath": "api/ChuongTrinhDaoTao/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "MaChuongTrinh",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenChuongTrinh",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "LoaiChuonTrinhDaoTao",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ThoiGianDaoTao",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "MoTa",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TongSoTinChi",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Khoa",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "NganhId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChuongTrinhDaoTao.ChuongTrinhDaoTaoController",
+    "Method": "DeleteChuongTrinhDaoTaoAsync",
+    "RelativePath": "api/ChuongTrinhDaoTao/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleGiangVien.GiangVienController",
+    "Method": "GetAllGiangVienAsync",
+    "RelativePath": "api/giangviens",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortByOrder",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "KhoaId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "BoMonId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "active",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "trangThai",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleGiangVien.GiangVienController",
+    "Method": "AddGiangVienAsync",
+    "RelativePath": "api/giangviens",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "HoTen",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ChucVu",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "GioiTinh",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgaySinh",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "CCCD",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SoDienThoai",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "DiaChi",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgayVaoTruong",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "TrinhDo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ChuyenNganh",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TrangThai",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "LoaiTaiKhoan",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "KhoaId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "BoMonId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleGiangVien.GiangVienController",
+    "Method": "GetAllGiangVienByBoMonAsync",
+    "RelativePath": "api/giangviens/{boMonId}/by-bomon",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "boMonId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleGiangVien.GiangVienController",
+    "Method": "GetGiangVienByIdAsync",
+    "RelativePath": "api/giangviens/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleGiangVien.GiangVienController",
+    "Method": "UpdateGiangVienAsync",
+    "RelativePath": "api/giangviens/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "HoTen",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ChucVu",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "GioiTinh",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgaySinh",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "CCCD",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SoDienThoai",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "DiaChi",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgayVaoTruong",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "TrinhDo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "LoaiTaiKhoan",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "ChuyenNganh",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TrangThai",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "TaiKhoanId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "KhoaId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "BoMonId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleGiangVien.GiangVienController",
+    "Method": "DeleteGiangVienAsync",
+    "RelativePath": "api/giangviens/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleGiangVien.GiangVienController",
+    "Method": "GetAllGiangVienByAsync",
+    "RelativePath": "api/giangviens/{id}/by-khoa",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleGiangVien.GiangVienController",
+    "Method": "GetReStoreGiangVienAsync",
+    "RelativePath": "api/giangviens/{id}/restore",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleGiangVien.GiangVienController",
+    "Method": "UpdateGiangVienOptionAsync",
+    "RelativePath": "api/giangviens/{id}/update-giang-vien",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "HoTen",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgaySinh",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "CCCD",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SoDienThoai",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "DiaChi",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleGiangVien.GiangVienController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/giangviens/change_password",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "OldPassword",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NewPassword",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleHocBa.HocBaController",
+    "Method": "GetAllHocBaAsync",
+    "RelativePath": "api/HocBa",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lopHocPhanId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortByOrder",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleHocBa.HocBaController",
+    "Method": "AddHocBaAsync",
+    "RelativePath": "api/HocBa",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "DiemTongKet",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "MoTa",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "KetQua",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "SinhVienId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "LopHocPhanId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "ChiTietChuongTrinhDaoTaoId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleHocBa.HocBaController",
+    "Method": "GetHocBaByIdAsync",
+    "RelativePath": "api/HocBa/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleHocBa.HocBaController",
+    "Method": "UpdateHocBaAsync",
+    "RelativePath": "api/HocBa/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "DiemTongKet",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "SinhVienId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "LopHocPhanId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "ChiTietChuongTrinhDaoTaoId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleHocBa.HocBaController",
+    "Method": "DeleteHocBaAsync",
+    "RelativePath": "api/HocBa/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleHocBa.HocBaController",
+    "Method": "DeleteListHocBaAsync",
+    "RelativePath": "api/HocBa/delete-list",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Education_assistant.Modules.ModuleHocBa.DTOs.Request.RequestDeleteHocBaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleHocBa.HocBaController",
+    "Method": "UpdateListHocBaAsync",
+    "RelativePath": "api/HocBa/nop-diem",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Education_assistant.Modules.ModuleHocBa.DTOs.Request.RequestListUpdateHocbaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleKhoa.KhoaController",
+    "Method": "GetAllKhoaAsync",
+    "RelativePath": "api/Khoa",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortByOrder",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleKhoa.KhoaController",
+    "Method": "AddKhoaAsync",
+    "RelativePath": "api/Khoa",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TenKhoa",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SoDienThoai",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ViTriPhong",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Website",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleKhoa.KhoaController",
+    "Method": "GetKhoaByIdAsync",
+    "RelativePath": "api/Khoa/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleKhoa.KhoaController",
+    "Method": "UpdateKhoaAsync",
+    "RelativePath": "api/Khoa/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenKhoa",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SoDienThoai",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ViTriPhong",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Website",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleKhoa.KhoaController",
+    "Method": "DeleteKhoaAsync",
+    "RelativePath": "api/Khoa/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleKhoa.KhoaController",
+    "Method": "GetAllKhoaNoPageAsync",
+    "RelativePath": "api/Khoa/no-page",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLichBieu.LichBieuController",
+    "Method": "GetAllLichBieuAsync",
+    "RelativePath": "api/LichBieu",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "giangVienId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "tuanId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "boMonId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortByOrder",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLichBieu.LichBieuController",
+    "Method": "AddLichBieuAsync",
+    "RelativePath": "api/LichBieu",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TietBatDau",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TietKetThuc",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Thu",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TuanId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "LopHocPhanId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "PhongHocId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLichBieu.LichBieuController",
+    "Method": "GetLichBieuByIdAsync",
+    "RelativePath": "api/LichBieu/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLichBieu.LichBieuController",
+    "Method": "UpdateLichBieuAsync",
+    "RelativePath": "api/LichBieu/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "TietBatDau",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TietKetThuc",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Thu",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "LopHocPhanId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "PhongHocId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLichBieu.LichBieuController",
+    "Method": "DeleteLichBieuAsync",
+    "RelativePath": "api/LichBieu/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLichBieu.LichBieuController",
+    "Method": "AddListLichBieuWithTuanAsync",
+    "RelativePath": "api/LichBieu/copy",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Education_assistant.Modules.ModuleLichBieu.DTOs.Request.RequestAddLichBieuListTuanDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLichBieu.LichBieuController",
+    "Method": "GetAllLichBieuNoPageAsync",
+    "RelativePath": "api/LichBieu/no-page",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "giangVienId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "tuanId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "boMonId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortByOrder",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLopHoc.LopHocController",
+    "Method": "GetAllLopHocAsync",
+    "RelativePath": "api/LopHoc",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortByOrder",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLopHoc.LopHocController",
+    "Method": "AddLopHocAsync",
+    "RelativePath": "api/LopHoc",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "MaLopHoc",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SiSo",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "NamHoc",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "GiangVienId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "NganhId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLopHoc.LopHocController",
+    "Method": "GetLopHocByIdAsync",
+    "RelativePath": "api/LopHoc/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLopHoc.LopHocController",
+    "Method": "UpdateLopHocAsync",
+    "RelativePath": "api/LopHoc/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "MaLopHoc",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SiSo",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "NamHoc",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "GiangVienId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "NganhId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "CreatedAt",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLopHoc.LopHocController",
+    "Method": "DeleteLopHocAsync",
+    "RelativePath": "api/LopHoc/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLopHocPhan.LopHocPhanController",
+    "Method": "GetAllLopHocPhanAsync",
+    "RelativePath": "api/LopHocPhan",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "khoa",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "loaiChuongTrinhDaoTao",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "chuongTrinhDaoTaoId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "hocKy",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "trangThai",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "loaiLopHoc",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "giangVienId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortByOrder",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLopHocPhan.LopHocPhanController",
+    "Method": "GetLopHocPhanByIdAsync",
+    "RelativePath": "api/LopHocPhan/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLopHocPhan.LopHocPhanController",
+    "Method": "UpdateLopHocPhanAsync",
+    "RelativePath": "api/LopHocPhan/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "SiSo",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TrangThai",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLopHocPhan.LopHocPhanController",
+    "Method": "DeleteLopHocPhanAsync",
+    "RelativePath": "api/LopHocPhan/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLopHocPhan.LopHocPhanController",
+    "Method": "UpdateTrangThaiLopHocPhanAsync",
+    "RelativePath": "api/LopHocPhan/{id}/update-trang-thai",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "trangThai",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLopHocPhan.LopHocPhanController",
+    "Method": "GetAllLopHocPhanByGiangVienAsync",
+    "RelativePath": "api/LopHocPhan/by-giang-vien",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loaiChuongTrinhDaoTao",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "khoa",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "hocKy",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "giangVienId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLopHocPhan.LopHocPhanController",
+    "Method": "UpdateListLopHocPhanAsync",
+    "RelativePath": "api/LopHocPhan/list-phan-cong",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "listRequest",
+        "Type": "System.Collections.Generic.List\u00601[[Education_assistant.Modules.ModuleLopHocPhan.DTOs.Request.RequestUpdateLopHocPhanDto, Education-assistant, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLopHocPhan.LopHocPhanController",
+    "Method": "GetAllLopHocPhanNoPageAsync",
+    "RelativePath": "api/LopHocPhan/no-page",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLopHocPhan.LopHocPhanController",
+    "Method": "AddAutoLopHocPhanAsync",
+    "RelativePath": "api/LopHocPhan/them-auto",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "NganhId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "HocKy",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Khoa",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLopHocPhan.LopHocPhanController",
+    "Method": "AddLopHocPhanAsync",
+    "RelativePath": "api/LopHocPhan/them-lop-hkp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "SiSo",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TrangThai",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "MonHocId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "GiangVienId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleMonHoc.MonHocController",
+    "Method": "GetAllMonHocAsync",
+    "RelativePath": "api/MonHoc",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortByOrder",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleMonHoc.MonHocController",
+    "Method": "AddMonHocAsync",
+    "RelativePath": "api/MonHoc",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "MaMonHoc",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenMonHoc",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "MoTa",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "KhoaId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleMonHoc.MonHocController",
+    "Method": "GetMonHocByIdAsync",
+    "RelativePath": "api/MonHoc/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleMonHoc.MonHocController",
+    "Method": "UpdateMonHocAsync",
+    "RelativePath": "api/MonHoc/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "MaMonHoc",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenMonHoc",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "MoTa",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "KhoaId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleMonHoc.MonHocController",
+    "Method": "DeleteMonHocAsync",
+    "RelativePath": "api/MonHoc/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleMonHoc.MonHocController",
+    "Method": "GetMonHocByKhoaIdAsync",
+    "RelativePath": "api/MonHoc/by-khoa/{khoaId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "khoaId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleNganh.NganhController",
+    "Method": "GetAllNganhAsync",
+    "RelativePath": "api/Nganh",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortByOrder",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleNganh.NganhController",
+    "Method": "AddNganhAsync",
+    "RelativePath": "api/Nganh",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "MaNganh",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenNganh",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "MoTa",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "KhoaId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleNganh.NganhController",
+    "Method": "GetNganhByIdAsync",
+    "RelativePath": "api/Nganh/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleNganh.NganhController",
+    "Method": "UpdateNganhAsync",
+    "RelativePath": "api/Nganh/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "MaNganh",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenNganh",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "MoTa",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "KhoaId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleNganh.NganhController",
+    "Method": "DeleteNganhAsync",
+    "RelativePath": "api/Nganh/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModulePhongHoc.PhongHocController",
+    "Method": "GetAllPhongHocAsync",
+    "RelativePath": "api/PhongHoc",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "trangThai",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortByOrder",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModulePhongHoc.PhongHocController",
+    "Method": "AddPhongHocAsync",
+    "RelativePath": "api/PhongHoc",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TenPhong",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ToaNha",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SucChua",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "LoaiPhongHoc",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TrangThaiPhongHoc",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModulePhongHoc.PhongHocController",
+    "Method": "GetPhongHocByIdAsync",
+    "RelativePath": "api/PhongHoc/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModulePhongHoc.PhongHocController",
+    "Method": "UpdatePhongHocAsync",
+    "RelativePath": "api/PhongHoc/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "TenPhong",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ToaNha",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SucChua",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "LoaiPhongHoc",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TrangThaiPhongHoc",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModulePhongHoc.PhongHocController",
+    "Method": "DeletePhongHocAsync",
+    "RelativePath": "api/PhongHoc/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModulePhongHoc.PhongHocController",
+    "Method": "UpdateTrangThaiLopHocPhanAsync",
+    "RelativePath": "api/PhongHoc/{id}/update-trang-thai",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "trangThai",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModulePhongHoc.PhongHocController",
+    "Method": "GetAllPhongHocNoPageAsync",
+    "RelativePath": "api/PhongHoc/no-page",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleSinhVien.SinhVienController",
+    "Method": "GetAllSinhVienAsync",
+    "RelativePath": "api/SinhVien",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lopId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "tinhTrangHocTap",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortByOrder",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleSinhVien.SinhVienController",
+    "Method": "AddSinhVienAsync",
+    "RelativePath": "api/SinhVien",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "MSSV",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CCCD",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "HoTen",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SoDienThoai",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgaySinh",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "GioiTinhEnum",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "DiaChi",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TrangThaiSinhVienEnum",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "TinhTrangHocTapSinhVienEnum",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgayTotNghiep",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgayNhapHoc",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "LopHocId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleSinhVien.SinhVienController",
+    "Method": "GetSinhVienByIdAsync",
+    "RelativePath": "api/SinhVien/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleSinhVien.SinhVienController",
+    "Method": "UpdateSinhVienAsync",
+    "RelativePath": "api/SinhVien/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "MSSV",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CCCD",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "HoTen",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SoDienThoai",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgaySinh",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "GioiTinhEnum",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "DiaChi",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TrangThaiSinhVienEnum",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "TinhTrangHocTapSinhVienEnum",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgayTotNghiep",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgayNhapHoc",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "LopHocId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "CreatedAt",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleSinhVien.SinhVienController",
+    "Method": "DeleteSinhVienAsync",
+    "RelativePath": "api/SinhVien/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleSinhVien.SinhVienController",
+    "Method": "GetReStoreSinhVienAsync",
+    "RelativePath": "api/SinhVien/{id}/restore",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleSinhVien.SinhVienController",
+    "Method": "ExportAsync",
+    "RelativePath": "api/SinhVien/{lopId}/export",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lopId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleSinhVien.SinhVienController",
+    "Method": "GetAllSummaryAsync",
+    "RelativePath": "api/SinhVien/all-tinh-trang-hoc-tap",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lopId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleSinhVien.SinhVienController",
+    "Method": "ImportAsync",
+    "RelativePath": "api/SinhVien/import",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lopHocId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleThongKe.ThongKeController",
+    "Method": "GetThongKeTopSinhVienGPAAsync",
+    "RelativePath": "api/ThongKe/top-sinh-vien-gpa",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleThongKe.ThongKeController",
+    "Method": "GetThongKeTinhTrangHocTapAsync",
+    "RelativePath": "api/ThongKe/xep-loai-hoc-luc",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleTuan.TuanController",
+    "Method": "GetAllTuanAsync",
+    "RelativePath": "api/Tuan",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "namHoc",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortByOrder",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleTuan.TuanController",
+    "Method": "AddTuanAsync",
+    "RelativePath": "api/Tuan",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "SoTuan",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "NamHoc",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgayBatDau",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleTuan.TuanController",
+    "Method": "GetTuanByIdAsync",
+    "RelativePath": "api/Tuan/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleTuan.TuanController",
+    "Method": "UpdateTuanAsync",
+    "RelativePath": "api/Tuan/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "SoTuan",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "NamHoc",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgayBatDau",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgayKetThuc",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleTuan.TuanController",
+    "Method": "DeleteTuanAsync",
+    "RelativePath": "api/Tuan/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleTuan.TuanController",
+    "Method": "GetAllTuanAsync",
+    "RelativePath": "api/Tuan/by-nam-hoc",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "namHoc",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleTuan.TuanController",
+    "Method": "GetTuanComboBoxAsync",
+    "RelativePath": "api/Tuan/combobox-copy",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "NamHoc",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TuanBatDauId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "GiangVienId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleTuan.TuanController",
+    "Method": "AddCreateAutoTuanAsync",
+    "RelativePath": "api/Tuan/tao-auto",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "NamHoc",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
