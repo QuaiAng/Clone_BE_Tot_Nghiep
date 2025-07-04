@@ -300,6 +300,11 @@
     "Order": 0,
     "Parameters": [
       {
+        "Name": "chuongTrinhDaoTaoId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
         "Name": "page",
         "Type": "System.Int32",
         "IsRequired": false
@@ -457,6 +462,27 @@
         "Name": "id",
         "Type": "System.Guid",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChiTietChuongTrinhDaoTao.ChiTietChuongTrinhDaoTaoController",
+    "Method": "GetChiTietChuongTrinhDaoTaoByCTDTIdAsync",
+    "RelativePath": "api/ChiTietChuongTrinhDaoTao/ChuongTrinhDaoTao/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "hocKy",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -1363,6 +1389,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Education_assistant.Modules.ModuleGiangVien.GiangVienController",
+    "Method": "GetAllGiangVienNoPageAsync",
+    "RelativePath": "api/giangviens/no-page",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Education_assistant.Modules.ModuleHocBa.HocBaController",
     "Method": "GetAllHocBaAsync",
     "RelativePath": "api/HocBa",
@@ -1904,18 +1940,23 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "giangVienId",
-        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Name": "namHoc",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "hocKy",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "lopHocId",
+        "Type": "System.Guid",
         "IsRequired": false
       },
       {
         "Name": "tuanId",
-        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "boMonId",
-        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "System.Guid",
         "IsRequired": false
       },
       {
@@ -2089,6 +2130,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLopHoc.LopHocController",
+    "Method": "GetAllLopHocNoPageAsync",
+    "RelativePath": "api/LopHoc/no-page",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -3131,6 +3182,27 @@
   },
   {
     "ContainingType": "Education_assistant.Modules.ModuleSinhVien.SinhVienController",
+    "Method": "DeleteSinhVienAsync",
+    "RelativePath": "api/SinhVien/{sinhVienId}/xoa-sv-khoi-lhp",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sinhVienId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "lopHocPhanId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleSinhVien.SinhVienController",
     "Method": "GetAllSummaryAsync",
     "RelativePath": "api/SinhVien/all-tinh-trang-hoc-tap",
     "HttpMethod": "GET",
@@ -3139,6 +3211,68 @@
     "Parameters": [
       {
         "Name": "lopId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleSinhVien.SinhVienController",
+    "Method": "GetAllSinhVienByLopHocPhanAsync",
+    "RelativePath": "api/SinhVien/by-lop-hoc-phan",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lopHocPhanId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortByOrder",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleSinhVien.SinhVienController",
+    "Method": "AddSinhVienDangKyMonHocAsync",
+    "RelativePath": "api/SinhVien/dang-ky-mon-hoc",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "SinhVienId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "LopHocPhanId",
         "Type": "System.Guid",
         "IsRequired": false
       }
@@ -3161,6 +3295,22 @@
       {
         "Name": "File",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleSinhVien.SinhVienController",
+    "Method": "GetSinhVienByMssvAsync",
+    "RelativePath": "api/SinhVien/mssv",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "mssv",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],
@@ -3363,22 +3513,6 @@
       {
         "Name": "GiangVienId",
         "Type": "System.Guid",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Education_assistant.Modules.ModuleTuan.TuanController",
-    "Method": "AddCreateAutoTuanAsync",
-    "RelativePath": "api/Tuan/tao-auto",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "NamHoc",
-        "Type": "System.Int32",
         "IsRequired": false
       }
     ],

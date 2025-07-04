@@ -1,8 +1,11 @@
 using AutoMapper;
 using ClosedXML.Excel;
 using Education_assistant.Contracts.LoggerServices;
+using Education_assistant.Exceptions.ThrowError.ChiTietLopHocPhanExceptions;
+using Education_assistant.Exceptions.ThrowError.DangKyMonHocExceptions;
 using Education_assistant.Exceptions.ThrowError.GiangVienExceptions;
 using Education_assistant.Exceptions.ThrowError.LopHocExceptions;
+using Education_assistant.Exceptions.ThrowError.LopHocPhanExceptions;
 using Education_assistant.Exceptions.ThrowError.SinhVienExceptions;
 using Education_assistant.Models;
 using Education_assistant.Models.Enums;
@@ -360,6 +363,144 @@ public class ServiceSinhVien : IServiceSinhVien
                 await Task.CompletedTask;
             });
             _loggerService.LogInfo("Cập nhật sinh viên thành công.");
+        }
+        catch (DbUpdateException ex)
+        {
+            throw new Exception($"Lỗi hệ thống!: {ex.Message}");
+        }
+    }
+
+    public async Task<ResponseSinhVienDto> GetSinhVienByMssvAsync(string mssv)
+    {
+        var sinhVien = await _repositoryMaster.SinhVien.GetSinhVienByMssvAsync(mssv, false);
+        if (sinhVien is null)
+        {
+
+        }
+        var sinhVienDto = _mapper.Map<ResponseSinhVienDto>(sinhVien);
+        return sinhVienDto;
+    }
+
+    public async Task<(IEnumerable<ResponseSinhVienDto> data, PageInfo page)> GetAllSinhVienByLopHocPhanIdAsync(ParamSinhVienByLopHocPhanDto paramSinhVienByLopHocPhanDto)
+    {
+        var sinhViens = await _repositoryMaster.SinhVien.GetAllSinhVienByLopHocPhanIdAsync(paramSinhVienByLopHocPhanDto.page,
+                                                                                            paramSinhVienByLopHocPhanDto.limit,
+                                                                                            paramSinhVienByLopHocPhanDto.search,
+                                                                                            paramSinhVienByLopHocPhanDto.sortBy,
+                                                                                            paramSinhVienByLopHocPhanDto.sortByOrder,
+                                                                                            paramSinhVienByLopHocPhanDto.lopHocPhanId);
+
+        var sinhVienDtos = _mapper.Map<IEnumerable<ResponseSinhVienDto>>(sinhViens);
+        return (data: sinhVienDtos, page: sinhViens.PageInfo);
+    }
+
+    public async Task<ResponseSinhVienDangKyMonHocDto> CreateSinhVienDangKyMonHocAsync(RequestSinhVienDangKyMonHocDto request)
+    {
+        var dangKyMonHoc = await _repositoryMaster.DangKyMonHoc.GetDangKyMonHocBySinhVienIdAndLopHocPhanIdAsync(request.SinhVienId, request.LopHocPhanId);
+        if (dangKyMonHoc is not null)
+        {
+            throw new DangKyMonHocBadRequestException($"Sinh viên đã trong lớp học phần không thể thêm.");
+        }
+        var lopHocPhan = await _repositoryMaster.LopHocPhan.GetLopHocPhanByIdAsync(request.LopHocPhanId, true);
+        if (lopHocPhan is null) {
+            throw new LopHocPhanNotFoundException(request.LopHocPhanId);
+        }
+        var chiTietLopHocPhan = await _repositoryMaster.ChiTietLopHocPhan.GetChiTietLopHocPhanByLopHocPhanIdAsync(request.LopHocPhanId);
+        if (chiTietLopHocPhan is null) {
+            throw new LopHocPhanNotFoundException(request.LopHocPhanId);
+        }
+        var hocBa = await _repositoryMaster.HocBa.GetHocBaByLopHocPhanIdAsync(request.LopHocPhanId);
+        if (hocBa is null) {
+            throw new LopHocPhanNotFoundException(request.LopHocPhanId);
+        }
+        try
+        {
+            var sinhVienDangKyMonHoc = new DangKyMonHoc
+            {
+                NgayDangKyHoc = DateTime.Now,
+                TrangThai = (int)TrangThaiDangKyMonHocEnum.DA_DANG_KY,
+                SinhVienId = request.SinhVienId,
+                LopHocPhanId = request.LopHocPhanId
+            };
+            var newChiTietLopHocPhan = new ChiTietLopHocPhan
+            {
+                HocKy = chiTietLopHocPhan.HocKy,
+                SinhVienId = request.SinhVienId,
+                MonHocId = chiTietLopHocPhan.MonHocId,
+                GiangVienId = chiTietLopHocPhan.GiangVienId,
+                LopHocPhanId = chiTietLopHocPhan.LopHocPhanId,
+                CreatedAt = DateTime.Now,
+            };
+            var newHocBa = new HocBa
+            {
+                SinhVienId = request.SinhVienId,
+                LopHocPhanId = hocBa.LopHocPhanId,
+                ChiTietChuongTrinhDaoTaoId = hocBa.ChiTietChuongTrinhDaoTaoId,
+                CreatedAt = DateTime.Now,
+            };
+            await _repositoryMaster.ExecuteInTransactionAsync(async () =>
+            {
+                await _repositoryMaster.DangKyMonHoc.CreateAsync(sinhVienDangKyMonHoc);
+                await _repositoryMaster.ChiTietLopHocPhan.CreateAsync(newChiTietLopHocPhan);
+                await _repositoryMaster.HocBa.CreateAsync(newHocBa);
+            });
+
+            var countSinhVienDangKyMonHoc = await _repositoryMaster.DangKyMonHoc.GetCountSinhVienDangKyMonHocAsync(request.LopHocPhanId);
+
+            await _repositoryMaster.ExecuteInTransactionAsync(async () =>
+            {
+                lopHocPhan.SiSo = countSinhVienDangKyMonHoc;
+                await Task.CompletedTask;
+            });
+
+            var sinhVienDangKyMonHocDto = _mapper.Map<ResponseSinhVienDangKyMonHocDto>(sinhVienDangKyMonHoc);
+            return sinhVienDangKyMonHocDto;
+        }
+        catch (DbUpdateException ex)
+        {
+            throw new Exception($"Lỗi hệ thống!: {ex.Message}");
+        }
+    }
+
+    public async Task DeleteSinhVienKhoiLopHocPhanAsync(Guid sinhVienId, Guid lopHocPhanId)
+    {
+        var lopHocPhan = await _repositoryMaster.LopHocPhan.GetLopHocPhanByIdAsync(lopHocPhanId, true);
+        if (lopHocPhan is null) {
+            throw new LopHocPhanNotFoundException(lopHocPhanId);
+        }
+        var dangKyMonHoc = await _repositoryMaster.DangKyMonHoc.GetDangKyMonHocBySinhVienAndLopHocPhanAsync(sinhVienId, lopHocPhanId);
+        if (dangKyMonHoc is null)
+        {
+            throw new SinhVienNotFoundException(sinhVienId);
+        }
+        var chiTietLopHocPhan = await _repositoryMaster.ChiTietLopHocPhan.GetChiTietLopHocPhanBySinhVienAndLopHocPhanAsync(sinhVienId, lopHocPhanId);
+        if (chiTietLopHocPhan is null)
+        {
+            throw new SinhVienNotFoundException(sinhVienId);
+        }
+        var hocBa = await _repositoryMaster.HocBa.GetHocBaBySinhVienAndLopHocPhanAsync(sinhVienId, lopHocPhanId);
+        if (hocBa is null)
+        {
+            throw new SinhVienNotFoundException(sinhVienId);
+        }
+        try
+        {
+            await _repositoryMaster.ExecuteInTransactionAsync(async () =>
+            {
+                _repositoryMaster.DangKyMonHoc.DeleteDangKyMonHoc(dangKyMonHoc);
+                _repositoryMaster.ChiTietLopHocPhan.DeleteChiTietLopHocPhan(chiTietLopHocPhan);
+                _repositoryMaster.HocBa.DeleteHocBa(hocBa);
+                await Task.CompletedTask;
+            });
+              
+            var countSinhVienDangKyMonHoc = await _repositoryMaster.DangKyMonHoc.GetCountSinhVienDangKyMonHocAsync(lopHocPhanId);
+
+            await _repositoryMaster.ExecuteInTransactionAsync(async () =>
+            {
+                lopHocPhan.SiSo = countSinhVienDangKyMonHoc;
+                await Task.CompletedTask;
+            });
+            
         }
         catch (DbUpdateException ex)
         {

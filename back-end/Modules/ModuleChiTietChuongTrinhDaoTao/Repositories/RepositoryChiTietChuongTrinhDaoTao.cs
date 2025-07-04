@@ -25,7 +25,7 @@ public class RepositoryChiTietChuongTrinhDaoTao : RepositoryBase<ChiTietChuongTr
         Delete(chiTietChuongTrinhDaoTao);
     }
 
-    public async Task<PagedListAsync<ChiTietChuongTrinhDaoTao>?> GetAllChiTietChuongTrinhDaoTaoAsync(int page, int limit, string search, string sortBy, string sortByOrder)
+    public async Task<PagedListAsync<ChiTietChuongTrinhDaoTao>?> GetAllChiTietChuongTrinhDaoTaoAsync(int page, int limit, string search, string sortBy, string sortByOrder, Guid? chuongTrinhDaoTaoId)
     {
         var query = _context.ChiTietChuongTrinhDaoTaos!
                                 .AsNoTracking()
@@ -33,7 +33,12 @@ public class RepositoryChiTietChuongTrinhDaoTao : RepositoryBase<ChiTietChuongTr
                                 .Include(item => item.ChuongTrinhDaoTao)
                                 .Include(item => item.BoMon)
                                 .AsQueryable();
-        if (!string.IsNullOrWhiteSpace(search)) {
+        if (chuongTrinhDaoTaoId.HasValue && chuongTrinhDaoTaoId != Guid.Empty)
+        {
+            query = query.Where(item => item.ChuongTrinhDaoTaoId == chuongTrinhDaoTaoId);
+        }
+        if (!string.IsNullOrWhiteSpace(search))
+        {
             query = query.SearchBy(search, item => item.ChuongTrinhDaoTao!.TenChuongTrinh);
         }
         return await PagedListAsync<ChiTietChuongTrinhDaoTao>.ToPagedListAsync(query
@@ -47,9 +52,23 @@ public class RepositoryChiTietChuongTrinhDaoTao : RepositoryBase<ChiTietChuongTr
                                  }).AsNoTracking(), page, limit);
     }
 
-    public async Task<IEnumerable<ChiTietChuongTrinhDaoTao>?> GetAllCtctdtByCtdtIdAsync(Guid id, int hocKy)
+    public async Task<IEnumerable<ChiTietChuongTrinhDaoTao>?> GetAllCtctdtByCtdtIdAsync(Guid id, int? hocKy = null)
     {
-        return await _context.ChiTietChuongTrinhDaoTaos?.Where(item => item.ChuongTrinhDaoTaoId == id && item.HocKy == hocKy).AsNoTracking().ToListAsync()!;
+        if (hocKy == null)
+        {
+            return await _context.ChiTietChuongTrinhDaoTaos?.Where(item => item.ChuongTrinhDaoTaoId == id)
+                .Include(item => item.MonHoc)
+                .Include(item => item.ChuongTrinhDaoTao)
+                .Include(item => item.BoMon)
+                .AsNoTracking()
+                .ToListAsync()!;
+        }
+        return await _context.ChiTietChuongTrinhDaoTaos?.Where(item => item.ChuongTrinhDaoTaoId == id && item.HocKy == hocKy)
+            .Include(item => item.MonHoc)
+            .Include(item => item.ChuongTrinhDaoTao)
+            .Include(item => item.BoMon)
+            .AsNoTracking()
+            .ToListAsync()!;
     }
 
     public async Task<IEnumerable<ChiTietChuongTrinhDaoTao>> GetChiTietChuongTrinhDaoTaoByHocKyAndChuongTrinhId(int hocKy, Guid chuongTrinhId)

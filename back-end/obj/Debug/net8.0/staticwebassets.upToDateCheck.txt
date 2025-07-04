@@ -3,6 +3,7 @@ wwwroot\uploads\giangvien_a4c504cf_163448_20062025.png
 wwwroot\uploads\giangvien_dcbf5bbc_232735_07062025.jpg
 wwwroot\uploads\giangvien_e9e71049_180107_21062025.png
 wwwroot\uploads\giangvien_fd975e04_232508_07062025.png
+wwwroot\uploads\sinhvien_0010358c_212449_04072025.jpg
 wwwroot\uploads\sinhvien_0046668e_013850_10062025.jpg
 wwwroot\uploads\sinhvien_03dfe067_223049_22062025.png
 wwwroot\uploads\sinhvien_07640ba6_013906_10062025.jpg
@@ -18,5 +19,6 @@ wwwroot\uploads\sinhvien_bfa74593_102807_08062025.png
 wwwroot\uploads\sinhvien_c20cac45_220633_22062025.png
 wwwroot\uploads\sinhvien_c2983dbb_225851_07062025.png
 wwwroot\uploads\sinhvien_e76cbe28_031834_29062025.png
+wwwroot\uploads\sinhvien_f05e6b86_234433_04072025.jpg
 wwwroot\uploads\sinhvien_fe03ada4_103459_08062025.jpg
 wwwroot\uploads\sinhvien_febf7ece_231051_07062025.png
