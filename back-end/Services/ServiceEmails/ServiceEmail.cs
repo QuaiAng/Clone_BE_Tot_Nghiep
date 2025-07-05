@@ -31,7 +31,7 @@ public class ServiceEmail : IServiceEmail
     public async Task SendEmailForgotPassword(string email)
     {
         var taiKhoan = await _repositoryMaster.TaiKhoan.GetTaiKhoanByEmailAsync(email, false);
-        if (taiKhoan is null) throw new GiangVienBadRequestException("Email không được để trống!.");
+        if (taiKhoan is null) throw new GiangVienBadRequestException($"Không tìm thấy tài khoản có email là {email}");
         taiKhoan.ResetPassword = _serviceMaster.Authenticate.GenerateToken(taiKhoan);
         taiKhoan.ResetPasswordExpires = DateTime.Now.AddMinutes(5);
         await _repositoryMaster.ExecuteInTransactionAsync(async () =>
@@ -101,17 +101,50 @@ public class ServiceEmail : IServiceEmail
 
     private string UpdatePlaceHolder(string text, List<KeyValuePair<string, string>>? placeHolder)
     {
-        if (!string.IsNullOrWhiteSpace(text) && placeHolder is not null)
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            _loggerService.LogError("Nội dung email template null hoặc rỗng");
+            throw new ArgumentException("Nội dung email template không thể null hoặc rỗng", nameof(text));
+        }
+
+        if (placeHolder is not null)
+        {
             foreach (var item in placeHolder)
+            {
                 if (text.Contains(item.Key))
                     text = text.Replace(item.Key, item.Value);
+            }
+        }
 
         return text;
     }
 
     private string GetEmailTemplate(string nameTemplate)
     {
-        var template = File.ReadAllText(string.Format(templatePath, nameTemplate));
-        return template;
+        try
+        {
+            var filePath = string.Format(templatePath, nameTemplate);
+
+            if (!File.Exists(filePath))
+            {
+                _loggerService.LogError($"Không tìm thấy file template: {filePath}");
+                throw new FileNotFoundException($"Không tìm thấy template email: {filePath}");
+            }
+
+            var template = File.ReadAllText(filePath);
+
+            if (string.IsNullOrWhiteSpace(template))
+            {
+                _loggerService.LogError($"File template rỗng: {filePath}");
+                throw new InvalidOperationException($"Template email rỗng: {filePath}");
+            }
+
+            return template;
+        }
+        catch (Exception ex)
+        {
+            _loggerService.LogError($"Lỗi khi đọc email template '{nameTemplate}': {ex.Message}");
+            throw;
+        }
     }
 }

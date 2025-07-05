@@ -7,6 +7,7 @@ wwwroot\uploads\sinhvien_0010358c_212449_04072025.jpg
 wwwroot\uploads\sinhvien_0046668e_013850_10062025.jpg
 wwwroot\uploads\sinhvien_03dfe067_223049_22062025.png
 wwwroot\uploads\sinhvien_07640ba6_013906_10062025.jpg
+wwwroot\uploads\sinhvien_09e98503_170203_05072025.jpg
 wwwroot\uploads\sinhvien_1a57ad96_222631_22062025.png
 wwwroot\uploads\sinhvien_255bb2b2_230622_07062025.png
 wwwroot\uploads\sinhvien_27cbe159_222914_22062025.png
@@ -15,6 +16,7 @@ wwwroot\uploads\sinhvien_618a4af4_225016_07062025.jpg
 wwwroot\uploads\sinhvien_7dbde768_222814_22062025.png
 wwwroot\uploads\sinhvien_86b1eb2a_103515_08062025.jpg
 wwwroot\uploads\sinhvien_9f3bd5dc_220114_22062025.png
+wwwroot\uploads\sinhvien_bd7931c4_170132_05072025.jpg
 wwwroot\uploads\sinhvien_bfa74593_102807_08062025.png
 wwwroot\uploads\sinhvien_c20cac45_220633_22062025.png
 wwwroot\uploads\sinhvien_c2983dbb_225851_07062025.png

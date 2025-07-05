@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Education-assistant")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d5299974a53fc0f8158944c68fbf439ca9d23783")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+898a57cf42ea9afaa27c84f00418231c11f0ca6c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Education-assistant")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Education-assistant")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

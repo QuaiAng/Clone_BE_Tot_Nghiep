@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "D:\\BE_TotNghiep\\education-assistant\\back-end\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\services\\serviceemails\\serviceemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:services\\serviceemails\\serviceemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\modules\\moduleauthenticate\\authenticatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:modules\\moduleauthenticate\\authenticatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\modules\\modulelophocphan\\dtos\\response\\responselophocphanwithmonhocdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:modules\\modulelophocphan\\dtos\\response\\responselophocphanwithmonhocdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -30,24 +46,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "D:\\BE_TotNghiep\\education-assistant\\back-end\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-05T10:18:55.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\BE_TotNghiep\\education-assistant\\back-end\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-05T10:18:20.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ServiceEmail.cs",
+              "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Services\\ServiceEmails\\ServiceEmail.cs",
+              "RelativeDocumentMoniker": "Services\\ServiceEmails\\ServiceEmail.cs",
+              "ToolTip": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Services\\ServiceEmails\\ServiceEmail.cs",
+              "RelativeToolTip": "Services\\ServiceEmails\\ServiceEmail.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAYwDYAAABdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T05:39:21.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthenticateController.cs",
+              "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleAuthenticate\\AuthenticateController.cs",
+              "RelativeDocumentMoniker": "Modules\\ModuleAuthenticate\\AuthenticateController.cs",
+              "ToolTip": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleAuthenticate\\AuthenticateController.cs",
+              "RelativeToolTip": "Modules\\ModuleAuthenticate\\AuthenticateController.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAkwDoAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T05:30:45.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ResponseLopHocPhanWithMonHocDto.cs",
               "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleLopHocPhan\\DTOs\\Response\\ResponseLopHocPhanWithMonHocDto.cs",
               "RelativeDocumentMoniker": "Modules\\ModuleLopHocPhan\\DTOs\\Response\\ResponseLopHocPhanWithMonHocDto.cs",
               "ToolTip": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleLopHocPhan\\DTOs\\Response\\ResponseLopHocPhanWithMonHocDto.cs",
               "RelativeToolTip": "Modules\\ModuleLopHocPhan\\DTOs\\Response\\ResponseLopHocPhanWithMonHocDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-04T09:59:50.645Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "ResponseLopHocPhanDto.cs",
               "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleLopHocPhan\\DTOs\\Response\\ResponseLopHocPhanDto.cs",
               "RelativeDocumentMoniker": "Modules\\ModuleLopHocPhan\\DTOs\\Response\\ResponseLopHocPhanDto.cs",
@@ -59,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "RequestLopHocPhanDto.cs",
               "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleLopHocPhan\\DTOs\\Request\\RequestLopHocPhanDto.cs",
               "RelativeDocumentMoniker": "Modules\\ModuleLopHocPhan\\DTOs\\Request\\RequestLopHocPhanDto.cs",
@@ -71,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "ParamLopHocPhanDto.cs",
               "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleLopHocPhan\\DTOs\\Param\\ParamLopHocPhanDto.cs",
               "RelativeDocumentMoniker": "Modules\\ModuleLopHocPhan\\DTOs\\Param\\ParamLopHocPhanDto.cs",
@@ -83,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "ChiTietLopHocPhanController.cs",
               "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleChiTietLopHocPhan\\ChiTietLopHocPhanController.cs",
               "RelativeDocumentMoniker": "Modules\\ModuleChiTietLopHocPhan\\ChiTietLopHocPhanController.cs",

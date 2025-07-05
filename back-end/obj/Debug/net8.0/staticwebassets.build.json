@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wwSKNqjcS3YdDgeS/4RBj/5TJoSu9dvT5Ethe/XA/no=",
+  "Hash": "G2HOZDoRlbNjYs0u4wO/knisGPCIkD8ElCrZxSUrlq0=",
   "Source": "Education-assistant",
   "BasePath": "_content/Education-assistant",
   "Mode": "Default",
@@ -206,6 +206,27 @@
       "OriginalItemSpec": "wwwroot\\uploads\\sinhvien_07640ba6_013906_10062025.jpg"
     },
     {
+      "Identity": "D:\\BE_TotNghiep\\education-assistant\\back-end\\wwwroot\\uploads\\sinhvien_09e98503_170203_05072025.jpg",
+      "SourceId": "Education-assistant",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\BE_TotNghiep\\education-assistant\\back-end\\wwwroot\\",
+      "BasePath": "_content/Education-assistant",
+      "RelativePath": "uploads/sinhvien_09e98503_170203_05072025#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "wck7vfpzff",
+      "Integrity": "MDIabkztbf/qjWSOt8+qyK+gM5jCTm6TmxkQ62dO0yI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\sinhvien_09e98503_170203_05072025.jpg"
+    },
+    {
       "Identity": "D:\\BE_TotNghiep\\education-assistant\\back-end\\wwwroot\\uploads\\sinhvien_1a57ad96_222631_22062025.png",
       "SourceId": "Education-assistant",
       "SourceType": "Discovered",
@@ -372,6 +393,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\sinhvien_9f3bd5dc_220114_22062025.png"
+    },
+    {
+      "Identity": "D:\\BE_TotNghiep\\education-assistant\\back-end\\wwwroot\\uploads\\sinhvien_bd7931c4_170132_05072025.jpg",
+      "SourceId": "Education-assistant",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\BE_TotNghiep\\education-assistant\\back-end\\wwwroot\\",
+      "BasePath": "_content/Education-assistant",
+      "RelativePath": "uploads/sinhvien_bd7931c4_170132_05072025#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5ldgk5282i",
+      "Integrity": "yZDbM3ZyjTA6r/WrUDoyFeTg4afhyFBMbgqAGCLhlVo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\sinhvien_bd7931c4_170132_05072025.jpg"
     },
     {
       "Identity": "D:\\BE_TotNghiep\\education-assistant\\back-end\\wwwroot\\uploads\\sinhvien_bfa74593_102807_08062025.png",
@@ -1261,6 +1303,88 @@
       ]
     },
     {
+      "Route": "uploads/sinhvien_09e98503_170203_05072025.jpg",
+      "AssetFile": "D:\\BE_TotNghiep\\education-assistant\\back-end\\wwwroot\\uploads\\sinhvien_09e98503_170203_05072025.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "149423"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MDIabkztbf/qjWSOt8+qyK+gM5jCTm6TmxkQ62dO0yI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 05 Jul 2025 10:02:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-MDIabkztbf/qjWSOt8+qyK+gM5jCTm6TmxkQ62dO0yI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/sinhvien_09e98503_170203_05072025.wck7vfpzff.jpg",
+      "AssetFile": "D:\\BE_TotNghiep\\education-assistant\\back-end\\wwwroot\\uploads\\sinhvien_09e98503_170203_05072025.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "149423"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MDIabkztbf/qjWSOt8+qyK+gM5jCTm6TmxkQ62dO0yI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 05 Jul 2025 10:02:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wck7vfpzff"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/sinhvien_09e98503_170203_05072025.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-MDIabkztbf/qjWSOt8+qyK+gM5jCTm6TmxkQ62dO0yI="
+        }
+      ]
+    },
+    {
       "Route": "uploads/sinhvien_1a57ad96_222631_22062025.g2u3lpjvdi.png",
       "AssetFile": "D:\\BE_TotNghiep\\education-assistant\\back-end\\wwwroot\\uploads\\sinhvien_1a57ad96_222631_22062025.png",
       "Selectors": [],
@@ -1913,6 +2037,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-+OPjpWDPvUsr47U2z9UnTIUstVIR2rydzUizB92/NOo="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/sinhvien_bd7931c4_170132_05072025.5ldgk5282i.jpg",
+      "AssetFile": "D:\\BE_TotNghiep\\education-assistant\\back-end\\wwwroot\\uploads\\sinhvien_bd7931c4_170132_05072025.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "51543"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yZDbM3ZyjTA6r/WrUDoyFeTg4afhyFBMbgqAGCLhlVo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 05 Jul 2025 10:01:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ldgk5282i"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/sinhvien_bd7931c4_170132_05072025.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yZDbM3ZyjTA6r/WrUDoyFeTg4afhyFBMbgqAGCLhlVo="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/sinhvien_bd7931c4_170132_05072025.jpg",
+      "AssetFile": "D:\\BE_TotNghiep\\education-assistant\\back-end\\wwwroot\\uploads\\sinhvien_bd7931c4_170132_05072025.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "51543"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yZDbM3ZyjTA6r/WrUDoyFeTg4afhyFBMbgqAGCLhlVo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 05 Jul 2025 10:01:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-yZDbM3ZyjTA6r/WrUDoyFeTg4afhyFBMbgqAGCLhlVo="
         }
       ]
     },

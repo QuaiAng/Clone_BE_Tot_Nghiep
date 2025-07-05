@@ -64,6 +64,18 @@ public class RepositoryLichBieu : RepositoryBase<LichBieu>, IRepositoryLichBieu
                                             , page, limit);
     }
 
+    public async Task<IEnumerable<LichBieu>> GetAllLichBieuByLopHocAndHocKyForCopyLichBieuAsync(int hocKy, string maLop, Guid chuongTrinhDaoTaoId, Guid tuanId, int? namHoc)
+    {
+        var query = _context.LichBieus!
+                    .AsNoTracking()
+                    .Where(lb => lb.TuanId == tuanId && lb.Tuan.NamHoc == namHoc &&
+                        lb.LopHocPhan != null &&
+                        lb.LopHocPhan.MaHocPhan.StartsWith(maLop) &&
+                        lb.LopHocPhan.MonHoc!.DanhSachChiTietChuongTrinhDaoTao!.Any(ct => ct.HocKy == hocKy && ct.ChuongTrinhDaoTaoId == chuongTrinhDaoTaoId))
+                    .AsQueryable();
+        return await query.ToListAsync();
+    }
+
     public async Task<IEnumerable<LichBieu>> GetAllLichBieuNoPageAsync(string? search, string? sortBy, string? sortByOrder, Guid? giangvienId, Guid? tuanId, Guid? boMonId)
     {
         var query = _context.LichBieus!
@@ -129,6 +141,11 @@ public class RepositoryLichBieu : RepositoryBase<LichBieu>, IRepositoryLichBieu
                                 ["createdat"] = item => item.CreatedAt,
                                 ["updatedat"] = item => item.UpdatedAt!,
                             }).ToListAsync();
+    }
+
+    public async Task<IEnumerable<LichBieu>?> GetCheckLichBieuByLopHocPhanIdAsync(Guid tuanId, List<Guid> lopHocPhanIds)
+    {
+        return await FindByCondition(item => item.TuanId == tuanId && lopHocPhanIds.Contains(item.LopHocPhanId.Value), false).ToListAsync();
     }
 
     public async Task<LichBieu?> GetLichBieuByIdAsync(Guid id, bool trackChanges)

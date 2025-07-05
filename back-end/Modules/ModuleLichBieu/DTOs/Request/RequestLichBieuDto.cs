@@ -30,10 +30,13 @@ namespace Education_assistant.Modules.ModuleLichBieu.DTOs.Request
 
         [Required(ErrorMessage = "Thứ không được để trống")]
         public int Thu { get; set; }
+        [Required(ErrorMessage = "Id tuần không được để trống")]
+        public Guid TuanId { get; set; }
         [Required(ErrorMessage = "Id lớp học phần không được để trống")]
         public Guid LopHocPhanId { get; set; }
         [Required(ErrorMessage = "Id phòng học không được để trống")]
         public Guid PhongHocId { get; set; }
+
     }
     public class RequestUpdateLichBieuDto
     {
@@ -54,15 +57,15 @@ namespace Education_assistant.Modules.ModuleLichBieu.DTOs.Request
     }
     public class RequestAddLichBieuListTuanDto
     {
-        [Required(ErrorMessage = "Danh sách lịch biểu không được để trống")]
-        public List<RequestUpdateLichBieuDto>? LichBieus { get; set; }
         [Required(ErrorMessage = "Năm học không được để trống")]
         public int NamHoc { get; set; }
+        [Required(ErrorMessage = "Học kỳ không được để trống")]
+        public int HocKy { get; set; }
+        [Required(ErrorMessage = "Id lớp học không được để trống")]
+        public Guid lopHocId { get; set; }
         [Required(ErrorMessage = "Id vào tuần không được để trống")]
         public Guid VaoTuanId { get; set; }
         [Required(ErrorMessage = "Id đến tuần không được để trống")]
         public Guid DenTuanId { get; set; }
-        [Required(ErrorMessage = "Id giảng viên không được để trống")]
-        public Guid GiangVienId { get; set; }
     }
 }
