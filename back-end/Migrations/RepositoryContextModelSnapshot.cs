@@ -47,6 +47,12 @@ namespace Education_assistant.Migrations
                         .HasColumnType("char(36)")
                         .HasColumnName("khoa_id");
 
+                    b.Property<string>("MaBoMon")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("ma_bo_mon");
+
                     b.Property<string>("SoDienThoai")
                         .IsRequired()
                         .HasMaxLength(15)
@@ -465,7 +471,6 @@ namespace Education_assistant.Migrations
                         .HasColumnName("deleted_at");
 
                     b.Property<decimal?>("DiemTongKet")
-                        .IsRequired()
                         .HasPrecision(4, 2)
                         .HasColumnType("decimal(4,2)")
                         .HasColumnName("diem_tong_ket");
@@ -681,7 +686,7 @@ namespace Education_assistant.Migrations
 
                     b.Property<int?>("Loai")
                         .HasColumnType("int")
-                        .HasColumnName("loai-lop");
+                        .HasColumnName("loai_lop");
 
                     b.Property<string>("MaHocPhan")
                         .IsRequired()
@@ -791,6 +796,10 @@ namespace Education_assistant.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("mo_ta");
 
+                    b.Property<Guid?>("NganhChaId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("nganh_cha_id");
+
                     b.Property<string>("TenNganh")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -804,6 +813,8 @@ namespace Education_assistant.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("KhoaId");
+
+                    b.HasIndex("NganhChaId");
 
                     b.ToTable("nganh");
                 });
@@ -1018,6 +1029,14 @@ namespace Education_assistant.Migrations
                     b.Property<int?>("LockTime")
                         .HasColumnType("int")
                         .HasColumnName("khoa_dang_nhap");
+
+                    b.Property<string>("OtpCode")
+                        .HasColumnType("longtext")
+                        .HasColumnName("otp-code");
+
+                    b.Property<DateTime?>("OtpExpires")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("otp-expires");
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -1290,7 +1309,13 @@ namespace Education_assistant.Migrations
                         .WithMany("DanhSachNganh")
                         .HasForeignKey("KhoaId");
 
+                    b.HasOne("Education_assistant.Models.Nganh", "NganhCha")
+                        .WithMany("DanhSachNganhCon")
+                        .HasForeignKey("NganhChaId");
+
                     b.Navigation("Khoa");
+
+                    b.Navigation("NganhCha");
                 });
 
             modelBuilder.Entity("Education_assistant.Models.SinhVien", b =>
@@ -1382,6 +1407,8 @@ namespace Education_assistant.Migrations
                     b.Navigation("DanhSachChuongTrinhDaoTao");
 
                     b.Navigation("DanhSachLopHoc");
+
+                    b.Navigation("DanhSachNganhCon");
                 });
 
             modelBuilder.Entity("Education_assistant.Models.PhongHoc", b =>

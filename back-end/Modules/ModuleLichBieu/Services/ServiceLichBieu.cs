@@ -44,10 +44,10 @@ namespace Education_assistant.Modules.ModuleLichBieu.Services
                 throw new ChuongTrinhDaoTaoBadRequestException($"Lớp học này không có trong lịch lớp học vui lòng chọn lớp học khác");
             }
 
-            var lichBieus = await _repositoryMaster.LichBieu.GetAllLichBieuByLopHocAndHocKyForCopyLichBieuAsync(request.HocKy, lopHoc.MaLopHoc, chuongTrinhDaoTao.Id, request.VaoTuanId, request.NamHoc);
+            var lichBieus = await _repositoryMaster.LichBieu.GetAllLichBieuByLopHocAndHocKyForCopyLichBieuAsync(request.HocKy, lopHoc.MaLopHoc, chuongTrinhDaoTao.Id, request.TuanHienTaiId, request.NamHoc);
             if (!lichBieus.Any())
             {
-                throw new GenericNotFoundException($"Lớp học chưa có trong lịch lớp học ở tuần vào");
+                throw new GenericNotFoundException($"Lớp học chưa có trong lịch lớp học ở tuần hiện tại");
             }
 
             var lopHocPhanIds = lichBieus.Where(item => item.LopHocPhanId.HasValue).Select(item => item.LopHocPhanId!.Value).Distinct().ToList();
@@ -143,7 +143,8 @@ namespace Education_assistant.Modules.ModuleLichBieu.Services
             {
                 return Enumerable.Empty<ResponseLichBieuDto>();
             }
-            var chuongTrinhDaoTao = await _repositoryMaster.ChuongTrinhDaoTao.GetChuongTrinhDaoTaoByKhoaAndNganhIdAsync(lopHoc.NamHoc, lopHoc.NganhId.Value);
+            var nganhId = lopHoc.NganhId;
+            var chuongTrinhDaoTao = await _repositoryMaster.ChuongTrinhDaoTao.GetChuongTrinhDaoTaoByKhoaAndNganhIdAsync(lopHoc.NamHoc, nganhId);
             if (chuongTrinhDaoTao is null)
             {
                 return Enumerable.Empty<ResponseLichBieuDto>();

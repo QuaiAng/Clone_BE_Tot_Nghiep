@@ -3,12 +3,43 @@
   "WorkspaceRootPath": "D:\\BE_TotNghiep\\education-assistant\\back-end\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\CAO AN\\AppData\\Local\\SourceServer\\850e541e9cb4f41f07b9299d15d648cd075dc17d45414b7426554e9cc480b4f4\\back-end\\Modules\\ModuleChiTietLopHocPhan\\DTOs\\Response\\ResponseChiTietLopHocPhanDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\modules\\modulegiangvien\\repositories\\giangviens\\repositorygiangvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:modules\\modulegiangvien\\repositories\\giangviens\\repositorygiangvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\modules\\modulegiangvien\\services\\servicegiangvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:modules\\modulegiangvien\\services\\servicegiangvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\CAO AN\\AppData\\Local\\SourceServer\\5485f3d07cae087de0d983cba135b648dfcfc36cbe93e2996b9ae655f8933b88\\back-end\\Modules\\ModuleChiTietLopHocPhan\\Services\\ServiceChiTietLopHocPhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\CAO AN\\AppData\\Local\\SourceServer\\2e8340edc5047a66f1b064918a28a933fd7d9ac6d89f8a50b9db1d3ee8d664ee\\back-end\\Modules\\ModuleLopHocPhan\\Services\\ServiceLopHocPhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\CAO AN\\AppData\\Local\\SourceServer\\4744fa1092eaa73affff7d56958443e90e043239c52d12375734c41764060d94\\back-end\\Modules\\ModuleChiTietLopHocPhan\\DTOs\\Response\\ResponseChiTietLopHocPhanDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\CAO AN\\AppData\\Local\\SourceServer\\b913e41db38e485796ea3c7f6c9b547aab15619a90e2104067d4e2bf42e2dcaa\\back-end\\Models\\ChiTietLopHocPhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\modules\\modulegiangvien\\giangviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:modules\\modulegiangvien\\giangviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\modules\\modulelophocphan\\lophocphancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:modules\\modulelophocphan\\lophocphancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\modules\\modulechitietlophocphan\\chitietlophocphancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:modules\\modulechitietlophocphan\\chitietlophocphancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\modules\\modulechitietlophocphan\\dtos\\response\\responsechitietlophocphandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:modules\\modulechitietlophocphan\\dtos\\response\\responsechitietlophocphandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\services\\serviceemails\\serviceemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,6 +48,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\modules\\moduleauthenticate\\authenticatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:modules\\moduleauthenticate\\authenticatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\modules\\modulegiangvien\\services\\servicetaikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:modules\\modulegiangvien\\services\\servicetaikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\models\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:models\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\modules\\modulelophocphan\\dtos\\response\\responselophocphanwithmonhocdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,14 +72,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\modules\\modulelophocphan\\dtos\\request\\requestlophocphandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:modules\\modulelophocphan\\dtos\\request\\requestlophocphandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\modules\\modulelophocphan\\dtos\\param\\paramlophocphandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:modules\\modulelophocphan\\dtos\\param\\paramlophocphandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\modules\\modulechitietlophocphan\\chitietlophocphancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:modules\\modulechitietlophocphan\\chitietlophocphancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,63 +81,194 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "appsettings.Development.json",
-              "ToolTip": "D:\\BE_TotNghiep\\education-assistant\\back-end\\appsettings.Development.json*",
-              "RelativeToolTip": "appsettings.Development.json*",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-05T10:18:55.643Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\BE_TotNghiep\\education-assistant\\back-end\\appsettings.json*",
-              "RelativeToolTip": "appsettings.json*",
-              "ViewState": "AgIAACIAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-05T10:18:20.374Z",
+              "Title": "ResponseChiTietLopHocPhanDto.cs",
+              "DocumentMoniker": "C:\\Users\\CAO AN\\AppData\\Local\\SourceServer\\850e541e9cb4f41f07b9299d15d648cd075dc17d45414b7426554e9cc480b4f4\\back-end\\Modules\\ModuleChiTietLopHocPhan\\DTOs\\Response\\ResponseChiTietLopHocPhanDto.cs",
+              "ToolTip": "C:\\Users\\CAO AN\\AppData\\Local\\SourceServer\\850e541e9cb4f41f07b9299d15d648cd075dc17d45414b7426554e9cc480b4f4\\back-end\\Modules\\ModuleChiTietLopHocPhan\\DTOs\\Response\\ResponseChiTietLopHocPhanDto.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAwBcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T07:35:21.892Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ServiceGiangVien.cs",
+              "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleGiangVien\\Services\\ServiceGiangVien.cs",
+              "RelativeDocumentMoniker": "Modules\\ModuleGiangVien\\Services\\ServiceGiangVien.cs",
+              "ToolTip": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleGiangVien\\Services\\ServiceGiangVien.cs",
+              "RelativeToolTip": "Modules\\ModuleGiangVien\\Services\\ServiceGiangVien.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAIwHsAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T15:02:38.279Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ServiceLopHocPhan.cs",
+              "DocumentMoniker": "C:\\Users\\CAO AN\\AppData\\Local\\SourceServer\\2e8340edc5047a66f1b064918a28a933fd7d9ac6d89f8a50b9db1d3ee8d664ee\\back-end\\Modules\\ModuleLopHocPhan\\Services\\ServiceLopHocPhan.cs",
+              "ToolTip": "C:\\Users\\CAO AN\\AppData\\Local\\SourceServer\\2e8340edc5047a66f1b064918a28a933fd7d9ac6d89f8a50b9db1d3ee8d664ee\\back-end\\Modules\\ModuleLopHocPhan\\Services\\ServiceLopHocPhan.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAkwEEAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T06:31:46.462Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ServiceChiTietLopHocPhan.cs",
+              "DocumentMoniker": "C:\\Users\\CAO AN\\AppData\\Local\\SourceServer\\5485f3d07cae087de0d983cba135b648dfcfc36cbe93e2996b9ae655f8933b88\\back-end\\Modules\\ModuleChiTietLopHocPhan\\Services\\ServiceChiTietLopHocPhan.cs",
+              "ToolTip": "C:\\Users\\CAO AN\\AppData\\Local\\SourceServer\\5485f3d07cae087de0d983cba135b648dfcfc36cbe93e2996b9ae655f8933b88\\back-end\\Modules\\ModuleChiTietLopHocPhan\\Services\\ServiceChiTietLopHocPhan.cs",
+              "ViewState": "AgIAADIBAAAAAAAAAAAcwEgBAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T06:31:37.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ResponseChiTietLopHocPhanDto.cs",
+              "DocumentMoniker": "C:\\Users\\CAO AN\\AppData\\Local\\SourceServer\\4744fa1092eaa73affff7d56958443e90e043239c52d12375734c41764060d94\\back-end\\Modules\\ModuleChiTietLopHocPhan\\DTOs\\Response\\ResponseChiTietLopHocPhanDto.cs",
+              "ToolTip": "C:\\Users\\CAO AN\\AppData\\Local\\SourceServer\\4744fa1092eaa73affff7d56958443e90e043239c52d12375734c41764060d94\\back-end\\Modules\\ModuleChiTietLopHocPhan\\DTOs\\Response\\ResponseChiTietLopHocPhanDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T04:36:32.526Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ChiTietLopHocPhan.cs",
+              "DocumentMoniker": "C:\\Users\\CAO AN\\AppData\\Local\\SourceServer\\b913e41db38e485796ea3c7f6c9b547aab15619a90e2104067d4e2bf42e2dcaa\\back-end\\Models\\ChiTietLopHocPhan.cs",
+              "ToolTip": "C:\\Users\\CAO AN\\AppData\\Local\\SourceServer\\b913e41db38e485796ea3c7f6c9b547aab15619a90e2104067d4e2bf42e2dcaa\\back-end\\Models\\ChiTietLopHocPhan.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T04:36:10.878Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RepositoryGiangVien.cs",
+              "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleGiangVien\\Repositories\\GiangViens\\RepositoryGiangVien.cs",
+              "RelativeDocumentMoniker": "Modules\\ModuleGiangVien\\Repositories\\GiangViens\\RepositoryGiangVien.cs",
+              "ToolTip": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleGiangVien\\Repositories\\GiangViens\\RepositoryGiangVien.cs",
+              "RelativeToolTip": "Modules\\ModuleGiangVien\\Repositories\\GiangViens\\RepositoryGiangVien.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAIA1wFUAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-06T17:13:32.48Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GiangVienController.cs",
+              "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleGiangVien\\GiangVienController.cs",
+              "RelativeDocumentMoniker": "Modules\\ModuleGiangVien\\GiangVienController.cs",
+              "ToolTip": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleGiangVien\\GiangVienController.cs",
+              "RelativeToolTip": "Modules\\ModuleGiangVien\\GiangVienController.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAkwD0AAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-06T17:13:00.543Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LopHocPhanController.cs",
+              "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleLopHocPhan\\LopHocPhanController.cs",
+              "RelativeDocumentMoniker": "Modules\\ModuleLopHocPhan\\LopHocPhanController.cs",
+              "ToolTip": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleLopHocPhan\\LopHocPhanController.cs",
+              "RelativeToolTip": "Modules\\ModuleLopHocPhan\\LopHocPhanController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABoAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-06T06:16:03.929Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ResponseChiTietLopHocPhanDto.cs",
+              "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleChiTietLopHocPhan\\DTOs\\Response\\ResponseChiTietLopHocPhanDto.cs",
+              "RelativeDocumentMoniker": "Modules\\ModuleChiTietLopHocPhan\\DTOs\\Response\\ResponseChiTietLopHocPhanDto.cs",
+              "ToolTip": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleChiTietLopHocPhan\\DTOs\\Response\\ResponseChiTietLopHocPhanDto.cs",
+              "RelativeToolTip": "Modules\\ModuleChiTietLopHocPhan\\DTOs\\Response\\ResponseChiTietLopHocPhanDto.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAmwBsAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-06T06:04:27.605Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ServiceTaiKhoan.cs",
+              "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleGiangVien\\Services\\ServiceTaiKhoan.cs",
+              "RelativeDocumentMoniker": "Modules\\ModuleGiangVien\\Services\\ServiceTaiKhoan.cs",
+              "ToolTip": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleGiangVien\\Services\\ServiceTaiKhoan.cs",
+              "RelativeToolTip": "Modules\\ModuleGiangVien\\Services\\ServiceTaiKhoan.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAswBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T14:08:39.153Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "D:\\BE_TotNghiep\\education-assistant\\back-end\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-05T10:18:55.643Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "ServiceEmail.cs",
               "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Services\\ServiceEmails\\ServiceEmail.cs",
               "RelativeDocumentMoniker": "Services\\ServiceEmails\\ServiceEmail.cs",
               "ToolTip": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Services\\ServiceEmails\\ServiceEmail.cs",
               "RelativeToolTip": "Services\\ServiceEmails\\ServiceEmail.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAYwJUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAowJ8AAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-05T05:39:21.712Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-05T05:39:21.712Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "AuthenticateController.cs",
               "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleAuthenticate\\AuthenticateController.cs",
               "RelativeDocumentMoniker": "Modules\\ModuleAuthenticate\\AuthenticateController.cs",
               "ToolTip": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleAuthenticate\\AuthenticateController.cs",
               "RelativeToolTip": "Modules\\ModuleAuthenticate\\AuthenticateController.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAkwDoAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAMwIIAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-05T05:30:45.324Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-05T05:30:45.324Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
+              "Title": "ChiTietLopHocPhanController.cs",
+              "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleChiTietLopHocPhan\\ChiTietLopHocPhanController.cs",
+              "RelativeDocumentMoniker": "Modules\\ModuleChiTietLopHocPhan\\ChiTietLopHocPhanController.cs",
+              "ToolTip": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleChiTietLopHocPhan\\ChiTietLopHocPhanController.cs",
+              "RelativeToolTip": "Modules\\ModuleChiTietLopHocPhan\\ChiTietLopHocPhanController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABgAAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T09:19:47.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "TaiKhoan.cs",
+              "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Models\\TaiKhoan.cs",
+              "RelativeDocumentMoniker": "Models\\TaiKhoan.cs",
+              "ToolTip": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Models\\TaiKhoan.cs",
+              "RelativeToolTip": "Models\\TaiKhoan.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T14:56:11.586Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "ResponseLopHocPhanWithMonHocDto.cs",
               "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleLopHocPhan\\DTOs\\Response\\ResponseLopHocPhanWithMonHocDto.cs",
               "RelativeDocumentMoniker": "Modules\\ModuleLopHocPhan\\DTOs\\Response\\ResponseLopHocPhanWithMonHocDto.cs",
@@ -110,12 +276,11 @@
               "RelativeToolTip": "Modules\\ModuleLopHocPhan\\DTOs\\Response\\ResponseLopHocPhanWithMonHocDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T09:59:50.645Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-04T09:59:50.645Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 17,
               "Title": "ResponseLopHocPhanDto.cs",
               "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleLopHocPhan\\DTOs\\Response\\ResponseLopHocPhanDto.cs",
               "RelativeDocumentMoniker": "Modules\\ModuleLopHocPhan\\DTOs\\Response\\ResponseLopHocPhanDto.cs",
@@ -127,7 +292,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 18,
               "Title": "RequestLopHocPhanDto.cs",
               "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleLopHocPhan\\DTOs\\Request\\RequestLopHocPhanDto.cs",
               "RelativeDocumentMoniker": "Modules\\ModuleLopHocPhan\\DTOs\\Request\\RequestLopHocPhanDto.cs",
@@ -136,30 +301,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-04T09:59:35.277Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ParamLopHocPhanDto.cs",
-              "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleLopHocPhan\\DTOs\\Param\\ParamLopHocPhanDto.cs",
-              "RelativeDocumentMoniker": "Modules\\ModuleLopHocPhan\\DTOs\\Param\\ParamLopHocPhanDto.cs",
-              "ToolTip": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleLopHocPhan\\DTOs\\Param\\ParamLopHocPhanDto.cs",
-              "RelativeToolTip": "Modules\\ModuleLopHocPhan\\DTOs\\Param\\ParamLopHocPhanDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T09:59:29.199Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ChiTietLopHocPhanController.cs",
-              "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleChiTietLopHocPhan\\ChiTietLopHocPhanController.cs",
-              "RelativeDocumentMoniker": "Modules\\ModuleChiTietLopHocPhan\\ChiTietLopHocPhanController.cs",
-              "ToolTip": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleChiTietLopHocPhan\\ChiTietLopHocPhanController.cs",
-              "RelativeToolTip": "Modules\\ModuleChiTietLopHocPhan\\ChiTietLopHocPhanController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAABcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T09:19:47.941Z"
             }
           ]
         }

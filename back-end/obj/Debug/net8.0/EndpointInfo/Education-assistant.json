@@ -250,6 +250,114 @@
         }
       }
     },
+    "/api/Authenticate/send-otp-forgot-password": {
+      "post": {
+        "tags": [
+          "Authenticate"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendOTPRequestMobileDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendOTPRequestMobileDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendOTPRequestMobileDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendOTPRequestMobileDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Authenticate/verify-otp": {
+      "post": {
+        "tags": [
+          "Authenticate"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyOTPRequestMobileDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyOTPRequestMobileDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyOTPRequestMobileDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyOTPRequestMobileDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Authenticate/reset-password-with-otp": {
+      "post": {
+        "tags": [
+          "Authenticate"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordOTPRequestMobileDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordOTPRequestMobileDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordOTPRequestMobileDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordOTPRequestMobileDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/BoMon": {
       "get": {
         "tags": [
@@ -1421,10 +1529,6 @@
                 ],
                 "type": "object",
                 "properties": {
-                  "MaChuongTrinh": {
-                    "maxLength": 255,
-                    "type": "string"
-                  },
                   "TenChuongTrinh": {
                     "maxLength": 255,
                     "type": "string"
@@ -1454,9 +1558,6 @@
                 }
               },
               "encoding": {
-                "MaChuongTrinh": {
-                  "style": "form"
-                },
                 "TenChuongTrinh": {
                   "style": "form"
                 },
@@ -1535,7 +1636,6 @@
                   "Id",
                   "Khoa",
                   "LoaiChuonTrinhDaoTao",
-                  "MaChuongTrinh",
                   "NganhId",
                   "TenChuongTrinh",
                   "ThoiGianDaoTao",
@@ -1546,10 +1646,6 @@
                   "Id": {
                     "type": "string",
                     "format": "uuid"
-                  },
-                  "MaChuongTrinh": {
-                    "maxLength": 255,
-                    "type": "string"
                   },
                   "TenChuongTrinh": {
                     "maxLength": 255,
@@ -1581,9 +1677,6 @@
               },
               "encoding": {
                 "Id": {
-                  "style": "form"
-                },
-                "MaChuongTrinh": {
                   "style": "form"
                 },
                 "TenChuongTrinh": {
@@ -1866,6 +1959,28 @@
       "get": {
         "tags": [
           "GiangVien"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/giangviens/tinh-trang-lam-viec": {
+      "get": {
+        "tags": [
+          "GiangVien"
+        ],
+        "parameters": [
+          {
+            "name": "khoaId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -3106,7 +3221,8 @@
                   "PhongHocId",
                   "Thu",
                   "TietBatDau",
-                  "TietKetThuc"
+                  "TietKetThuc",
+                  "TuanId"
                 ],
                 "type": "object",
                 "properties": {
@@ -3125,6 +3241,10 @@
                   "Thu": {
                     "type": "integer",
                     "format": "int32"
+                  },
+                  "TuanId": {
+                    "type": "string",
+                    "format": "uuid"
                   },
                   "LopHocPhanId": {
                     "type": "string",
@@ -3147,6 +3267,9 @@
                   "style": "form"
                 },
                 "Thu": {
+                  "style": "form"
+                },
+                "TuanId": {
                   "style": "form"
                 },
                 "LopHocPhanId": {
@@ -3297,8 +3420,8 @@
                     "format": "int32"
                   },
                   "NamHoc": {
-                    "maxLength": 10,
-                    "type": "string"
+                    "type": "integer",
+                    "format": "int32"
                   },
                   "GiangVienId": {
                     "type": "string",
@@ -3411,8 +3534,8 @@
                     "format": "int32"
                   },
                   "NamHoc": {
-                    "maxLength": 255,
-                    "type": "string"
+                    "type": "integer",
+                    "format": "int32"
                   },
                   "GiangVienId": {
                     "type": "string",
@@ -3421,10 +3544,6 @@
                   "NganhId": {
                     "type": "string",
                     "format": "uuid"
-                  },
-                  "CreatedAt": {
-                    "type": "string",
-                    "format": "date-time"
                   }
                 }
               },
@@ -3445,9 +3564,6 @@
                   "style": "form"
                 },
                 "NganhId": {
-                  "style": "form"
-                },
-                "CreatedAt": {
                   "style": "form"
                 }
               }
@@ -3621,6 +3737,36 @@
           },
           {
             "name": "giangVienId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LopHocPhan/by-lop-hoc-and-hoc-ky": {
+      "get": {
+        "tags": [
+          "LopHocPhan"
+        ],
+        "parameters": [
+          {
+            "name": "hocKy",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "lopHocId",
             "in": "query",
             "schema": {
               "type": "string",
@@ -4010,15 +4156,10 @@
             "multipart/form-data": {
               "schema": {
                 "required": [
-                  "MaMonHoc",
                   "TenMonHoc"
                 ],
                 "type": "object",
                 "properties": {
-                  "MaMonHoc": {
-                    "maxLength": 255,
-                    "type": "string"
-                  },
                   "TenMonHoc": {
                     "maxLength": 255,
                     "type": "string"
@@ -4034,9 +4175,6 @@
                 }
               },
               "encoding": {
-                "MaMonHoc": {
-                  "style": "form"
-                },
                 "TenMonHoc": {
                   "style": "form"
                 },
@@ -4100,7 +4238,6 @@
               "schema": {
                 "required": [
                   "Id",
-                  "MaMonHoc",
                   "TenMonHoc"
                 ],
                 "type": "object",
@@ -4108,10 +4245,6 @@
                   "Id": {
                     "type": "string",
                     "format": "uuid"
-                  },
-                  "MaMonHoc": {
-                    "maxLength": 255,
-                    "type": "string"
                   },
                   "TenMonHoc": {
                     "maxLength": 255,
@@ -4129,9 +4262,6 @@
               },
               "encoding": {
                 "Id": {
-                  "style": "form"
-                },
-                "MaMonHoc": {
                   "style": "form"
                 },
                 "TenMonHoc": {
@@ -4258,15 +4388,10 @@
               "schema": {
                 "required": [
                   "KhoaId",
-                  "MaNganh",
                   "TenNganh"
                 ],
                 "type": "object",
                 "properties": {
-                  "MaNganh": {
-                    "maxLength": 255,
-                    "type": "string"
-                  },
                   "TenNganh": {
                     "maxLength": 255,
                     "type": "string"
@@ -4281,9 +4406,6 @@
                 }
               },
               "encoding": {
-                "MaNganh": {
-                  "style": "form"
-                },
                 "TenNganh": {
                   "style": "form"
                 },
@@ -4348,7 +4470,6 @@
                 "required": [
                   "Id",
                   "KhoaId",
-                  "MaNganh",
                   "TenNganh"
                 ],
                 "type": "object",
@@ -4356,10 +4477,6 @@
                   "Id": {
                     "type": "string",
                     "format": "uuid"
-                  },
-                  "MaNganh": {
-                    "maxLength": 255,
-                    "type": "string"
                   },
                   "TenNganh": {
                     "maxLength": 255,
@@ -4376,9 +4493,6 @@
               },
               "encoding": {
                 "Id": {
-                  "style": "form"
-                },
-                "MaNganh": {
                   "style": "form"
                 },
                 "TenNganh": {
@@ -4817,7 +4931,6 @@
               "schema": {
                 "required": [
                   "CCCD",
-                  "DiaChi",
                   "Email",
                   "HoTen",
                   "MSSV",
@@ -4855,7 +4968,6 @@
                     "format": "int32"
                   },
                   "DiaChi": {
-                    "maxLength": 255,
                     "type": "string"
                   },
                   "TrangThaiSinhVienEnum": {
@@ -5314,7 +5426,7 @@
         }
       }
     },
-    "/api/SinhVien/{sinhVienId}/xoa-sv-khoi-lhp": {
+    "/api/SinhVien/{sinhVienId}/lhp/{lopHocPhanId}/xoa-sv-khoi-lhp": {
       "delete": {
         "tags": [
           "SinhVien"
@@ -5328,28 +5440,17 @@
               "type": "string",
               "format": "uuid"
             }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "lopHocPhanId": {
-                    "type": "string",
-                    "format": "uuid"
-                  }
-                }
-              },
-              "encoding": {
-                "lopHocPhanId": {
-                  "style": "form"
-                }
-              }
+          },
+          {
+            "name": "lopHocPhanId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
             }
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -5436,6 +5537,30 @@
       }
     },
     "/api/ThongKe/top-sinh-vien-gpa": {
+      "get": {
+        "tags": [
+          "ThongKe"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ThongKe/thi-lai-trong-nam": {
+      "get": {
+        "tags": [
+          "ThongKe"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ThongKe/qua-mon-trong-nam": {
       "get": {
         "tags": [
           "ThongKe"
@@ -5602,14 +5727,6 @@
               "type": "string",
               "format": "uuid"
             }
-          },
-          {
-            "name": "GiangVienId",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
           }
         ],
         "responses": {
@@ -5749,32 +5866,30 @@
       "RequestAddLichBieuListTuanDto": {
         "required": [
           "denTuanId",
-          "giangVienId",
-          "lichBieus",
+          "hocKy",
+          "lopHocId",
           "namHoc",
           "vaoTuanId"
         ],
         "type": "object",
         "properties": {
-          "lichBieus": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RequestUpdateLichBieuDto"
-            }
-          },
           "namHoc": {
             "type": "integer",
             "format": "int32"
+          },
+          "hocKy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lopHocId": {
+            "type": "string",
+            "format": "uuid"
           },
           "vaoTuanId": {
             "type": "string",
             "format": "uuid"
           },
           "denTuanId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "giangVienId": {
             "type": "string",
             "format": "uuid"
           }
@@ -5835,7 +5950,6 @@
       },
       "RequestListUpdateHocbaDto": {
         "required": [
-          "chuongTrinhDaoTaoId",
           "lopHocPhanId",
           "monHocId"
         ],
@@ -5849,10 +5963,6 @@
             "nullable": true
           },
           "lopHocPhanId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "chuongTrinhDaoTaoId": {
             "type": "string",
             "format": "uuid"
           },
@@ -5888,47 +5998,6 @@
           "refreshToken": {
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "RequestUpdateLichBieuDto": {
-        "required": [
-          "id",
-          "thu",
-          "tietBatDau",
-          "tietKetThuc"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "tietBatDau": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "tietKetThuc": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "thu": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "tuanId": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          },
-          "lopHocPhanId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "phongHocId": {
-            "type": "string",
-            "format": "uuid"
           }
         },
         "additionalProperties": false
@@ -5976,6 +6045,34 @@
         },
         "additionalProperties": false
       },
+      "ResetPasswordOTPRequestMobileDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "otpCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "newPassword": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SendOTPRequestMobileDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "UpdateChiTietLopHocPhanDto": {
         "required": [
           "id"
@@ -6017,6 +6114,20 @@
             "nullable": true
           },
           "ghiChu": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "VerifyOTPRequestMobileDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "otpCode": {
             "type": "string",
             "nullable": true
           }

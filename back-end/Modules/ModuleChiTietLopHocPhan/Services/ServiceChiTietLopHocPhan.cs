@@ -229,20 +229,19 @@ public class ServiceChiTietLopHocPhan : IServiceChiTietLopHocPhan
             foreach (var item in importData)
             {
                 var existingRecord = await _repositoryMaster.ChiTietLopHocPhan.GetByMaSinhVienAndLopHocPhanIdAsync(item.MaSinhVien, request.LopHocPhanId);
-                if (existingRecord == null)
+                if (existingRecord != null)
                 {
-                    throw new ChiTietLopHocPhanBadRequestException("Dữ liệu đầu vào file excel không đầy đủ!.");
+                    existingRecord.DiemChuyenCan = item.DiemChuyenCan;
+                    existingRecord.DiemTrungBinh = item.DiemTrungBinh;
+                    existingRecord.DiemThi1 = item.DiemThi1;
+                    existingRecord.DiemThi2 = item.DiemThi2;
+                    existingRecord.DiemTongKet1 = item.DiemTongKet1;
+                    existingRecord.DiemTongKet2 = item.DiemTongKet2;
+                    existingRecord.GhiChu = item.GhiChu;
+                    existingRecord.NgayLuuDiem = DateTime.Now;
+                    existingRecord.UpdatedAt = DateTime.Now;
+                    listChiTiets.Add(existingRecord);
                 }
-                existingRecord.DiemChuyenCan = item.DiemChuyenCan;
-                existingRecord.DiemTrungBinh = item.DiemTrungBinh;
-                existingRecord.DiemThi1 = item.DiemThi1;
-                existingRecord.DiemThi2 = item.DiemThi2;
-                existingRecord.DiemTongKet1 = item.DiemTongKet1;
-                existingRecord.DiemTongKet2 = item.DiemTongKet2;
-                existingRecord.GhiChu = item.GhiChu;
-                existingRecord.NgayLuuDiem = DateTime.Now;
-                existingRecord.UpdatedAt = DateTime.Now;
-                listChiTiets.Add(existingRecord);
             }
 
 
@@ -266,24 +265,24 @@ public class ServiceChiTietLopHocPhan : IServiceChiTietLopHocPhan
             {
                 throw new ChiTietLopHocPhanBadRequestException($"Id: {id} và Id: {request.Id} của bộ môn không giống nhau!");
             }
-            var diemSoExstting = await _repositoryMaster.ChiTietLopHocPhan.GetChiTietLopHocPhanByIdAsync(id, false);
+            var diemSoExstting = await _repositoryMaster.ChiTietLopHocPhan.GetChiTietLopHocPhanByIdAsync(id, true);
             if (diemSoExstting is null)
             {
                 throw new ChiTietLopHocPhanNotFoundException(id);
             }
-            diemSoExstting.DiemChuyenCan = request.DiemChuyenCan;
-            diemSoExstting.DiemTrungBinh = request.DiemTrungBinh;
-            diemSoExstting.DiemThi1 = request.DiemThi1;
-            diemSoExstting.DiemThi2 = request.DiemThi2;
-            diemSoExstting.DiemTongKet1 = request.DiemTongKet1;
-            diemSoExstting.DiemTongKet2 = request.DiemTongKet2;
-            diemSoExstting.GhiChu = request.GhiChu;
-            diemSoExstting.TrangThai = request.TrangThai;
-            diemSoExstting.NgayLuuDiem = DateTime.Now;
-            diemSoExstting.UpdatedAt = DateTime.Now;
+
             await _repositoryMaster.ExecuteInTransactionAsync(async () =>
             {
-                _repositoryMaster.ChiTietLopHocPhan.UpdateChiTietLopHocPhan(diemSoExstting);
+                diemSoExstting.DiemChuyenCan = request.DiemChuyenCan;
+                diemSoExstting.DiemTrungBinh = request.DiemTrungBinh;
+                diemSoExstting.DiemThi1 = request.DiemThi1;
+                diemSoExstting.DiemThi2 = request.DiemThi2;
+                diemSoExstting.DiemTongKet1 = request.DiemTongKet1;
+                diemSoExstting.DiemTongKet2 = request.DiemTongKet2;
+                diemSoExstting.GhiChu = request.GhiChu;
+                diemSoExstting.TrangThai = request.TrangThai;
+                diemSoExstting.NgayLuuDiem = DateTime.Now;
+                diemSoExstting.UpdatedAt = DateTime.Now;
                 await Task.CompletedTask;
             });
             _loggerService.LogInfo("Cập nhật chi tiết lớp học phần thành công.");

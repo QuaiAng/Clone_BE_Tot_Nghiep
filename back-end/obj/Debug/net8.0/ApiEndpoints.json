@@ -126,6 +126,54 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Education_assistant.Modules.ModuleAuthenticate.AuthenticateController",
+    "Method": "ResetPasswordWithOTP",
+    "RelativePath": "api/Authenticate/reset-password-with-otp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Education_assistant.Modules.ModuleAuthenticate.Dtos.ResetPasswordOTPRequestMobileDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleAuthenticate.AuthenticateController",
+    "Method": "SendOTPForgotPassword",
+    "RelativePath": "api/Authenticate/send-otp-forgot-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Education_assistant.Modules.ModuleAuthenticate.Dtos.SendOTPRequestMobileDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleAuthenticate.AuthenticateController",
+    "Method": "VerifyOTP",
+    "RelativePath": "api/Authenticate/verify-otp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Education_assistant.Modules.ModuleAuthenticate.Dtos.VerifyOTPRequestMobileDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Education_assistant.Modules.ModuleBoMon.BoMonController",
     "Method": "GetAllBoMonAsync",
     "RelativePath": "api/BoMon",
@@ -852,11 +900,6 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "MaChuongTrinh",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "TenChuongTrinh",
         "Type": "System.String",
         "IsRequired": false
@@ -927,11 +970,6 @@
       {
         "Name": "Id",
         "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "MaChuongTrinh",
-        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -1396,6 +1434,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleGiangVien.GiangVienController",
+    "Method": "GetAllGiangViensummaryAsync",
+    "RelativePath": "api/giangviens/tinh-trang-lam-viec",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "khoaId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -1887,6 +1941,11 @@
         "IsRequired": false
       },
       {
+        "Name": "TuanId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
         "Name": "LopHocPhanId",
         "Type": "System.Guid",
         "IsRequired": false
@@ -2033,7 +2092,7 @@
       },
       {
         "Name": "NamHoc",
-        "Type": "System.String",
+        "Type": "System.Int32",
         "IsRequired": false
       },
       {
@@ -2095,7 +2154,7 @@
       },
       {
         "Name": "NamHoc",
-        "Type": "System.String",
+        "Type": "System.Int32",
         "IsRequired": false
       },
       {
@@ -2106,11 +2165,6 @@
       {
         "Name": "NganhId",
         "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "CreatedAt",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       }
     ],
@@ -2330,6 +2384,27 @@
   },
   {
     "ContainingType": "Education_assistant.Modules.ModuleLopHocPhan.LopHocPhanController",
+    "Method": "GetAllLopHocPhanByLopHocAndHocKyAsync",
+    "RelativePath": "api/LopHocPhan/by-lop-hoc-and-hoc-ky",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "hocKy",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "lopHocId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLopHocPhan.LopHocPhanController",
     "Method": "UpdateListLopHocPhanAsync",
     "RelativePath": "api/LopHocPhan/list-phan-cong",
     "HttpMethod": "PUT",
@@ -2456,11 +2531,6 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "MaMonHoc",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "TenMonHoc",
         "Type": "System.String",
         "IsRequired": false
@@ -2510,11 +2580,6 @@
       {
         "Name": "Id",
         "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "MaMonHoc",
-        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -2612,11 +2677,6 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "MaNganh",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "TenNganh",
         "Type": "System.String",
         "IsRequired": false
@@ -2666,11 +2726,6 @@
       {
         "Name": "Id",
         "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "MaNganh",
-        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -3183,7 +3238,7 @@
   {
     "ContainingType": "Education_assistant.Modules.ModuleSinhVien.SinhVienController",
     "Method": "DeleteSinhVienAsync",
-    "RelativePath": "api/SinhVien/{sinhVienId}/xoa-sv-khoi-lhp",
+    "RelativePath": "api/SinhVien/{sinhVienId}/lhp/{lopHocPhanId}/xoa-sv-khoi-lhp",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -3196,7 +3251,7 @@
       {
         "Name": "lopHocPhanId",
         "Type": "System.Guid",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -3314,6 +3369,26 @@
         "IsRequired": false
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleThongKe.ThongKeController",
+    "Method": "GetThongKeQuaMonTrongNamAsync",
+    "RelativePath": "api/ThongKe/qua-mon-trong-nam",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleThongKe.ThongKeController",
+    "Method": "GetThongKeThiLaiTrongNamAsync",
+    "RelativePath": "api/ThongKe/thi-lai-trong-nam",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -3507,11 +3582,6 @@
       },
       {
         "Name": "TuanBatDauId",
-        "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "GiangVienId",
         "Type": "System.Guid",
         "IsRequired": false
       }

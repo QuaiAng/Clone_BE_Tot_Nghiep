@@ -24,6 +24,20 @@ public class ServiceThongKe : IServiceThongKe
         return await _repositoryMaster.ThongKe.ThongKeTopSinhVienGPAAsync();
     }
 
+    public async Task<List<ResponseThongKeTrongNamDto>> ThongKetQuaMonTrongNam()
+    {
+        return await _repositoryMaster.ThongKe.ThongKetQuaMonTrongNam();
+    }
+
+    public async Task<List<ResponseThongKeTrongNamDto>> ThongKetThiLaiTrongNam(int nam)
+    {
+        if (nam <= 1900)
+        {
+            nam = DateTime.Now.Year;
+        }   
+        return await _repositoryMaster.ThongKe.ThongKetThiLaiTrongNam(nam); 
+    }
+
     public async Task<Dictionary<string, double>> ThongKetTinhTrangHocTap()
     {
         return await _repositoryMaster.ThongKe.ThongKetTinhTrangHocTap();

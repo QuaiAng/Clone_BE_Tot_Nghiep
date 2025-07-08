@@ -83,7 +83,11 @@ public class RepositoryGiangVien : RepositoryBase<GiangVien>, IRepositoryGiangVi
 
     public async Task<GiangVien?> GetGiangVienByIdAsync(Guid? id, bool trackChanges)
     {
-        return await FindByCondition(item => item.Id == id, trackChanges).Include(gv => gv.TaiKhoan).FirstOrDefaultAsync();
+        return await FindByCondition(item => item.Id == id, trackChanges)
+            .Include(gv => gv.TaiKhoan)
+            .Include(gv => gv.BoMon)
+            .Include(gv => gv.Khoa)
+            .FirstOrDefaultAsync();
     }
 
     public async Task<GiangVien?> GetGiangVienDeleteAsync(Guid id, bool trackChanges)
@@ -98,7 +102,7 @@ public class RepositoryGiangVien : RepositoryBase<GiangVien>, IRepositoryGiangVi
 
     public async Task<GiangVien?> GetGiangVienByTaiKhoanIdAsync(Guid taiKhoanId, bool trackChanges)
     {
-        return await FindByCondition(item => item.TaiKhoanId == taiKhoanId, false).Include(item => item.BoMon).Include(item => item.Khoa).Include(item => item.TaiKhoan).FirstOrDefaultAsync();
+        return await FindByCondition(item => item.TaiKhoanId == taiKhoanId, false).Include(item => item.BoMon).IgnoreQueryFilters().Include(item => item.Khoa).Include(item => item.TaiKhoan).FirstOrDefaultAsync();
     }
 
     public async Task<IEnumerable<GiangVien>?> GetAllGiangVienByBoMonAsync(Guid boMonId)

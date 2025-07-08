@@ -1,8 +1,16 @@
 {
   "Files": [
     {
+      "Id": "D:\\BE_TotNghiep\\education-assistant\\back-end\\wwwroot\\uploads\\giangvien_2a85f3f8_025919_08072025.jpg",
+      "PackagePath": "staticwebassets\\uploads\\giangvien_2a85f3f8_025919_08072025.jpg"
+    },
+    {
       "Id": "D:\\BE_TotNghiep\\education-assistant\\back-end\\wwwroot\\uploads\\giangvien_4612589a_153038_20062025.png",
       "PackagePath": "staticwebassets\\uploads\\giangvien_4612589a_153038_20062025.png"
+    },
+    {
+      "Id": "D:\\BE_TotNghiep\\education-assistant\\back-end\\wwwroot\\uploads\\giangvien_927c8236_004211_07072025.jpg",
+      "PackagePath": "staticwebassets\\uploads\\giangvien_927c8236_004211_07072025.jpg"
     },
     {
       "Id": "D:\\BE_TotNghiep\\education-assistant\\back-end\\wwwroot\\uploads\\giangvien_a4c504cf_163448_20062025.png",
@@ -65,6 +73,10 @@
       "PackagePath": "staticwebassets\\uploads\\sinhvien_7dbde768_222814_22062025.png"
     },
     {
+      "Id": "D:\\BE_TotNghiep\\education-assistant\\back-end\\wwwroot\\uploads\\sinhvien_84b047c2_192835_06072025.jpg",
+      "PackagePath": "staticwebassets\\uploads\\sinhvien_84b047c2_192835_06072025.jpg"
+    },
+    {
       "Id": "D:\\BE_TotNghiep\\education-assistant\\back-end\\wwwroot\\uploads\\sinhvien_86b1eb2a_103515_08062025.jpg",
       "PackagePath": "staticwebassets\\uploads\\sinhvien_86b1eb2a_103515_08062025.jpg"
     },
@@ -95,6 +107,10 @@
     {
       "Id": "D:\\BE_TotNghiep\\education-assistant\\back-end\\wwwroot\\uploads\\sinhvien_f05e6b86_234433_04072025.jpg",
       "PackagePath": "staticwebassets\\uploads\\sinhvien_f05e6b86_234433_04072025.jpg"
+    },
+    {
+      "Id": "D:\\BE_TotNghiep\\education-assistant\\back-end\\wwwroot\\uploads\\sinhvien_fdf221b4_183509_05072025.jpg",
+      "PackagePath": "staticwebassets\\uploads\\sinhvien_fdf221b4_183509_05072025.jpg"
     },
     {
       "Id": "D:\\BE_TotNghiep\\education-assistant\\back-end\\wwwroot\\uploads\\sinhvien_fe03ada4_103459_08062025.jpg",
