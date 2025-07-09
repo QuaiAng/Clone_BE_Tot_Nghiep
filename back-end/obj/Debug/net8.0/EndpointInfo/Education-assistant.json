@@ -944,6 +944,29 @@
         }
       }
     },
+    "/api/ChiTietChuongTrinhDaoTao/by-subject/{monHocId}": {
+      "get": {
+        "tags": [
+          "ChiTietChuongTrinhDaoTao"
+        ],
+        "parameters": [
+          {
+            "name": "monHocId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/ChiTietLopHocPhan": {
       "get": {
         "tags": [
@@ -4402,6 +4425,10 @@
                   "KhoaId": {
                     "type": "string",
                     "format": "uuid"
+                  },
+                  "NganhChaId": {
+                    "type": "string",
+                    "format": "uuid"
                   }
                 }
               },
@@ -4413,6 +4440,9 @@
                   "style": "form"
                 },
                 "KhoaId": {
+                  "style": "form"
+                },
+                "NganhChaId": {
                   "style": "form"
                 }
               }
@@ -4488,6 +4518,10 @@
                   "KhoaId": {
                     "type": "string",
                     "format": "uuid"
+                  },
+                  "NganhChaId": {
+                    "type": "string",
+                    "format": "uuid"
                   }
                 }
               },
@@ -4502,6 +4536,9 @@
                   "style": "form"
                 },
                 "KhoaId": {
+                  "style": "form"
+                },
+                "NganhChaId": {
                   "style": "form"
                 }
               }
@@ -4933,6 +4970,7 @@
                   "CCCD",
                   "Email",
                   "HoTen",
+                  "LopHocId",
                   "MSSV",
                   "SoDienThoai",
                   "TrangThaiSinhVienEnum"
@@ -5103,6 +5141,29 @@
             "in": "query",
             "schema": {
               "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SinhVien/{lopHocId}by-lop-hoc": {
+      "get": {
+        "tags": [
+          "SinhVien"
+        ],
+        "parameters": [
+          {
+            "name": "lopHocId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -5383,6 +5444,52 @@
         }
       }
     },
+    "/api/SinhVien/chuyen-lop": {
+      "post": {
+        "tags": [
+          "SinhVien"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "LopHocId",
+                  "SinhVienIds"
+                ],
+                "type": "object",
+                "properties": {
+                  "SinhVienIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "uuid"
+                    }
+                  },
+                  "LopHocId": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "encoding": {
+                "SinhVienIds": {
+                  "style": "form"
+                },
+                "LopHocId": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/SinhVien/dang-ky-mon-hoc": {
       "post": {
         "tags": [
@@ -5552,6 +5659,16 @@
       "get": {
         "tags": [
           "ThongKe"
+        ],
+        "parameters": [
+          {
+            "name": "nam",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -5859,6 +5976,49 @@
           }
         }
       }
+    },
+    "/api/Tuan/tao-auto-tuan": {
+      "post": {
+        "tags": [
+          "Tuan"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "NamHoc",
+                  "NgayBatDau"
+                ],
+                "type": "object",
+                "properties": {
+                  "NamHoc": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "NgayBatDau": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              },
+              "encoding": {
+                "NamHoc": {
+                  "style": "form"
+                },
+                "NgayBatDau": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -5869,6 +6029,7 @@
           "hocKy",
           "lopHocId",
           "namHoc",
+          "tuanHienTaiId",
           "vaoTuanId"
         ],
         "type": "object",
@@ -5882,6 +6043,10 @@
             "format": "int32"
           },
           "lopHocId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tuanHienTaiId": {
             "type": "string",
             "format": "uuid"
           },

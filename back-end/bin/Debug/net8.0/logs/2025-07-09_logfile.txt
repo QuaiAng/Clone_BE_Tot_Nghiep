@@ -1,5 +1,69 @@
-2025-07-08 01:48:19.1814 INFO Đăng nhập thành công.
-2025-07-08 02:06:34.9072 ERROR Something went wrong: Education_assistant.Exceptions.ThrowError.TaiKhoanExceptions.TaiKhoanBadRequestException: Mật khẩu không đúng!
+2025-07-09 00:09:24.9196 INFO Cập nhật điểm hàng loại thành công thành công.
+2025-07-09 00:09:42.5735 INFO Cập nhật điểm hàng loại thành công thành công.
+2025-07-09 00:11:34.1977 INFO Cập nhật điểm hàng loại thành công thành công.
+2025-07-09 00:12:01.0929 INFO Đăng nhập thành công.
+2025-07-09 00:20:11.9658 INFO Cập nhật điểm hàng loại thành công thành công.
+2025-07-09 00:22:21.5396 INFO Cập nhật điểm hàng loại thành công thành công.
+2025-07-09 00:22:28.8236 INFO Cập nhật điểm hàng loại thành công thành công.
+2025-07-09 00:24:17.9337 ERROR Something went wrong: Education_assistant.Exceptions.ThrowError.TaiKhoanExceptions.TaiKhoanBadRequestException: Refresh token không hợp lệ hoặc đã hết hạn.
+   at Education_assistant.Modules.ModuleAuthenticate.Services.ServiceAuthenticate.refresh(String refreshToken) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleAuthenticate\Services\ServiceAuthenticate.cs:line 92
+   at Education_assistant.Modules.ModuleAuthenticate.AuthenticateController.RefreshToken(RequestRefreshTokenDto requestRefreshTokenDto) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleAuthenticate\AuthenticateController.cs:line 39
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-07-09 00:24:37.8429 INFO Đăng nhập thành công.
+2025-07-09 00:24:56.9889 INFO Cập nhật điểm hàng loại thành công thành công.
+2025-07-09 00:25:12.9976 INFO Cập nhật điểm hàng loại thành công thành công.
+2025-07-09 00:26:28.5640 INFO Cập nhật điểm hàng loại thành công thành công.
+2025-07-09 00:31:34.9541 ERROR Something went wrong: Education_assistant.Exceptions.ThrowError.SinhVienExceptions.SinhVienNotFoundException: Sinh viên với id: 06169343-5bed-11f0-ab39-fa163ede03de không tìm thấy.
+   at Education_assistant.Modules.ModuleSinhVien.Services.ServiceSinhVien.GetSinhVienByIdAsync(Guid id, Boolean trackChanges) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleSinhVien\Services\ServiceSinhVien.cs:line 246
+   at Education_assistant.Modules.ModuleSinhVien.SinhVienController.GetSinhVienByIdAsync(Guid id) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleSinhVien\SinhVienController.cs:line 60
+   at lambda_method936(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-07-09 00:35:14.8729 INFO Bỏ qua bảng ghi cho sinh viên id: 1871a34c-57a4-475d-a944-1bceb3855ea2
+2025-07-09 00:54:29.6770 INFO Đăng nhập thành công.
+2025-07-09 00:55:42.4951 ERROR Something went wrong: Education_assistant.Exceptions.ThrowError.TaiKhoanExceptions.TaiKhoanBadRequestException: Refresh token không hợp lệ hoặc đã hết hạn.
+   at Education_assistant.Modules.ModuleAuthenticate.Services.ServiceAuthenticate.refresh(String refreshToken) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleAuthenticate\Services\ServiceAuthenticate.cs:line 92
+   at Education_assistant.Modules.ModuleAuthenticate.AuthenticateController.RefreshToken(RequestRefreshTokenDto requestRefreshTokenDto) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleAuthenticate\AuthenticateController.cs:line 39
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-07-09 00:56:32.2418 ERROR Something went wrong: Education_assistant.Exceptions.ThrowError.TaiKhoanExceptions.TaiKhoanBadRequestException: Mật khẩu không đúng!
    at Education_assistant.Modules.ModuleAuthenticate.Services.ServiceAuthenticate.Login(RequestLoginDto requestLoginDto) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleAuthenticate\Services\ServiceAuthenticate.cs:line 46
    at Education_assistant.Modules.ModuleAuthenticate.AuthenticateController.Login(RequestLoginDto loginDto) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleAuthenticate\AuthenticateController.cs:line 29
    at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
@@ -16,15 +80,32 @@
    at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
-2025-07-08 02:06:50.5826 INFO Đăng nhập thành công.
-2025-07-08 02:51:09.1771 INFO Đăng nhập thành công.
-2025-07-08 02:59:20.0279 INFO Cập nhật giảng viên thành công.
-2025-07-08 03:00:54.6208 INFO Đăng nhập thành công.
-2025-07-08 03:01:23.8529 INFO Cập nhật mật khẩu thành công.
-2025-07-08 11:41:16.7055 ERROR Something went wrong: Education_assistant.Exceptions.ThrowError.LopHocPhanExceptions.LopHocPhanNotFoundException: Lớp học phần với id: 12299749-3a05-41e3-a10b-2b5761bd0940 không tìm thấy.
-   at Education_assistant.Modules.ModuleLopHocPhan.Services.ServiceLopHocPhan.GetLopHocPhanByIdAsync(Guid id, Boolean trackChanges) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleLopHocPhan\Services\ServiceLopHocPhan.cs:line 205
-   at Education_assistant.Modules.ModuleLopHocPhan.LopHocPhanController.GetLopHocPhanByIdAsync(Guid id) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleLopHocPhan\LopHocPhanController.cs:line 52
-   at lambda_method544(Closure, Object)
+2025-07-09 00:56:35.8812 INFO Đăng nhập thành công.
+2025-07-09 00:58:06.4094 INFO Bỏ qua bảng ghi cho sinh viên id: 1871a34c-57a4-475d-a944-1bceb3855ea2
+2025-07-09 01:00:18.5924 INFO Lấy thành công lớp học có id = 387d31ec-f61a-401a-ad7f-c98f9cf5cb80.
+2025-07-09 01:00:27.1354 INFO Lấy thành công lớp học có id = 3d9ad2e4-4546-4214-b88d-0270494519c4.
+2025-07-09 01:00:35.9865 INFO Lấy thành công lớp học có id = 911eaaca-5aec-11f0-ab39-fa163ede03de.
+2025-07-09 01:00:44.2445 INFO Lấy thành công lớp học có id = 387d31ec-f61a-401a-ad7f-c98f9cf5cb80.
+2025-07-09 01:00:53.3378 INFO Lấy thành công lớp học có id = 3d9ad2e4-4546-4214-b88d-0270494519c4.
+2025-07-09 01:00:58.5997 INFO Lấy thành công lớp học có id = 758d286a-d2e2-47f1-ac65-32d4d7b93885.
+2025-07-09 01:01:09.2896 INFO Lấy thành công lớp học có id = 387d31ec-f61a-401a-ad7f-c98f9cf5cb80.
+2025-07-09 01:08:40.8093 INFO Lấy thành công lớp học có id = 387d31ec-f61a-401a-ad7f-c98f9cf5cb80.
+2025-07-09 01:09:01.6738 INFO Lấy thành công lớp học có id = 758d286a-d2e2-47f1-ac65-32d4d7b93885.
+2025-07-09 01:09:54.2094 INFO Lấy thành công lớp học có id = 387d31ec-f61a-401a-ad7f-c98f9cf5cb80.
+2025-07-09 01:11:44.0718 INFO Lấy thành công lớp học có id = 387d31ec-f61a-401a-ad7f-c98f9cf5cb80.
+2025-07-09 01:11:55.0271 INFO Lấy thành công lớp học có id = 758d286a-d2e2-47f1-ac65-32d4d7b93885.
+2025-07-09 01:15:07.3573 INFO Lấy thành công lớp học có id = 387d31ec-f61a-401a-ad7f-c98f9cf5cb80.
+2025-07-09 01:16:52.6469 INFO Lấy thành công lớp học có id = 387d31ec-f61a-401a-ad7f-c98f9cf5cb80.
+2025-07-09 01:17:48.7446 INFO Lấy thành công lớp học có id = 387d31ec-f61a-401a-ad7f-c98f9cf5cb80.
+2025-07-09 12:11:39.4385 INFO Đăng nhập thành công.
+2025-07-09 12:11:39.4385 INFO Đăng nhập thành công.
+2025-07-09 12:11:40.2473 ERROR Something went wrong: System.InvalidCastException: Unable to cast object of type 'System.DBNull' to type 'System.Double'.
+   at MySqlConnector.Core.Row.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/Core/Row.cs:line 377
+   at MySqlConnector.MySqlDataReader.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/MySqlDataReader.cs:line 299
+   at Education_assistant.Modules.ModuleThongKe.Repositories.RepositoryThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Repositories\RepositoryThongKe.cs:line 101
+   at Education_assistant.Modules.ModuleThongKe.Services.ServiceThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Services\ServiceThongKe.cs:line 38
+   at Education_assistant.Modules.ModuleThongKe.ThongKeController.GetThongKeThiLaiTrongNamAsync(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\ThongKeController.cs:line 35
+   at lambda_method493(Closure, Object)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
@@ -39,15 +120,13 @@
    at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
-2025-07-08 12:17:55.6494 INFO Đăng nhập thành công.
-2025-07-08 14:34:43.9808 INFO Đăng nhập thành công.
-2025-07-08 14:48:54.8736 INFO Cập nhật điểm hàng loại thành công thành công.
-2025-07-08 14:50:48.5863 INFO Đăng nhập thành công.
-2025-07-08 14:57:19.2812 ERROR Error transaction: An error occurred while saving the entity changes. See the inner exception for details.
-2025-07-08 14:57:19.6709 ERROR Something went wrong: System.Exception: Lỗi hệ thống!: An error occurred while saving the entity changes. See the inner exception for details.
-   at Education_assistant.Modules.ModuleChiTietLopHocPhan.Services.ServiceChiTietLopHocPhan.CreateAsync(RequestAddChiTietLopHocPhanDto request) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleChiTietLopHocPhan\Services\ServiceChiTietLopHocPhan.cs:line 48
-   at Education_assistant.Modules.ModuleChiTietLopHocPhan.ChiTietLopHocPhanController.AddChiTietLopHocPhanAsync(RequestAddChiTietLopHocPhanDto model) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleChiTietLopHocPhan\ChiTietLopHocPhanController.cs:line 47
-   at lambda_method894(Closure, Object)
+2025-07-09 12:11:41.7977 ERROR Something went wrong: System.InvalidCastException: Unable to cast object of type 'System.DBNull' to type 'System.Double'.
+   at MySqlConnector.Core.Row.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/Core/Row.cs:line 377
+   at MySqlConnector.MySqlDataReader.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/MySqlDataReader.cs:line 299
+   at Education_assistant.Modules.ModuleThongKe.Repositories.RepositoryThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Repositories\RepositoryThongKe.cs:line 101
+   at Education_assistant.Modules.ModuleThongKe.Services.ServiceThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Services\ServiceThongKe.cs:line 38
+   at Education_assistant.Modules.ModuleThongKe.ThongKeController.GetThongKeThiLaiTrongNamAsync(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\ThongKeController.cs:line 35
+   at lambda_method493(Closure, Object)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
@@ -62,32 +141,15 @@
    at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
-2025-07-08 15:09:12.9501 INFO Đăng nhập thành công.
-2025-07-08 15:21:26.3689 INFO Đăng nhập thành công.
-2025-07-08 17:21:21.3082 INFO Đăng nhập thành công.
-2025-07-08 17:21:35.2923 ERROR Something went wrong: MySqlConnector.MySqlException (0x80004005): Unknown column 'l.loai-lop' in 'field list'
-   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894
-   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
-   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
-   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483
-   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
-   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
-   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
---- End of stack trace from previous location ---
-   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
-   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
-   at Education_assistant.Modules.ModuleChiTietLopHocPhan.Repositories.RepositoryChiTietLopHocPhan.GetChiTietLopHocPhanByIdAsync(Guid id, Boolean trackChanges) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleChiTietLopHocPhan\Repositories\RepositoryChiTietLopHocPhan.cs:line 128
-   at Education_assistant.Modules.ModuleChiTietLopHocPhan.Services.ServiceChiTietLopHocPhan.GetChiTietLopHocPhanByIdAsync(Guid id, Boolean trackChanges) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleChiTietLopHocPhan\Services\ServiceChiTietLopHocPhan.cs:line 178
-   at Education_assistant.Modules.ModuleChiTietLopHocPhan.ChiTietLopHocPhanController.GetChiTietLopHocPhanByIdAsync(Guid id) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleChiTietLopHocPhan\ChiTietLopHocPhanController.cs:line 40
-   at lambda_method294(Closure, Object)
+2025-07-09 12:13:31.5640 INFO Đăng nhập thành công.
+2025-07-09 12:25:21.6347 INFO Đăng nhập thành công.
+2025-07-09 12:32:09.6619 ERROR Something went wrong: System.InvalidCastException: Unable to cast object of type 'System.DBNull' to type 'System.Double'.
+   at MySqlConnector.Core.Row.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/Core/Row.cs:line 377
+   at MySqlConnector.MySqlDataReader.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/MySqlDataReader.cs:line 299
+   at Education_assistant.Modules.ModuleThongKe.Repositories.RepositoryThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Repositories\RepositoryThongKe.cs:line 101
+   at Education_assistant.Modules.ModuleThongKe.Services.ServiceThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Services\ServiceThongKe.cs:line 38
+   at Education_assistant.Modules.ModuleThongKe.ThongKeController.GetThongKeThiLaiTrongNamAsync(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\ThongKeController.cs:line 35
+   at lambda_method17(Closure, Object)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
@@ -102,29 +164,13 @@
    at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
-2025-07-08 17:22:05.6970 ERROR Something went wrong: MySqlConnector.MySqlException (0x80004005): Unknown column 'l.loai-lop' in 'field list'
-   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894
-   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
-   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
-   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483
-   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
-   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
-   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
---- End of stack trace from previous location ---
-   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
-   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
-   at Education_assistant.Modules.ModuleChiTietLopHocPhan.Repositories.RepositoryChiTietLopHocPhan.GetAllChiTietLopHocPhanByLopHocPhanIdAsync(Guid lopHocPhanId, String search) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleChiTietLopHocPhan\Repositories\RepositoryChiTietLopHocPhan.cs:line 92
-   at Education_assistant.Modules.ModuleChiTietLopHocPhan.Services.ServiceChiTietLopHocPhan.GetAllChiTietLopHocPhanByLopHocPhanIdAsync(Guid lopHocPhanId, ParamChiTietLopHocPhanSimpleDto ParamChiTietLopHocPhanSimpleDto) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleChiTietLopHocPhan\Services\ServiceChiTietLopHocPhan.cs:line 166
-   at Education_assistant.Modules.ModuleChiTietLopHocPhan.ChiTietLopHocPhanController.GetAllChiTietLopHocPhanByLopHocPhanAsync(Guid lopHocPhanId, ParamChiTietLopHocPhanSimpleDto ParamChiTietLopHocPhanSimpleDto) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleChiTietLopHocPhan\ChiTietLopHocPhanController.cs:line 34
-   at lambda_method395(Closure, Object)
+2025-07-09 12:32:11.3964 ERROR Something went wrong: System.InvalidCastException: Unable to cast object of type 'System.DBNull' to type 'System.Double'.
+   at MySqlConnector.Core.Row.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/Core/Row.cs:line 377
+   at MySqlConnector.MySqlDataReader.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/MySqlDataReader.cs:line 299
+   at Education_assistant.Modules.ModuleThongKe.Repositories.RepositoryThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Repositories\RepositoryThongKe.cs:line 101
+   at Education_assistant.Modules.ModuleThongKe.Services.ServiceThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Services\ServiceThongKe.cs:line 38
+   at Education_assistant.Modules.ModuleThongKe.ThongKeController.GetThongKeThiLaiTrongNamAsync(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\ThongKeController.cs:line 35
+   at lambda_method17(Closure, Object)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
@@ -139,30 +185,15 @@
    at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
-2025-07-08 17:22:42.4632 INFO Đăng nhập thành công.
-2025-07-08 17:23:26.7394 ERROR Something went wrong: MySqlConnector.MySqlException (0x80004005): Unknown column 'l.loai-lop' in 'field list'
-   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894
-   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
-   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
-   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483
-   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
-   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
-   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
---- End of stack trace from previous location ---
-   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
-   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
-   at Education_assistant.Modules.ModuleChiTietLopHocPhan.Repositories.RepositoryChiTietLopHocPhan.GetChiTietLopHocPhanByIdAsync(Guid id, Boolean trackChanges) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleChiTietLopHocPhan\Repositories\RepositoryChiTietLopHocPhan.cs:line 128
-   at Education_assistant.Modules.ModuleChiTietLopHocPhan.Services.ServiceChiTietLopHocPhan.GetChiTietLopHocPhanByIdAsync(Guid id, Boolean trackChanges) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleChiTietLopHocPhan\Services\ServiceChiTietLopHocPhan.cs:line 178
-   at Education_assistant.Modules.ModuleChiTietLopHocPhan.ChiTietLopHocPhanController.GetChiTietLopHocPhanByIdAsync(Guid id) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleChiTietLopHocPhan\ChiTietLopHocPhanController.cs:line 40
-   at lambda_method294(Closure, Object)
+2025-07-09 12:33:16.4821 INFO Đăng nhập thành công.
+2025-07-09 13:29:20.2274 INFO Đăng nhập thành công.
+2025-07-09 13:29:20.7971 ERROR Something went wrong: System.InvalidCastException: Unable to cast object of type 'System.DBNull' to type 'System.Double'.
+   at MySqlConnector.Core.Row.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/Core/Row.cs:line 377
+   at MySqlConnector.MySqlDataReader.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/MySqlDataReader.cs:line 299
+   at Education_assistant.Modules.ModuleThongKe.Repositories.RepositoryThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Repositories\RepositoryThongKe.cs:line 101
+   at Education_assistant.Modules.ModuleThongKe.Services.ServiceThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Services\ServiceThongKe.cs:line 38
+   at Education_assistant.Modules.ModuleThongKe.ThongKeController.GetThongKeThiLaiTrongNamAsync(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\ThongKeController.cs:line 35
+   at lambda_method17(Closure, Object)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
@@ -177,29 +208,13 @@
    at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
-2025-07-08 17:24:32.4942 ERROR Something went wrong: MySqlConnector.MySqlException (0x80004005): Unknown column 'l.loai-lop' in 'field list'
-   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894
-   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
-   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
-   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483
-   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
-   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
-   at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
---- End of stack trace from previous location ---
-   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
-   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
-   at Education_assistant.Modules.ModuleChiTietLopHocPhan.Repositories.RepositoryChiTietLopHocPhan.GetAllChiTietLopHocPhanByLopHocPhanIdAsync(Guid lopHocPhanId, String search) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleChiTietLopHocPhan\Repositories\RepositoryChiTietLopHocPhan.cs:line 92
-   at Education_assistant.Modules.ModuleChiTietLopHocPhan.Services.ServiceChiTietLopHocPhan.GetAllChiTietLopHocPhanByLopHocPhanIdAsync(Guid lopHocPhanId, ParamChiTietLopHocPhanSimpleDto ParamChiTietLopHocPhanSimpleDto) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleChiTietLopHocPhan\Services\ServiceChiTietLopHocPhan.cs:line 166
-   at Education_assistant.Modules.ModuleChiTietLopHocPhan.ChiTietLopHocPhanController.GetAllChiTietLopHocPhanByLopHocPhanAsync(Guid lopHocPhanId, ParamChiTietLopHocPhanSimpleDto ParamChiTietLopHocPhanSimpleDto) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleChiTietLopHocPhan\ChiTietLopHocPhanController.cs:line 34
-   at lambda_method395(Closure, Object)
+2025-07-09 13:29:22.2491 ERROR Something went wrong: System.InvalidCastException: Unable to cast object of type 'System.DBNull' to type 'System.Double'.
+   at MySqlConnector.Core.Row.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/Core/Row.cs:line 377
+   at MySqlConnector.MySqlDataReader.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/MySqlDataReader.cs:line 299
+   at Education_assistant.Modules.ModuleThongKe.Repositories.RepositoryThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Repositories\RepositoryThongKe.cs:line 101
+   at Education_assistant.Modules.ModuleThongKe.Services.ServiceThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Services\ServiceThongKe.cs:line 38
+   at Education_assistant.Modules.ModuleThongKe.ThongKeController.GetThongKeThiLaiTrongNamAsync(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\ThongKeController.cs:line 35
+   at lambda_method17(Closure, Object)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
@@ -214,32 +229,13 @@
    at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
-2025-07-08 21:37:12.7584 INFO Đăng nhập thành công.
-2025-07-08 21:39:51.3401 ERROR Something went wrong: Education_assistant.Exceptions.ThrowError.LopHocPhanExceptions.LopHocPhanNotFoundException: Lớp học phần với id: 24cba786-61d3-45f4-aa28-4afedb097d1f không tìm thấy.
-   at Education_assistant.Modules.ModuleLopHocPhan.Services.ServiceLopHocPhan.GetLopHocPhanByIdAsync(Guid id, Boolean trackChanges) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleLopHocPhan\Services\ServiceLopHocPhan.cs:line 214
-   at Education_assistant.Modules.ModuleLopHocPhan.LopHocPhanController.GetLopHocPhanByIdAsync(Guid id) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleLopHocPhan\LopHocPhanController.cs:line 52
-   at lambda_method507(Closure, Object)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
-   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
-   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
-2025-07-08 21:43:30.0719 INFO Cập nhật điểm hàng loại thành công thành công.
-2025-07-08 21:58:39.4234 INFO Đăng nhập thành công.
-2025-07-08 22:28:57.9884 INFO Đăng nhập thành công.
-2025-07-08 22:58:22.7156 INFO Đăng nhập thành công.
-2025-07-08 23:03:46.8980 INFO Đăng nhập thành công.
-2025-07-08 23:06:09.5211 INFO Cập nhật list phân công giảng viên thành công.
-2025-07-08 23:14:20.7917 ERROR Something went wrong: Education_assistant.Exceptions.ThrowError.TaiKhoanExceptions.TaiKhoanBadRequestException: Refresh token không hợp lệ hoặc đã hết hạn.
+2025-07-09 13:50:04.3606 INFO Đăng nhập thành công.
+2025-07-09 13:51:51.0694 INFO Đăng nhập thành công.
+2025-07-09 14:07:45.4986 INFO Đăng nhập thành công.
+2025-07-09 14:09:55.3450 INFO Đăng nhập thành công.
+2025-07-09 14:12:47.5639 INFO Đăng nhập thành công.
+2025-07-09 14:20:43.9393 INFO Đăng nhập thành công.
+2025-07-09 15:04:45.2346 ERROR Something went wrong: Education_assistant.Exceptions.ThrowError.TaiKhoanExceptions.TaiKhoanBadRequestException: Refresh token không hợp lệ hoặc đã hết hạn.
    at Education_assistant.Modules.ModuleAuthenticate.Services.ServiceAuthenticate.refresh(String refreshToken) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleAuthenticate\Services\ServiceAuthenticate.cs:line 92
    at Education_assistant.Modules.ModuleAuthenticate.AuthenticateController.RefreshToken(RequestRefreshTokenDto requestRefreshTokenDto) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleAuthenticate\AuthenticateController.cs:line 39
    at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
@@ -256,52 +252,8 @@
    at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
-2025-07-08 23:14:51.0258 INFO Đăng nhập thành công.
-2025-07-08 23:20:58.1984 INFO Lấy thành công lớp học có id = 911eaaca-5aec-11f0-ab39-fa163ede03de.
-2025-07-08 23:30:20.8031 INFO Cập nhật điểm hàng loại thành công thành công.
-2025-07-08 23:32:25.6348 ERROR Something went wrong: System.InvalidCastException: Unable to cast object of type 'System.DBNull' to type 'System.Double'.
-   at MySqlConnector.Core.Row.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/Core/Row.cs:line 377
-   at MySqlConnector.MySqlDataReader.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/MySqlDataReader.cs:line 299
-   at Education_assistant.Modules.ModuleThongKe.Repositories.RepositoryThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Repositories\RepositoryThongKe.cs:line 101
-   at Education_assistant.Modules.ModuleThongKe.Services.ServiceThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Services\ServiceThongKe.cs:line 38
-   at Education_assistant.Modules.ModuleThongKe.ThongKeController.GetThongKeThiLaiTrongNamAsync(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\ThongKeController.cs:line 35
-   at lambda_method1331(Closure, Object)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
-   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
-   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
-2025-07-08 23:32:27.5266 ERROR Something went wrong: System.InvalidCastException: Unable to cast object of type 'System.DBNull' to type 'System.Double'.
-   at MySqlConnector.Core.Row.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/Core/Row.cs:line 377
-   at MySqlConnector.MySqlDataReader.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/MySqlDataReader.cs:line 299
-   at Education_assistant.Modules.ModuleThongKe.Repositories.RepositoryThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Repositories\RepositoryThongKe.cs:line 101
-   at Education_assistant.Modules.ModuleThongKe.Services.ServiceThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Services\ServiceThongKe.cs:line 38
-   at Education_assistant.Modules.ModuleThongKe.ThongKeController.GetThongKeThiLaiTrongNamAsync(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\ThongKeController.cs:line 35
-   at lambda_method1331(Closure, Object)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
-   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
-   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
-   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
-   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
-   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
-2025-07-08 23:52:17.2848 ERROR Something went wrong: Education_assistant.Exceptions.ThrowError.TaiKhoanExceptions.TaiKhoanBadRequestException: Refresh token không hợp lệ hoặc đã hết hạn.
+2025-07-09 15:05:06.3312 INFO Đăng nhập thành công.
+2025-07-09 15:43:20.1852 ERROR Something went wrong: Education_assistant.Exceptions.ThrowError.TaiKhoanExceptions.TaiKhoanBadRequestException: Refresh token không hợp lệ hoặc đã hết hạn.
    at Education_assistant.Modules.ModuleAuthenticate.Services.ServiceAuthenticate.refresh(String refreshToken) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleAuthenticate\Services\ServiceAuthenticate.cs:line 92
    at Education_assistant.Modules.ModuleAuthenticate.AuthenticateController.RefreshToken(RequestRefreshTokenDto requestRefreshTokenDto) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleAuthenticate\AuthenticateController.cs:line 39
    at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
@@ -318,4 +270,70 @@
    at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
-2025-07-08 23:52:34.3897 INFO Đăng nhập thành công.
+2025-07-09 15:43:36.1047 INFO Đăng nhập thành công.
+2025-07-09 15:55:15.2697 INFO Cập nhật list phân công giảng viên thành công.
+2025-07-09 16:11:15.9106 INFO Đăng nhập thành công.
+2025-07-09 16:11:16.3006 ERROR Something went wrong: System.InvalidCastException: Unable to cast object of type 'System.DBNull' to type 'System.Double'.
+   at MySqlConnector.Core.Row.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/Core/Row.cs:line 377
+   at MySqlConnector.MySqlDataReader.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/MySqlDataReader.cs:line 299
+   at Education_assistant.Modules.ModuleThongKe.Repositories.RepositoryThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Repositories\RepositoryThongKe.cs:line 101
+   at Education_assistant.Modules.ModuleThongKe.Services.ServiceThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Services\ServiceThongKe.cs:line 38
+   at Education_assistant.Modules.ModuleThongKe.ThongKeController.GetThongKeThiLaiTrongNamAsync(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\ThongKeController.cs:line 35
+   at lambda_method801(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-07-09 16:11:17.8696 ERROR Something went wrong: System.InvalidCastException: Unable to cast object of type 'System.DBNull' to type 'System.Double'.
+   at MySqlConnector.Core.Row.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/Core/Row.cs:line 377
+   at MySqlConnector.MySqlDataReader.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/MySqlDataReader.cs:line 299
+   at Education_assistant.Modules.ModuleThongKe.Repositories.RepositoryThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Repositories\RepositoryThongKe.cs:line 101
+   at Education_assistant.Modules.ModuleThongKe.Services.ServiceThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Services\ServiceThongKe.cs:line 38
+   at Education_assistant.Modules.ModuleThongKe.ThongKeController.GetThongKeThiLaiTrongNamAsync(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\ThongKeController.cs:line 35
+   at lambda_method801(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-07-09 16:44:33.8150 INFO Đăng nhập thành công.
+2025-07-09 16:52:20.4403 INFO Đăng nhập thành công.
+2025-07-09 17:06:45.6180 ERROR Something went wrong: Education_assistant.Exceptions.ThrowError.TaiKhoanExceptions.TaiKhoanBadRequestException: Refresh token không hợp lệ hoặc đã hết hạn.
+   at Education_assistant.Modules.ModuleAuthenticate.Services.ServiceAuthenticate.refresh(String refreshToken) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleAuthenticate\Services\ServiceAuthenticate.cs:line 92
+   at Education_assistant.Modules.ModuleAuthenticate.AuthenticateController.RefreshToken(RequestRefreshTokenDto requestRefreshTokenDto) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleAuthenticate\AuthenticateController.cs:line 39
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-07-09 17:07:03.9780 INFO Đăng nhập thành công.
+2025-07-09 17:10:26.7047 INFO Cập nhật list phân công giảng viên thành công.
+2025-07-09 17:10:37.0077 INFO Cập nhật lớp học phần thành công.

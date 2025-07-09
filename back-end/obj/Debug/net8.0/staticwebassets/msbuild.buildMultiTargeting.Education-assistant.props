@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Education-assistant.props" />
-</Project>

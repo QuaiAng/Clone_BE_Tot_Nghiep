@@ -317,12 +317,6 @@ D:\BE_TotNghiep\education-assistant\back-end\obj\Debug\net8.0\scopedcss\bundle\E
 D:\BE_TotNghiep\education-assistant\back-end\obj\Debug\net8.0\staticwebassets.build.json
 D:\BE_TotNghiep\education-assistant\back-end\obj\Debug\net8.0\staticwebassets.development.json
 D:\BE_TotNghiep\education-assistant\back-end\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-D:\BE_TotNghiep\education-assistant\back-end\obj\Debug\net8.0\staticwebassets\msbuild.Education-assistant.Microsoft.AspNetCore.StaticWebAssets.props
-D:\BE_TotNghiep\education-assistant\back-end\obj\Debug\net8.0\staticwebassets\msbuild.Education-assistant.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-D:\BE_TotNghiep\education-assistant\back-end\obj\Debug\net8.0\staticwebassets\msbuild.build.Education-assistant.props
-D:\BE_TotNghiep\education-assistant\back-end\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Education-assistant.props
-D:\BE_TotNghiep\education-assistant\back-end\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Education-assistant.props
-D:\BE_TotNghiep\education-assistant\back-end\obj\Debug\net8.0\staticwebassets.pack.json
 D:\BE_TotNghiep\education-assistant\back-end\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\BE_TotNghiep\education-assistant\back-end\obj\Debug\net8.0\Educatio.8979C88A.Up2Date
 D:\BE_TotNghiep\education-assistant\back-end\obj\Debug\net8.0\Education-assistant.dll
@@ -338,3 +332,8 @@ D:\BE_TotNghiep\education-assistant\back-end\bin\Debug\net8.0\ExcelNumberFormat.
 D:\BE_TotNghiep\education-assistant\back-end\bin\Debug\net8.0\RBush.dll
 D:\BE_TotNghiep\education-assistant\back-end\bin\Debug\net8.0\SixLabors.Fonts.dll
 D:\BE_TotNghiep\education-assistant\back-end\bin\Debug\net8.0\System.IO.Packaging.dll
+D:\BE_TotNghiep\education-assistant\back-end\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\BE_TotNghiep\education-assistant\back-end\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\BE_TotNghiep\education-assistant\back-end\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\BE_TotNghiep\education-assistant\back-end\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\BE_TotNghiep\education-assistant\back-end\obj\Debug\net8.0\staticwebassets.build.json.cache

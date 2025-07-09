@@ -516,6 +516,22 @@
   },
   {
     "ContainingType": "Education_assistant.Modules.ModuleChiTietChuongTrinhDaoTao.ChiTietChuongTrinhDaoTaoController",
+    "Method": "GetChiTietChuongTrinhDaoTaoByMonHocIdAsync",
+    "RelativePath": "api/ChiTietChuongTrinhDaoTao/by-subject/{monHocId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "monHocId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChiTietChuongTrinhDaoTao.ChiTietChuongTrinhDaoTaoController",
     "Method": "GetChiTietChuongTrinhDaoTaoByCTDTIdAsync",
     "RelativePath": "api/ChiTietChuongTrinhDaoTao/ChuongTrinhDaoTao/{id}",
     "HttpMethod": "GET",
@@ -2690,6 +2706,11 @@
         "Name": "KhoaId",
         "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
+      },
+      {
+        "Name": "NganhChaId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -2740,6 +2761,11 @@
       },
       {
         "Name": "KhoaId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "NganhChaId",
         "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       }
@@ -3064,7 +3090,7 @@
       },
       {
         "Name": "LopHocId",
-        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "System.Guid",
         "IsRequired": false
       },
       {
@@ -3221,6 +3247,22 @@
   },
   {
     "ContainingType": "Education_assistant.Modules.ModuleSinhVien.SinhVienController",
+    "Method": "GetAllSinhVienByLopHocAsync",
+    "RelativePath": "api/SinhVien/{lopHocId}by-lop-hoc",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lopHocId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleSinhVien.SinhVienController",
     "Method": "ExportAsync",
     "RelativePath": "api/SinhVien/{lopId}/export",
     "HttpMethod": "GET",
@@ -3315,6 +3357,27 @@
   },
   {
     "ContainingType": "Education_assistant.Modules.ModuleSinhVien.SinhVienController",
+    "Method": "AddSinhVienLopHocAsync",
+    "RelativePath": "api/SinhVien/chuyen-lop",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "SinhVienIds",
+        "Type": "System.Collections.Generic.List\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "LopHocId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleSinhVien.SinhVienController",
     "Method": "AddSinhVienDangKyMonHocAsync",
     "RelativePath": "api/SinhVien/dang-ky-mon-hoc",
     "HttpMethod": "POST",
@@ -3388,7 +3451,13 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "nam",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -3583,6 +3652,27 @@
       {
         "Name": "TuanBatDauId",
         "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleTuan.TuanController",
+    "Method": "AddTuanAutoAsync",
+    "RelativePath": "api/Tuan/tao-auto-tuan",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "NamHoc",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "NgayBatDau",
+        "Type": "System.DateTime",
         "IsRequired": false
       }
     ],
