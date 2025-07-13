@@ -1,4 +1,3 @@
-using System;
 using Education_assistant.Models;
 using Education_assistant.Modules.ModuleChiTietChuongTrinhDaoTao.DTOs.Response;
 using Education_assistant.Modules.ModuleLopHocPhan.DTOs.Response;
@@ -23,7 +22,22 @@ public class ResponseHocBaDto
 }
 
 public class HocBaSimpleDto
-{ 
+{
     public Guid Id { get; set; }
     public decimal DiemTongKet { get; set; }
+}
+
+public class ResponseHocBaSummaryDto
+{
+    public IEnumerable<ResponseHocBaDto>? ListHocBa { get; set; }
+    public decimal? GPA { get; set; }
+}
+
+public class ResponseHocBaProfileDto
+{
+    public SinhVienSimpleWithLopHocDto? SinhVien { get; set; }
+    public int HocKy { get; set; }
+    public List<HocBa> ListHocBa { get; set; } = new();
+
+    public decimal? DiemTongKet { get; set; }
 }

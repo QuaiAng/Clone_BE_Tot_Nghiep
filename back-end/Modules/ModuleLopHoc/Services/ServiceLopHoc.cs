@@ -29,6 +29,11 @@ namespace Education_assistant.Modules.ModuleLopHoc.Services
 
         public async Task<ResponseLopHocDto> CreateAsync(RequestAddLopHocDto request)
         {
+            var lopHoc = await _repositoryMaster.LopHoc.GetLopHocByMaAsync(request.MaLopHoc, false);
+            if (lopHoc is not null)
+            {
+                throw new LopHocExistdException($"Đã có mã lớp học này rồi hãy tạo mã lớp học khác!");
+            }
             try
             {
                 var newLopHoc = _mapper.Map<LopHoc>(request);
@@ -39,9 +44,10 @@ namespace Education_assistant.Modules.ModuleLopHoc.Services
                 _loggerService.LogInfo("Thêm thông tin lớp học thành công.");
                 var lopHocDto = _mapper.Map<ResponseLopHocDto>(newLopHoc);
                 return lopHocDto;
-            }catch (DbUpdateException ex)
+            }
+            catch (DbUpdateException ex)
             {
-                throw new Exception($"Lỗi hệ thống!: {ex.Message}");   
+                throw new Exception($"Lỗi hệ thống!: {ex.Message}");
             }
         }
 
@@ -82,8 +88,17 @@ namespace Education_assistant.Modules.ModuleLopHoc.Services
 
         public async Task<(IEnumerable<ResponseLopHocDto> data, PageInfo page)> GetAllLopHocAsync(ParamLopHocDto paramLopHocDto)
         {
+            var page = paramLopHocDto.page;
+            var limit = paramLopHocDto.limit;
             var lopHocs = await _repositoryMaster.LopHoc.GetAllLopHocAsync(paramLopHocDto.page, paramLopHocDto.limit, paramLopHocDto.search, paramLopHocDto.sortBy, paramLopHocDto.sortByOrder);
-            var lopHocDto = _mapper.Map<IEnumerable<ResponseLopHocDto>>(lopHocs);
+
+            var startIndex = (page - 1) * limit;
+            var lopHocDto = _mapper.Map<IEnumerable<ResponseLopHocDto>>(lopHocs)
+                    .Select((item, index) =>
+                    {
+                        item.STT = startIndex + index + 1;
+                        return item;
+                    });
             return (data: lopHocDto, page: lopHocs!.PageInfo);
         }
 

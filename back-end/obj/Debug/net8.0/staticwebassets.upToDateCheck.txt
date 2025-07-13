@@ -28,3 +28,16 @@ wwwroot\uploads\sinhvien_f05e6b86_234433_04072025.jpg
 wwwroot\uploads\sinhvien_fdf221b4_183509_05072025.jpg
 wwwroot\uploads\sinhvien_fe03ada4_103459_08062025.jpg
 wwwroot\uploads\sinhvien_febf7ece_231051_07062025.png
+wwwroot\uploads\sinhvien_ef54d777_234611_10072025.jpg
+wwwroot\uploads\giangvien_04d7709c_092211_11072025.jpg
+wwwroot\uploads\giangvien_7359bc43_224213_10072025.png
+wwwroot\uploads\giangvien_8f73c71f_224213_10072025.png
+wwwroot\uploads\sinhvien_304a1458_222131_10072025.png
+wwwroot\uploads\sinhvien_41095f20_222021_10072025.png
+wwwroot\uploads\sinhvien_6acc14d0_222539_10072025.png
+wwwroot\uploads\sinhvien_a9f63223_222255_10072025.png
+wwwroot\uploads\sinhvien_ee1b0e3f_222100_10072025.png
+wwwroot\uploads\sinhvien_f631e3af_221915_10072025.png
+wwwroot\uploads\sinhvien_9a643b6f_004027_13072025.jpg
+wwwroot\uploads\sinhvien_a0ed9124_151335_13072025.jpg
+wwwroot\uploads\giangvien_bca3d87a_151629_13072025.jpg

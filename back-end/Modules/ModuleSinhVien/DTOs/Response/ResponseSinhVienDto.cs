@@ -1,5 +1,3 @@
-using System;
-using System.ComponentModel.DataAnnotations;
 using Education_assistant.Modules.ModuleLopHoc.DTOs.Response;
 
 namespace Education_assistant.Modules.ModuleSinhVien.DTOs.Response;
@@ -27,6 +25,17 @@ public class ResponseSinhVienDto
     public DateTime? DeletedAt { get; set; }
 }
 
+public class SinhVienSimpleWithLopHocDto
+{
+    public Guid Id { get; set; }
+    public string MSSV { get; set; } = string.Empty;
+    public string HoTen { get; set; } = string.Empty;
+    public DateTime? NgaySinh { get; set; }
+    public int? GioiTinh { get; set; }
+    public string? AnhDaiDien { get; set; } = string.Empty;
+    public LopHocSimpleDto? LopHoc { get; set; }
+}
+
 public class SinhVienSimpleDto
 {
     public Guid Id { get; set; }
@@ -46,8 +55,10 @@ public class ResponseSinhVienSummaryDto
     public int SoDaTotNghiep { get; set; }
     public int SoTamNghi { get; set; }
 }
+
 public class ResponseSinhVienTinhTrangHocTapDto
 {
+    public int STT { get; set; }
     public Guid Id { get; set; }
     public string MSSV { get; set; } = string.Empty;
     public string CCCD { get; set; } = string.Empty;
@@ -70,6 +81,7 @@ public class ResponseSinhVienTinhTrangHocTapDto
     public DateTime? UpdatedAt { get; set; }
     public DateTime? DeletedAt { get; set; }
 }
+
 public class ResponseExportFileSinhVienDto
 {
     public int STT { get; set; }

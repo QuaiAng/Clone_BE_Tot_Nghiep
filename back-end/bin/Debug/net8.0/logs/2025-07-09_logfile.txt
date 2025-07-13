@@ -337,3 +337,50 @@
 2025-07-09 17:07:03.9780 INFO Đăng nhập thành công.
 2025-07-09 17:10:26.7047 INFO Cập nhật list phân công giảng viên thành công.
 2025-07-09 17:10:37.0077 INFO Cập nhật lớp học phần thành công.
+2025-07-09 23:43:37.8581 INFO Đăng nhập thành công.
+2025-07-09 23:43:37.8581 INFO Đăng nhập thành công.
+2025-07-09 23:43:38.2229 INFO Đăng nhập thành công.
+2025-07-09 23:43:38.5204 ERROR Something went wrong: System.InvalidCastException: Unable to cast object of type 'System.DBNull' to type 'System.Double'.
+   at MySqlConnector.Core.Row.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/Core/Row.cs:line 377
+   at MySqlConnector.MySqlDataReader.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/MySqlDataReader.cs:line 299
+   at Education_assistant.Modules.ModuleThongKe.Repositories.RepositoryThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Repositories\RepositoryThongKe.cs:line 101
+   at Education_assistant.Modules.ModuleThongKe.Services.ServiceThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Services\ServiceThongKe.cs:line 38
+   at Education_assistant.Modules.ModuleThongKe.ThongKeController.GetThongKeThiLaiTrongNamAsync(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\ThongKeController.cs:line 35
+   at lambda_method480(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-07-09 23:43:40.1937 ERROR Something went wrong: System.InvalidCastException: Unable to cast object of type 'System.DBNull' to type 'System.Double'.
+   at MySqlConnector.Core.Row.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/Core/Row.cs:line 377
+   at MySqlConnector.MySqlDataReader.GetDouble(Int32 ordinal) in /_/src/MySqlConnector/MySqlDataReader.cs:line 299
+   at Education_assistant.Modules.ModuleThongKe.Repositories.RepositoryThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Repositories\RepositoryThongKe.cs:line 101
+   at Education_assistant.Modules.ModuleThongKe.Services.ServiceThongKe.ThongKetThiLaiTrongNam(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\Services\ServiceThongKe.cs:line 38
+   at Education_assistant.Modules.ModuleThongKe.ThongKeController.GetThongKeThiLaiTrongNamAsync(Int32 nam) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleThongKe\ThongKeController.cs:line 35
+   at lambda_method480(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-07-09 23:43:43.0878 INFO Đăng nhập thành công.
+2025-07-09 23:57:41.6772 INFO Đăng nhập thành công.

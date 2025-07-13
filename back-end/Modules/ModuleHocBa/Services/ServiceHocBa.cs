@@ -1,7 +1,10 @@
 using AutoMapper;
 using Education_assistant.Contracts.LoggerServices;
+using Education_assistant.Exceptions.ThrowError.ChiTietChuongTrinhDaoTaoExceptions;
 using Education_assistant.Exceptions.ThrowError.ChiTietLopHocPhanExceptions;
 using Education_assistant.Exceptions.ThrowError.HocBaExceptions;
+using Education_assistant.Exceptions.ThrowError.SinhVienChuongTrinhDaoTaoExceptions;
+using Education_assistant.Exceptions.ThrowError.SinhVienExceptions;
 using Education_assistant.helpers.implements;
 using Education_assistant.Models;
 using Education_assistant.Models.Enums;
@@ -86,9 +89,21 @@ public class ServiceHocBa : IServiceHocBa
             paramHocBaDto.search,
             paramHocBaDto.sortBy,
             paramHocBaDto.sortByOrder,
-            paramHocBaDto.lopHocPhanId);
+            paramHocBaDto.lopHocPhanId,
+            paramHocBaDto.sinhVienId);
         var hocBaDtos = _mapper.Map<IEnumerable<ResponseHocBaDto>>(hocBas);
         return (data: hocBaDtos, page: hocBas!.PageInfo);
+    }
+
+    public async Task<IEnumerable<ResponseHocBaProfileDto>> GetAllHocBaBySinhVienAsync(ParamHocBaBySinhVienDto param)
+    {
+        var sinhVien = await _repositoryMaster.SinhVien.GetSinhVienByMssvAsync(param.mssv, false);
+        if (sinhVien is null)
+            throw new SinhVienNotFoundException2();
+        var hocBas =
+            await _repositoryMaster.HocBa.GetAllHocBaBySinhVienAsync(param.sortBy, param.sortByOrder, sinhVien.Id);
+        //var GPA = await _repositoryMaster.HocBa.TinhGPAAsync(sinhVien.Id);
+        return hocBas;
     }
 
     public async Task<ResponseHocBaDto> GetHocBaByIdAsync(Guid id, bool trackChanges)
@@ -103,17 +118,12 @@ public class ServiceHocBa : IServiceHocBa
     {
         try
         {
-            if (id != request.Id)
-                throw new HocBaBadRequestException($"Id: {id} và Id: {request.Id} của khoa không giống nhau!");
             var hocBa = await _repositoryMaster.HocBa.GetHocBaByIdAsync(id, true);
             if (hocBa is null) throw new HocBaNotFoundException(id);
             await _repositoryMaster.ExecuteInTransactionAsync(async () =>
             {
                 hocBa.DiemTongKet = request.DiemTongKet;
                 hocBa.KetQua = request.DiemTongKet >= 5 ? (int)KetQuaHocBaEnum.DAT : (int)KetQuaHocBaEnum.KHONG_DAT;
-                hocBa.SinhVienId = request.SinhVienId;
-                hocBa.LopHocPhanId = request.LopHocPhanId;
-                hocBa.ChiTietChuongTrinhDaoTaoId = request.ChiTietChuongTrinhDaoTaoId;
                 hocBa.UpdatedAt = DateTime.Now;
                 await Task.CompletedTask;
             });
@@ -132,6 +142,9 @@ public class ServiceHocBa : IServiceHocBa
         var sinhVienIds = request.ListDiemSo.Select(d => d.SinhVienId!.Value).ToList();
         var allSvCtdt = await _repositoryMaster.sinhVienChuongTrinhDao
             .GetSinhVienChuongTrinhDaoTaoByIdsAsync(sinhVienIds);
+        if (allSvCtdt is null || !allSvCtdt.Any())
+            throw new SinhVienChuongTrinhDaoTaoNotFoundException(
+                "Không tìm thấy sinh viên trong chương trình đào tạo tương ứng với danh sách điểm số.");
         // var svCtdtDict = allSvCtdt
         //     .GroupBy(s => s.SinhVienId!.Value)s
         //     .ToDictionary(g => g.Key, g => g.ToList());
@@ -141,6 +154,9 @@ public class ServiceHocBa : IServiceHocBa
             .ToList();
         var ctctdt = await _repositoryMaster.ChiTietChuongTrinhDaoTao
             .GetCtctdtByIdsCtctdtAndMonHocAsync(allChuongTrinhIds, request.MonHocId);
+        if (ctctdt is null)
+            throw new ChiTietChuongTrinhDaoTaoNotFoundException();
+
         var exsitingHocBas =
             await _repositoryMaster.HocBa.GetAllHocBaByKeysAsync(sinhVienIds, ctctdt!.Id);
         var hocBaDict =
@@ -156,7 +172,7 @@ public class ServiceHocBa : IServiceHocBa
                 continue;
             }
 
-            var diemSoTong = _diemSoHelper.ComparePoint(diemTongKetLopHocPhan, exsitingHocBa.DiemTongKet!.Value);
+            var diemSoTong = _diemSoHelper.ComparePoint(diemTongKetLopHocPhan, exsitingHocBa.DiemTongKet ?? 0);
             var hocBa = new HocBa
             {
                 Id = exsitingHocBa.Id,
@@ -183,11 +199,12 @@ public class ServiceHocBa : IServiceHocBa
             .Distinct()
             .ToList();
         var getALlSinhVien = await _repositoryMaster.SinhVien.GetAllSinhVienByIds(updateHocBaSinhVienIds, true);
-        var gpaCalculations = getALlSinhVien.Select(async sinhVien => new
+        var gpaCalculations = getALlSinhVien.Select(async sinhVien =>
         {
-            SinhVien = sinhVien,
-            GPA = await _repositoryMaster.HocBa.TinhGPAAsync(sinhVien.Id)
-        });
+            using var context = await _repositoryMaster.CreateNewContextAsync();
+            var gpa = await _repositoryMaster.HocBa.TinhGPAAsync2(context, sinhVien.Id);
+            return new { SinhVien = sinhVien, GPA = gpa };
+        }).ToList();
         var results = await Task.WhenAll(gpaCalculations);
         await _repositoryMaster.ExecuteInTransactionAsync(async () =>
         {
@@ -214,7 +231,7 @@ public class ServiceHocBa : IServiceHocBa
             await _repositoryMaster.ExecuteInTransactionAsync(async () =>
             {
                 await _repositoryMaster.ChiTietLopHocPhan.UpdateNgayNopDiemChiTietLopHocPhanByLopHocPhanIdAsync(
-                    request.LopHocPhanId);
+                    request.LopHocPhanId, true);
             });
         }
         catch (Exception ex)

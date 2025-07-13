@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\BE_TotNghiep\\education-assistant\\back-end\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\modules\\modulephonghoc\\phonghoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:modules\\modulephonghoc\\phonghoccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\modules\\modulelichbieu\\lichbieucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:modules\\modulelichbieu\\lichbieucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|d:\\be_totnghiep\\education-assistant\\back-end\\modules\\modulechitietchuongtrinhdaotao\\chitietchuongtrinhdaotaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9E9B6578-34AF-4D5C-A80D-37D71969670E}|Education-assistant.csproj|solutionrelative:modules\\modulechitietchuongtrinhdaotao\\chitietchuongtrinhdaotaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,11 +30,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LichBieuController.cs",
+              "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleLichBieu\\LichBieuController.cs",
+              "RelativeDocumentMoniker": "Modules\\ModuleLichBieu\\LichBieuController.cs",
+              "ToolTip": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleLichBieu\\LichBieuController.cs",
+              "RelativeToolTip": "Modules\\ModuleLichBieu\\LichBieuController.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAkwD8AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T04:01:26.321Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "PhongHocController.cs",
+              "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModulePhongHoc\\PhongHocController.cs",
+              "RelativeDocumentMoniker": "Modules\\ModulePhongHoc\\PhongHocController.cs",
+              "ToolTip": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModulePhongHoc\\PhongHocController.cs",
+              "RelativeToolTip": "Modules\\ModulePhongHoc\\PhongHocController.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T16:39:40.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ChiTietChuongTrinhDaoTaoController.cs",
               "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleChiTietChuongTrinhDaoTao\\ChiTietChuongTrinhDaoTaoController.cs",
               "RelativeDocumentMoniker": "Modules\\ModuleChiTietChuongTrinhDaoTao\\ChiTietChuongTrinhDaoTaoController.cs",
@@ -34,12 +67,11 @@
               "RelativeToolTip": "Modules\\ModuleChiTietChuongTrinhDaoTao\\ChiTietChuongTrinhDaoTaoController.cs",
               "ViewState": "AgIAADQAAAAAAAAAAAAwwEkAAAB7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T09:40:38.859Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-09T09:40:38.859Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ServiceChiTietChuongTrinhDaoTao.cs",
               "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleChiTietChuongTrinhDaoTao\\Services\\ServiceChiTietChuongTrinhDaoTao.cs",
               "RelativeDocumentMoniker": "Modules\\ModuleChiTietChuongTrinhDaoTao\\Services\\ServiceChiTietChuongTrinhDaoTao.cs",
@@ -47,12 +79,11 @@
               "RelativeToolTip": "Modules\\ModuleChiTietChuongTrinhDaoTao\\Services\\ServiceChiTietChuongTrinhDaoTao.cs",
               "ViewState": "AgIAAHwAAAAAAAAAAAAwwJkAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T09:40:37.939Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-09T09:40:37.939Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "RepositoryChiTietChuongTrinhDaoTao.cs",
               "DocumentMoniker": "D:\\BE_TotNghiep\\education-assistant\\back-end\\Modules\\ModuleChiTietChuongTrinhDaoTao\\Repositories\\RepositoryChiTietChuongTrinhDaoTao.cs",
               "RelativeDocumentMoniker": "Modules\\ModuleChiTietChuongTrinhDaoTao\\Repositories\\RepositoryChiTietChuongTrinhDaoTao.cs",
@@ -60,8 +91,7 @@
               "RelativeToolTip": "Modules\\ModuleChiTietChuongTrinhDaoTao\\Repositories\\RepositoryChiTietChuongTrinhDaoTao.cs",
               "ViewState": "AgIAAF4AAAAAAAAAAAA6wHUAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T09:40:35.08Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-09T09:40:35.08Z"
             }
           ]
         }

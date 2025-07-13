@@ -1,0 +1,65 @@
+2025-07-11 00:00:25.7207 INFO Lấy thành công lớp học có id = 3d9ad2e4-4546-4214-b88d-0270494519c4.
+2025-07-11 00:01:01.6109 INFO Lấy thành công lớp học có id = 3d9ad2e4-4546-4214-b88d-0270494519c4.
+2025-07-11 00:02:36.0334 INFO Lấy thành công lớp học có id = 3d9ad2e4-4546-4214-b88d-0270494519c4.
+2025-07-11 00:02:48.5643 INFO Lấy thành công lớp học có id = 3d9ad2e4-4546-4214-b88d-0270494519c4.
+2025-07-11 01:39:24.8682 INFO Đăng nhập thành công.
+2025-07-11 05:47:38.7986 INFO Đăng nhập thành công.
+2025-07-11 05:50:49.4021 INFO Cập nhật giảng viên thành công.
+2025-07-11 05:51:16.4049 INFO Đăng nhập thành công.
+2025-07-11 06:02:58.7059 INFO Lấy thành công lớp học có id = 3d9ad2e4-4546-4214-b88d-0270494519c4.
+2025-07-11 06:10:08.5395 INFO Đăng nhập thành công.
+2025-07-11 06:11:38.3612 INFO Đăng nhập thành công.
+2025-07-11 06:11:59.2982 INFO Cập nhật giảng viên thành công.
+2025-07-11 06:12:21.1390 INFO Đăng nhập thành công.
+2025-07-11 09:12:16.5374 INFO Đăng nhập thành công.
+2025-07-11 09:14:29.9714 INFO Tạo OTP thành công!
+2025-07-11 09:14:30.2044 INFO Gửi email giảng viên thành công.
+2025-07-11 09:15:36.1342 INFO Reset password bằng OTP thành công!
+2025-07-11 09:15:48.4479 INFO Đăng nhập thành công.
+2025-07-11 09:16:14.7702 ERROR Something went wrong: Education_assistant.Exceptions.ThrowError.TaiKhoanExceptions.TaiKhoanBadRequestException: Mật khẩu không đúng!
+   at Education_assistant.Modules.ModuleAuthenticate.Services.ServiceAuthenticate.Login(RequestLoginDto requestLoginDto) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleAuthenticate\Services\ServiceAuthenticate.cs:line 46
+   at Education_assistant.Modules.ModuleAuthenticate.AuthenticateController.Login(RequestLoginDto loginDto) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleAuthenticate\AuthenticateController.cs:line 29
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-07-11 09:16:30.4527 INFO Đăng nhập thành công.
+2025-07-11 09:20:33.9301 INFO Cập nhật chi tiết chương trình đào tạo thành công.
+2025-07-11 09:22:11.9572 INFO Cập nhật giảng viên thành công.
+2025-07-11 09:22:32.0583 INFO Lấy thành công lớp học có id = 3d9ad2e4-4546-4214-b88d-0270494519c4.
+2025-07-11 09:22:41.5993 INFO Lấy thành công lớp học có id = 911eaaca-5aec-11f0-ab39-fa163ede03de.
+2025-07-11 09:22:56.6571 INFO Lấy thành công lớp học có id = 911eaaca-5aec-11f0-ab39-fa163ede03de.
+2025-07-11 09:33:02.4051 INFO Lấy thành công lớp học có id = 911eaaca-5aec-11f0-ab39-fa163ede03de.
+2025-07-11 09:37:29.6103 INFO Lấy thành công phòng học có id = e64f7437-d3ed-4352-a0e8-46929df8f705.
+2025-07-11 09:40:55.9737 INFO Lấy thành công phòng học có id = d98a2579-984d-48ad-8319-7198a592cb04.
+2025-07-11 09:41:13.6097 INFO Lấy thành công phòng học có id = 47234459-dc45-4c10-b5bc-8f16be45fe6c.
+2025-07-11 09:41:14.6392 INFO Lấy thành công phòng học có id = 47234459-dc45-4c10-b5bc-8f16be45fe6c.
+2025-07-11 09:41:30.8756 INFO Lấy thành công phòng học có id = 47234459-dc45-4c10-b5bc-8f16be45fe6c.
+2025-07-11 09:49:09.0641 ERROR Something went wrong: Education_assistant.Exceptions.ThrowError.TaiKhoanExceptions.TaiKhoanBadRequestException: Refresh token không hợp lệ hoặc đã hết hạn.
+   at Education_assistant.Modules.ModuleAuthenticate.Services.ServiceAuthenticate.refresh(String refreshToken) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleAuthenticate\Services\ServiceAuthenticate.cs:line 92
+   at Education_assistant.Modules.ModuleAuthenticate.AuthenticateController.RefreshToken(RequestRefreshTokenDto requestRefreshTokenDto) in D:\BE_TotNghiep\education-assistant\back-end\Modules\ModuleAuthenticate\AuthenticateController.cs:line 39
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-07-11 09:49:30.3427 INFO Đăng nhập thành công.

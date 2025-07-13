@@ -275,9 +275,8 @@ namespace Education_assistant.Migrations
                         .HasColumnType("varchar(255)")
                         .HasColumnName("ten_chuong_trinh");
 
-                    b.Property<string>("ThoiGianDaoTao")
-                        .IsRequired()
-                        .HasColumnType("longtext")
+                    b.Property<int>("ThoiGianDaoTao")
+                        .HasColumnType("int")
                         .HasColumnName("thoi_gian_dao_tao");
 
                     b.Property<int>("TongSoTinChi")

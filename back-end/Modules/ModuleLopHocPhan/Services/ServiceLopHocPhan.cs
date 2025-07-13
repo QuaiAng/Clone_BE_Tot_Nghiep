@@ -13,6 +13,7 @@ using Education_assistant.Modules.ModuleLopHocPhan.DTOs.Response;
 using Education_assistant.Repositories.Paginations;
 using Education_assistant.Repositories.RepositoryMaster;
 using Microsoft.EntityFrameworkCore;
+using Sprache;
 
 namespace Education_assistant.Modules.ModuleLopHocPhan.Services;
 
@@ -66,10 +67,11 @@ public class ServiceLopHocPhan : IServiceLopHocPhan
             throw new ChiTietChuongTrinhDaoTaoBadRequestException("Môn học chưa được thêm chương trình đào tạo");
         var lopHocs = await _repositoryMaster.LopHoc.GetLopHocByKhoaAndNganhIdAsync(request.Khoa, request.NganhId);
         if (!lopHocs.Any()) throw new LopHocBadRequestException("Không tìm thấy lớp học trong ngành id");
+
         var newLopHocPhans = new List<(LopHocPhan LopHocPhan, Guid LopHocId)>();
-        foreach (var ctctdt in ctctdts)
+        foreach (var lopHoc in lopHocs)
         {
-            foreach (var lopHoc in lopHocs)
+            foreach (var ctctdt in ctctdts)
             {
                 var lopHocPhanExsiting = await _repositoryMaster.LopHocPhan.KiemTraLopHocPhanDaTonTaiAsync(request.NganhId,
                     request.HocKy, request.Khoa, ctctdt.MonHocId!.Value);
@@ -92,29 +94,25 @@ public class ServiceLopHocPhan : IServiceLopHocPhan
         {
             throw new LopHocPhanBadRequestException($"Danh sách lớp học phần trong với ngành và học kỳ, khóa đó đã được tạo rồi");
         }
+        var lopHocPhanEntities = newLopHocPhans.Select(item => item.LopHocPhan).ToList();
         await _repositoryMaster.ExecuteInTransactionBulkEntityAsync(async () =>
         {
-            var lopHocPhanEntities = newLopHocPhans.Select(item => item.LopHocPhan).ToList();
             await _repositoryMaster.BulkAddEntityAsync<LopHocPhan>(lopHocPhanEntities);
         });
-        try
+        _loggerService.LogInfo("Tạo lớp học phần thành công.");
+        foreach (var item in newLopHocPhans)
         {
-            await _repositoryMaster.ExecuteInTransactionAsync(async () =>
-            {
-                foreach (var (lopHocPhan, lopHocId) in newLopHocPhans)
-                {
-                    var ctctdt = ctctdts.FirstOrDefault(ct =>
-                        ct.MonHocId == lopHocPhan.MonHocId && ct.HocKy == request.HocKy);
-                    await _repositoryMaster.LopHocPhan.CreateSinhVienLopHocPhanHocBa(lopHocId, lopHocPhan.Id,
-                        lopHocPhan.GiangVienId, lopHocPhan.MonHocId, ctctdt!.Id, request.HocKy);
-                }
-            });
+            await _repositoryMaster.LopHocPhan.CreateSinhVienLopHocPhanHocBa(
+                item.LopHocId,
+                item.LopHocPhan.Id,
+                item.LopHocPhan.MonHocId,
+                request.HocKy
+            );
         }
-        catch (DbUpdateException ex)
-        {
-            throw new Exception($"Lỗi hệ thống!: {ex.Message}");
-        }
+        _loggerService.LogInfo("Thêm danh sách sinh viên vào danh sách điểm số và danh sách đăng ký môn học thành công.");
+       
     }
+
 
     public async Task DeleteAsync(Guid id)
     {
@@ -149,6 +147,8 @@ public class ServiceLopHocPhan : IServiceLopHocPhan
     public async Task<(IEnumerable<ResponseLopHocPhanDto> data, PageInfo page)> GetAllLopHocPhanAsync(
         ParamLopHocPhanDto paramLopHocPhanDto)
     {
+        var page = paramLopHocPhanDto.page;
+        var limit = paramLopHocPhanDto.limit;
         var lopHocPhans = await _repositoryMaster.LopHocPhan.GetAllLopHocPhanAsync(paramLopHocPhanDto.page,
             paramLopHocPhanDto.limit,
             paramLopHocPhanDto.search,
@@ -161,7 +161,14 @@ public class ServiceLopHocPhan : IServiceLopHocPhan
             paramLopHocPhanDto.trangThai,
             paramLopHocPhanDto.loaiLopHoc,
             paramLopHocPhanDto.giangVienId);
-        var lopHocPhanDtos = _mapper.Map<IEnumerable<ResponseLopHocPhanDto>>(lopHocPhans);
+
+        var startIndex = (page - 1) * limit;
+        var lopHocPhanDtos = _mapper.Map<IEnumerable<ResponseLopHocPhanDto>>(lopHocPhans)
+                .Select((item, index) =>
+                {
+                    item.STT = startIndex + index + 1;
+                    return item;
+                });
         return (data: lopHocPhanDtos, page: lopHocPhans!.PageInfo);
     }
 
@@ -199,6 +206,22 @@ public class ServiceLopHocPhan : IServiceLopHocPhan
         var lopHocPhans = await _repositoryMaster.LopHocPhan.GetAllLopHocPhanByLopHocAndHocKyAsync(param.hocKy, maLopHoc, chuongTrinhDaoTaoId);
         var lopHocPhanDtos = _mapper.Map<IEnumerable<ResponseLopHocPhanDto>>(lopHocPhans);
         return lopHocPhanDtos;
+    }
+
+    public async Task<(IEnumerable<ResponseLopHocPhanDto> data, PageInfo page)> GetAllLopHocPhanDaNopAsync(ParamLopHocPhanDaNopDto param)
+    {
+        var page = param.page;
+        var limit = param.limit;
+        var lopHocPhans = await _repositoryMaster.LopHocPhan.GetAllLopHocPhanDaNopAsync(param.page, param.limit, param.search, param.sortBy, param.sortByOrder, param.loaiChuongTrinhDaoTao, param.khoaId, param.hocKy);
+
+        var startIndex = (page - 1) * limit;
+        var lopHocPhanDtos = _mapper.Map<IEnumerable<ResponseLopHocPhanDto>>(lopHocPhans)
+                .Select((item, index) =>
+                {
+                    item.STT = startIndex + index + 1;
+                    return item;
+                });
+        return (data: lopHocPhanDtos, page: lopHocPhans!.PageInfo);
     }
 
     public async Task<IEnumerable<ResponseLopHocPhanDto>> GetAllLopHocPhanNoPageAsync()

@@ -1561,7 +1561,8 @@
                     "format": "int32"
                   },
                   "ThoiGianDaoTao": {
-                    "type": "string"
+                    "type": "integer",
+                    "format": "int32"
                   },
                   "MoTa": {
                     "type": "string"
@@ -1679,7 +1680,8 @@
                     "format": "int32"
                   },
                   "ThoiGianDaoTao": {
-                    "type": "string"
+                    "type": "integer",
+                    "format": "int32"
                   },
                   "MoTa": {
                     "type": "string"
@@ -2407,6 +2409,42 @@
         }
       }
     },
+    "/api/HocBa/nop-diem": {
+      "post": {
+        "tags": [
+          "HocBa"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestListUpdateHocbaDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestListUpdateHocbaDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestListUpdateHocbaDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestListUpdateHocbaDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/HocBa": {
       "get": {
         "tags": [
@@ -2415,6 +2453,14 @@
         "parameters": [
           {
             "name": "lopHocPhanId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "sinhVienId",
             "in": "query",
             "schema": {
               "type": "string",
@@ -2537,6 +2583,41 @@
         }
       }
     },
+    "/api/HocBa/by-sinh-vien": {
+      "get": {
+        "tags": [
+          "HocBa"
+        ],
+        "parameters": [
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortByOrder",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "mssv",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/HocBa/{id}": {
       "get": {
         "tags": [
@@ -2576,55 +2657,24 @@
         ],
         "requestBody": {
           "content": {
-            "multipart/form-data": {
+            "application/json-patch+json": {
               "schema": {
-                "required": [
-                  "ChiTietChuongTrinhDaoTaoId",
-                  "DiemTongKet",
-                  "Id",
-                  "LopHocPhanId",
-                  "SinhVienId"
-                ],
-                "type": "object",
-                "properties": {
-                  "Id": {
-                    "type": "string",
-                    "format": "uuid"
-                  },
-                  "DiemTongKet": {
-                    "type": "number",
-                    "format": "double"
-                  },
-                  "SinhVienId": {
-                    "type": "string",
-                    "format": "uuid"
-                  },
-                  "LopHocPhanId": {
-                    "type": "string",
-                    "format": "uuid"
-                  },
-                  "ChiTietChuongTrinhDaoTaoId": {
-                    "type": "string",
-                    "format": "uuid"
-                  }
-                }
-              },
-              "encoding": {
-                "Id": {
-                  "style": "form"
-                },
-                "DiemTongKet": {
-                  "style": "form"
-                },
-                "SinhVienId": {
-                  "style": "form"
-                },
-                "LopHocPhanId": {
-                  "style": "form"
-                },
-                "ChiTietChuongTrinhDaoTaoId": {
-                  "style": "form"
-                }
+                "$ref": "#/components/schemas/RequestUpdateHocbaDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestUpdateHocbaDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestUpdateHocbaDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestUpdateHocbaDto"
               }
             }
           }
@@ -2650,42 +2700,6 @@
             }
           }
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/HocBa/nop-diem": {
-      "put": {
-        "tags": [
-          "HocBa"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/RequestListUpdateHocbaDto"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RequestListUpdateHocbaDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RequestListUpdateHocbaDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/RequestListUpdateHocbaDto"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -4127,6 +4141,14 @@
         ],
         "parameters": [
           {
+            "name": "khoaId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
             "name": "page",
             "in": "query",
             "schema": {
@@ -4573,6 +4595,64 @@
         }
       }
     },
+    "/api/Nganh/no-page": {
+      "get": {
+        "tags": [
+          "Nganh"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Nganh/no-parent/{khoaId}": {
+      "get": {
+        "tags": [
+          "Nganh"
+        ],
+        "parameters": [
+          {
+            "name": "khoaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Nganh/by-khoa/{khoaId}": {
+      "get": {
+        "tags": [
+          "Nganh"
+        ],
+        "parameters": [
+          {
+            "name": "khoaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/PhongHoc": {
       "get": {
         "tags": [
@@ -4580,7 +4660,22 @@
         ],
         "parameters": [
           {
+            "name": "toaNha",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "trangThai",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "loaiPhongHoc",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -4842,6 +4937,71 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/PhongHoc/create-list": {
+      "post": {
+        "tags": [
+          "PhongHoc"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "LoaiPhongHoc",
+                  "SucChua",
+                  "TenPhongs",
+                  "ToaNha"
+                ],
+                "type": "object",
+                "properties": {
+                  "TenPhongs": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "ToaNha": {
+                    "maxLength": 255,
+                    "type": "string"
+                  },
+                  "SucChua": {
+                    "maximum": 500,
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "LoaiPhongHoc": {
+                    "maximum": 3,
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "encoding": {
+                "TenPhongs": {
+                  "style": "form"
+                },
+                "ToaNha": {
+                  "style": "form"
+                },
+                "SucChua": {
+                  "style": "form"
+                },
+                "LoaiPhongHoc": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -5151,7 +5311,7 @@
         }
       }
     },
-    "/api/SinhVien/{lopHocId}by-lop-hoc": {
+    "/api/SinhVien/{lopHocId}/by-lop-hoc": {
       "get": {
         "tags": [
           "SinhVien"
@@ -5451,34 +5611,24 @@
         ],
         "requestBody": {
           "content": {
-            "multipart/form-data": {
+            "application/json-patch+json": {
               "schema": {
-                "required": [
-                  "LopHocId",
-                  "SinhVienIds"
-                ],
-                "type": "object",
-                "properties": {
-                  "SinhVienIds": {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "format": "uuid"
-                    }
-                  },
-                  "LopHocId": {
-                    "type": "string",
-                    "format": "uuid"
-                  }
-                }
-              },
-              "encoding": {
-                "SinhVienIds": {
-                  "style": "form"
-                },
-                "LopHocId": {
-                  "style": "form"
-                }
+                "$ref": "#/components/schemas/RequestAddSinhVienChuyenLopDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestAddSinhVienChuyenLopDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestAddSinhVienChuyenLopDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestAddSinhVienChuyenLopDto"
               }
             }
           }
@@ -6061,6 +6211,27 @@
         },
         "additionalProperties": false
       },
+      "RequestAddSinhVienChuyenLopDto": {
+        "required": [
+          "lopHocId",
+          "sinhVienIds"
+        ],
+        "type": "object",
+        "properties": {
+          "sinhVienIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "lopHocId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
       "RequestDeleteChiTietLopHocPhanDto": {
         "required": [
           "ids"
@@ -6163,6 +6334,19 @@
           "refreshToken": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RequestUpdateHocbaDto": {
+        "required": [
+          "diemTongKet"
+        ],
+        "type": "object",
+        "properties": {
+          "diemTongKet": {
+            "type": "number",
+            "format": "double"
           }
         },
         "additionalProperties": false
