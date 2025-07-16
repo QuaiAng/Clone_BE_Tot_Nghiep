@@ -1346,6 +1346,29 @@
         }
       }
     },
+    "/api/ChiTietLopHocPhan/{lopHocPhanId}/update-nop-diem": {
+      "put": {
+        "tags": [
+          "ChiTietLopHocPhan"
+        ],
+        "parameters": [
+          {
+            "name": "lopHocPhanId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/ChiTietLopHocPhan/update-list": {
       "put": {
         "tags": [
@@ -1490,6 +1513,14 @@
           "ChuongTrinhDaoTao"
         ],
         "parameters": [
+          {
+            "name": "nganhId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
           {
             "name": "page",
             "in": "query",
@@ -1825,6 +1856,14 @@
           },
           {
             "name": "trangThai",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "vaiTro",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -2256,6 +2295,53 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/giangviens/{id}/change-status": {
+      "put": {
+        "tags": [
+          "GiangVien"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestUpdateStatusGiangVienDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestUpdateStatusGiangVienDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestUpdateStatusGiangVienDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestUpdateStatusGiangVienDto"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -3742,6 +3828,81 @@
         }
       }
     },
+    "/api/LopHocPhan/lop-da-nop": {
+      "get": {
+        "tags": [
+          "LopHocPhan"
+        ],
+        "parameters": [
+          {
+            "name": "loaiChuongTrinhDaoTao",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "khoaId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "hocKy",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortByOrder",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/LopHocPhan/by-giang-vien": {
       "get": {
         "tags": [
@@ -4732,61 +4893,24 @@
         ],
         "requestBody": {
           "content": {
-            "multipart/form-data": {
+            "application/json-patch+json": {
               "schema": {
-                "required": [
-                  "LoaiPhongHoc",
-                  "SucChua",
-                  "TenPhong",
-                  "ToaNha",
-                  "TrangThaiPhongHoc"
-                ],
-                "type": "object",
-                "properties": {
-                  "TenPhong": {
-                    "maxLength": 255,
-                    "type": "string"
-                  },
-                  "ToaNha": {
-                    "maxLength": 255,
-                    "type": "string"
-                  },
-                  "SucChua": {
-                    "maximum": 2147483647,
-                    "minimum": 1,
-                    "type": "integer",
-                    "format": "int32"
-                  },
-                  "LoaiPhongHoc": {
-                    "maximum": 3,
-                    "minimum": 1,
-                    "type": "integer",
-                    "format": "int32"
-                  },
-                  "TrangThaiPhongHoc": {
-                    "maximum": 3,
-                    "minimum": 1,
-                    "type": "integer",
-                    "format": "int32"
-                  }
-                }
-              },
-              "encoding": {
-                "TenPhong": {
-                  "style": "form"
-                },
-                "ToaNha": {
-                  "style": "form"
-                },
-                "SucChua": {
-                  "style": "form"
-                },
-                "LoaiPhongHoc": {
-                  "style": "form"
-                },
-                "TrangThaiPhongHoc": {
-                  "style": "form"
-                }
+                "$ref": "#/components/schemas/RequestAddPhongHocDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestAddPhongHocDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestAddPhongHocDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestAddPhongHocDto"
               }
             }
           }
@@ -4951,28 +5075,64 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestAddPhongHocAutoDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestAddPhongHocAutoDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestAddPhongHocAutoDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestAddPhongHocAutoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/PhongHoc/{id}/update-option": {
+      "put": {
+        "tags": [
+          "PhongHoc"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
             "multipart/form-data": {
               "schema": {
                 "required": [
                   "LoaiPhongHoc",
                   "SucChua",
-                  "TenPhongs",
-                  "ToaNha"
+                  "TrangThaiPhongHoc"
                 ],
                 "type": "object",
                 "properties": {
-                  "TenPhongs": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "ToaNha": {
-                    "maxLength": 255,
-                    "type": "string"
-                  },
                   "SucChua": {
-                    "maximum": 500,
+                    "maximum": 2147483647,
                     "minimum": 1,
                     "type": "integer",
                     "format": "int32"
@@ -4982,20 +5142,23 @@
                     "minimum": 1,
                     "type": "integer",
                     "format": "int32"
+                  },
+                  "TrangThaiPhongHoc": {
+                    "maximum": 3,
+                    "minimum": 1,
+                    "type": "integer",
+                    "format": "int32"
                   }
                 }
               },
               "encoding": {
-                "TenPhongs": {
-                  "style": "form"
-                },
-                "ToaNha": {
-                  "style": "form"
-                },
                 "SucChua": {
                   "style": "form"
                 },
                 "LoaiPhongHoc": {
+                  "style": "form"
+                },
+                "TrangThaiPhongHoc": {
                   "style": "form"
                 }
               }
@@ -5068,6 +5231,14 @@
           },
           {
             "name": "tinhTrangHocTap",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "trangThai",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -5327,6 +5498,53 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SinhVien/{id}/update-trang-thai": {
+      "put": {
+        "tags": [
+          "SinhVien"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestSinhVienTrangThaiDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestSinhVienTrangThaiDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestSinhVienTrangThaiDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestSinhVienTrangThaiDto"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -6211,6 +6429,82 @@
         },
         "additionalProperties": false
       },
+      "RequestAddPhongHocAutoDto": {
+        "required": [
+          "loaiPhongHoc",
+          "sucChua",
+          "tenPhongs",
+          "toaNha"
+        ],
+        "type": "object",
+        "properties": {
+          "tenPhongs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "toaNha": {
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string"
+          },
+          "sucChua": {
+            "maximum": 500,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "loaiPhongHoc": {
+            "maximum": 3,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RequestAddPhongHocDto": {
+        "required": [
+          "LoaiPhongHoc",
+          "SucChua",
+          "TenPhong",
+          "ToaNha",
+          "TrangThaiPhongHoc"
+        ],
+        "type": "object",
+        "properties": {
+          "TenPhong": {
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string"
+          },
+          "ToaNha": {
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string"
+          },
+          "SucChua": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "LoaiPhongHoc": {
+            "maximum": 3,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "TrangThaiPhongHoc": {
+            "maximum": 3,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "RequestAddSinhVienChuyenLopDto": {
         "required": [
           "lopHocId",
@@ -6338,6 +6632,19 @@
         },
         "additionalProperties": false
       },
+      "RequestSinhVienTrangThaiDto": {
+        "required": [
+          "trangThai"
+        ],
+        "type": "object",
+        "properties": {
+          "trangThai": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "RequestUpdateHocbaDto": {
         "required": [
           "diemTongKet"
@@ -6390,6 +6697,21 @@
             "type": "string",
             "format": "date-time",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RequestUpdateStatusGiangVienDto": {
+        "required": [
+          "trangThai"
+        ],
+        "type": "object",
+        "properties": {
+          "trangThai": {
+            "maximum": 3,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

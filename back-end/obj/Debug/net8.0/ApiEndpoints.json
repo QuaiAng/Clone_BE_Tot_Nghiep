@@ -820,6 +820,22 @@
   },
   {
     "ContainingType": "Education_assistant.Modules.ModuleChiTietLopHocPhan.ChiTietLopHocPhanController",
+    "Method": "UpdateNopDiemChiTietLopHocPhanAsync",
+    "RelativePath": "api/ChiTietLopHocPhan/{lopHocPhanId}/update-nop-diem",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lopHocPhanId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleChiTietLopHocPhan.ChiTietLopHocPhanController",
     "Method": "DeleteListChiTietLopHocPhanAsync",
     "RelativePath": "api/ChiTietLopHocPhan/delete-list",
     "HttpMethod": "DELETE",
@@ -879,6 +895,11 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [
+      {
+        "Name": "nganhId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
       {
         "Name": "page",
         "Type": "System.Int32",
@@ -1092,6 +1113,11 @@
       },
       {
         "Name": "trangThai",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "vaiTro",
         "Type": "System.Int32",
         "IsRequired": false
       }
@@ -1349,6 +1375,27 @@
       {
         "Name": "id",
         "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleGiangVien.GiangVienController",
+    "Method": "ChangeStatusAsync",
+    "RelativePath": "api/giangviens/{id}/change-status",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Education_assistant.Modules.ModuleGiangVien.DTOs.Request.RequestUpdateStatusGiangVienDto",
         "IsRequired": true
       }
     ],
@@ -2448,6 +2495,57 @@
   },
   {
     "ContainingType": "Education_assistant.Modules.ModuleLopHocPhan.LopHocPhanController",
+    "Method": "GetAllLopHocPhanDaNopDiemAsync",
+    "RelativePath": "api/LopHocPhan/lop-da-nop",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loaiChuongTrinhDaoTao",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "khoaId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "hocKy",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortByOrder",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleLopHocPhan.LopHocPhanController",
     "Method": "GetAllLopHocPhanNoPageAsync",
     "RelativePath": "api/LopHocPhan/no-page",
     "HttpMethod": "GET",
@@ -2906,29 +3004,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "TenPhong",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ToaNha",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "SucChua",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "LoaiPhongHoc",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "TrangThaiPhongHoc",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Name": "model",
+        "Type": "Education_assistant.Modules.ModulePhongHoc.DTOs.Request.RequestAddPhongHocDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -3013,6 +3091,37 @@
   },
   {
     "ContainingType": "Education_assistant.Modules.ModulePhongHoc.PhongHocController",
+    "Method": "UpdatePhongHocOptionAsync",
+    "RelativePath": "api/PhongHoc/{id}/update-option",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "SucChua",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "LoaiPhongHoc",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TrangThaiPhongHoc",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModulePhongHoc.PhongHocController",
     "Method": "UpdateTrangThaiLopHocPhanAsync",
     "RelativePath": "api/PhongHoc/{id}/update-trang-thai",
     "HttpMethod": "PATCH",
@@ -3041,24 +3150,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "TenPhongs",
-        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "ToaNha",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "SucChua",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "LoaiPhongHoc",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Name": "model",
+        "Type": "Education_assistant.Modules.ModulePhongHoc.DTOs.Request.RequestAddPhongHocAutoDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -3088,6 +3182,11 @@
       },
       {
         "Name": "tinhTrangHocTap",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "trangThai",
         "Type": "System.Int32",
         "IsRequired": false
       },
@@ -3339,6 +3438,27 @@
       {
         "Name": "id",
         "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Education_assistant.Modules.ModuleSinhVien.SinhVienController",
+    "Method": "UpdateTrangThaiSinhVienAsync",
+    "RelativePath": "api/SinhVien/{id}/update-trang-thai",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Education_assistant.Modules.ModuleSinhVien.DTOs.Request.RequestSinhVienTrangThaiDto",
         "IsRequired": true
       }
     ],
